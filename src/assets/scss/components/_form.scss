@@ -1,0 +1,62 @@
+.nsForm{
+    display: flex;
+    flex-direction: column;
+    font-family: $primary-font;
+
+
+    label{
+        font-size: $font-size-2;
+        font-weight: 500;
+        letter-spacing: normal;
+        color: $dark;
+        line-height: normal;
+        margin-bottom: 8px;
+    }
+
+    &-input{
+        height: 48px;
+        width: 100%;
+        border-radius: $border-radius-2;
+        background-color: $whitesmoke;
+        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        font-size: $font-size-2;
+        letter-spacing: normal;
+        color: $gray;
+        line-height: normal;
+        padding: 16px;
+        outline: none !important;
+        margin-top: 8px;
+
+    }
+    
+    &-control{
+        margin: 12px 0px;
+        &:first-child{
+            margin-top: 0px;
+        }
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+
+    &-button{
+        background-color: $orange;
+        width: 100%;
+        outline: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-2;
+        color: $white;
+        letter-spacing: normal;
+        line-height: normal;
+        height: 48px;
+        border-radius: $border-radius-2;
+        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+    }
+
+    &-select{
+
+    }
+}

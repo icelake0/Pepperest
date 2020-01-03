@@ -1,0 +1,48 @@
+@import 'utils/_typography.scss';
+
+//colors
+$white: #ffffff;
+$black: #10182a;
+$orange: #ff721b;
+$dark: #313639;
+$gray: #707479;
+$whitesmoke: #f2f3f5;
+$blue: #4367b2;
+$gainsboro: #e4e4e4;
+$oldlace: #fef9e8;
+
+
+//Font-sizes
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+$font-size-5: 24px;
+$font-size-6: 26px;
+$font-size-7: 28px;
+$font-size-8: 32px;
+$font-size-md: 26px;
+$font-size-small: 20px;
+$font-size-smaller: 22px;
+$font-size-large: 40px;
+$font-size-largest: 48px;
+$font-size-max: 64px;
+
+//border radius
+$border-radius-1: 2px;
+$border-radius-2: 4px;
+$border-radius-md: 16px;
+$border-radius-lg: 24px;
+
+
+//breakpoints
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
