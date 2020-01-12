@@ -2,16 +2,19 @@
     font-family: 'Graphik Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('/assets/fonts/Graphik.WOFF'), url('/assets/fonts/Graphik.WOFF') format('woff');
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    src: url('/assets/fonts/Graphik.WOFF') format('woff');
 }
 
 @font-face {
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: normal;
-    src: local('/assets/fonts/Merriweather-Bold.ttf'), url('/assets/fonts/Merriweather-Bold.ttf') format('ttf');
+    src: url('/assets/fonts/Merriweather.woff') format('woff');
 }
 
 
 $primary-font: 'Graphik Regular','Helvetica Neue', Arial, sans-serif;
-$secondary-font: 'Merriweather-Bold.ttf',Arial, "Helvetica Neue", Arial, sans-serif;
+$secondary-font: 'Merriweather',Arial, "Helvetica Neue", Arial, sans-serif;
