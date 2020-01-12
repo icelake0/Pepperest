@@ -4,7 +4,7 @@
     font-family: $primary-font;
 
 
-    label{
+    label, &__label-help{
         font-size: $font-size-2;
         font-weight: 500;
         letter-spacing: normal;
@@ -13,12 +13,20 @@
         margin-bottom: 8px;
     }
 
+    &__label-help{
+        font-size: $font-size-1;
+        color: $orange;
+        // text-decoration: none !important;
+        &:hover{
+            color: $orange;
+        }
+    }
+
     &-input{
         height: 48px;
         width: 100%;
         border-radius: $border-radius-2;
         background-color: $whitesmoke;
-        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
         font-size: $font-size-2;
         letter-spacing: normal;
         color: $gray;
@@ -26,6 +34,16 @@
         padding: 16px;
         outline: none !important;
         margin-top: 8px;
+        border: 0px;
+        &::placeholder{
+            color: $gray;
+        }
+        &:hover{
+          box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        }
+        &.error{
+            border: solid 1px #ff721b;
+        }
 
     }
     
@@ -57,6 +75,52 @@
     }
 
     &-select{
+        background-color: $whitesmoke;
+        border-radius: $border-radius-2;
+        &:hover{
+          box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        }
 
+        select {
+            height: 48px;
+            width: 100%;
+            padding: 13px;
+            border: 0px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none; /* remove default arrow */
+            background: url(/assets/images/svg/chevron.svg) no-repeat 96% 53%; /* add custom arrow */
+            font-size: $font-size-2;
+            line-height: normal;
+            color: $gray;
+            outline: none;
+            &:focus {
+                outline: none;
+            }
+            &.error{
+                border: solid 1px #ff721b;
+            }
+
+            // &:hover {
+            //     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+            // }
+
+            // &.error {
+            //     border: 1px solid $red !important;
+            // }
+        }
+    }
+
+    &-password{
+        position: relative;
+        & .nsForm-input{
+            padding-right: 56px;
+        }
+        &-icon{
+            position: absolute;
+            top: 24px;
+            right: 16px;
+        }
     }
 }

@@ -1,7 +1,12 @@
 @import 'utils/_bootstrap.scss';
 @import 'settings';
 
+@import 'components/button';
+@import 'components/form';
+@import 'components/pill';
+@import 'components/alert';
 
+@import 'layout/auth';
 
 
 @import 'globals';
