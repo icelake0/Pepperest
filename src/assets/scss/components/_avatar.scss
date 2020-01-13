@@ -1,0 +1,17 @@
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    &-xs{
+        width: 24px;
+        height: 24px;
+    }
+
+    &-image{
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

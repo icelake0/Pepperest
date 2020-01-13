@@ -1,4 +1,4 @@
-import {Register, Login, UpdatePassword, ForgotPassword } from  'pages'
+import {Register, Login, UpdatePassword, ForgotPassword, PaymentPage, CustomersPage, OrdersPage, ProductsPage } from  'pages'
 
 
 const routes = [
@@ -30,6 +30,30 @@ const routes = [
     path: '/forgot-password',
     exact: true,
     component: ForgotPassword,
+    isProtected: false
+  },
+  {
+    path: '/payment',
+    exact: true,
+    component: PaymentPage,
+    isProtected: false
+  },
+  {
+    path: '/customers',
+    exact: true,
+    component: CustomersPage,
+    isProtected: false
+  },
+  {
+    path: '/products',
+    exact: true,
+    component: ProductsPage,
+    isProtected: false
+  },
+  {
+    path: '/orders',
+    exact: true,
+    component: OrdersPage,
     isProtected: false
   }
 ];
