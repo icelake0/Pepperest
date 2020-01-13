@@ -8,6 +8,7 @@ import FacebookButton from './FacebookButton';
 import GoogleButton from './GoogleButton'
 import AuthFooter from './AuthFooter'
 import Alert from './Alert'
+import NavLink from './NavLink'
 
 
 
@@ -20,5 +21,6 @@ export {
   FacebookButton,
   GoogleButton,
   AuthFooter,
-  Alert
+  Alert,
+  NavLink
 };
