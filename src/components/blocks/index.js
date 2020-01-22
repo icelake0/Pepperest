@@ -9,6 +9,9 @@ import GoogleButton from './GoogleButton'
 import AuthFooter from './AuthFooter'
 import Alert from './Alert'
 import NavLink from './NavLink'
+import BankAlert from './BankAlert'
+import OnBoardingModal from './OnBoardingModal';
+import LoadingListItem from './LoadingListItem';
 
 
 
@@ -22,5 +25,8 @@ export {
   GoogleButton,
   AuthFooter,
   Alert,
-  NavLink
+  NavLink,
+  BankAlert,
+  OnBoardingModal,
+  LoadingListItem
 };

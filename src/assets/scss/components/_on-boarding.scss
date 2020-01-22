@@ -1,0 +1,53 @@
+.on-boarding{
+    width: 1024px;
+    height: 400px;
+    background: $white;
+    padding: 48px;
+    box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+    border-radius: $border-radius-1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__content{
+        // padding: 48px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        width: 317px;
+        font-family: $secondary-font;
+        font-size: $font-size-8;
+        line-height: 1.25;
+        color: $black;
+        margin-bottom: 12px;
+    }
+    &__info{
+        width: 328px;
+        opacity: 0.8;
+        font-size: $font-size-2;
+        line-height: 1.71;
+        color: $dark;
+        margin-top: 12px;
+    }
+
+    & .button{
+        width: 160px;
+        height: 40px;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    &-image{
+        height: 100%;
+        
+        &__container{
+            height: 100%;
+
+            
+        }
+    }
+}

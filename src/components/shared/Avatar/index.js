@@ -7,9 +7,13 @@ const Avatar = props => (
     </div>
 );
 
+Avatar.defaultProps = {
+  avatarSize: 'xs' // possibles sizes can be xs,md,lg , e.t.c
+};
+
 Avatar.propTypes = {
     imageUrl: PropTypes.string.isRequired,
-    avatarSize: 'xs', // possibles sizes can be xs,md,lg , e.t.c
+    avatarSize: PropTypes.string.isRequired
 }
 
 export default Avatar;

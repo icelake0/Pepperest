@@ -26,7 +26,7 @@ const Header = props => (
       <a className="nsHeader-logo" href="/">
         <img
           src="/assets/images/logo/pepperest-logo-white.png"
-          srcset="/assets/images/logo/pepperest-logo-white@2x.png 2x,
+          srcSet="/assets/images/logo/pepperest-logo-white@2x.png 2x,
                             /assets/images/logo/pepperest-logo-white@3x.png 3x"
           alt="logo"
         />
