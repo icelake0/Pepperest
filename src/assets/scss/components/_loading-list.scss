@@ -1,0 +1,78 @@
+.loading-list{
+    &__item{
+        height: 48px;
+        border: 1px solid  rgba(151,151,151,0.3);
+        border-left: 2px solid rgba($color: #c9c2c1, $alpha: 0.9);
+        border-bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // justify-content: space-between;;
+        padding: 0px 24px;
+        opacity: 0.2;
+        &:last-child{
+            border: 1px solid  rgba(151,151,151,0.3);
+            border-left: 2px solid rgba($color: #c9c2c1, $alpha: 0.9);
+        }
+
+
+        &-placeholder{
+            height: 6px;
+            border-radius: 3px;
+            background-color: #9f9f9f;
+            &-xs {
+                width: 60px;
+                
+            }
+            &-xxs{
+                width: 28px;
+                margin-right: auto;
+            }
+            &-xl{
+                width: 110px;
+            }
+            &-md{
+                width: 88px;
+            }
+            &-lg{
+                width: 91px;
+                
+            }
+
+            &-one {
+                margin-right: auto;
+            }
+            &-two{
+                margin-right: auto;
+                height: 32px;
+                border-radius: 4px;
+                background-color: #cacaca;
+                padding: 13px 14px;
+                opacity: 0.79;
+            }
+            &-five{
+                justify-self: flex-end;
+                margin-left: auto;
+            }
+
+            &-multiple{
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-direction: row;
+                & .loading-list__item-placeholder {
+                    &:first-child{
+                        margin-right: 12px;
+                    }
+                    &:last-child{
+                        background-color: #cacaca;
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// rgb(151,151,151)

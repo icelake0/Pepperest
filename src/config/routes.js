@@ -5,7 +5,7 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: Register,
+    component: PaymentPage,
     isProtected: false
   },
   {
