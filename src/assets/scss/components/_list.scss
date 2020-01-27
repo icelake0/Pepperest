@@ -99,6 +99,11 @@
         border-left: 0px;
         border-right: 0px;
         position: relative;
+        padding: 8px 24px 8px 22px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         &:first-child{
             border-top: 0px;
         }
@@ -137,11 +142,149 @@
             &-refund{
                 background-color:$refund ;
             }
-            &-released{
+            &-release{
                 background-color: $released ;
             }
             &-stop{
                 background-color: $stop ;
+            }
+        }
+        &__date{
+            &-text{
+                opacity: 0.5;
+                font-size: $font-size-2;
+                color: $black;
+            }
+        }
+        &__details{
+            &-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: 0px auto;
+            }
+            &-product{
+                font-size: $font-size-2;
+                color: $black;
+                font-weight: 700;
+                margin-right: 12px;
+                text-align: right;
+                width: 133px;
+                margin-left: auto;
+            }
+            &-email{
+                opacity: 0.5;
+                font-size: $font-size-2;
+                color: $black;
+                margin-left: 12px;
+                text-align: left;
+                width: 138px;
+                margin-right: auto;
+            }
+            &-product, &-email{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &__payment{
+            &-container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            & .button{
+                margin-right: 8px;
+            }
+
+            &-price{
+                font-size: $font-size-2;
+                color: $black;
+                font-weight: 700;
+                margin-left: 8px;
+                text-align: right;
+                width: 94px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &__more{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 40px;
+
+            & .dot {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #d8d8d8;
+                margin: 0px 4px;
+                &:first-child {
+                    margin-left: 0px;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        &__status{
+            margin-left: 24px;
+            &-container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &-tag{
+                padding: 6px 8px;
+                width: auto;
+                height: 24px;
+                border-radius: $border-radius-2;
+                font-size: $font-size-1;
+                font-weight: 600;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                &--pending{
+                    background-color:  $pending-tag;
+                }
+                &--initial{
+                    background-color: $initial-tag;
+                }
+                &--open{
+                    background-color: $open-tag;;
+                }
+                &--awaiting{
+                    background-color: $awaiting-tag;
+                }
+                &--fulfilled{
+                    background-color: $fulfilled-tag;
+                }
+                &--flagged{
+                    background-color: $flagged-tag;
+                }
+                &--closed{
+                    background-color: $closed-tag;
+                }
+                &--refund{
+                    background-color: $refund-tag;
+                }
+                &--release{
+                    background-color: $release-tag;
+                }
+                &--stop{
+                    background-color: $stop-tag;
+                }
+            }
+
+            &-text{
+                font-size: $font-size-1;
+                font-weight: 600;
+                margin-left: 8px;
             }
         }
     }

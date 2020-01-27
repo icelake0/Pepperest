@@ -1,0 +1,33 @@
+.text{
+
+    &--pending{
+        color: $pending-text-color;
+    }
+    &--awaiting{
+        color: $awaiting-text-color;
+    }
+    &--initial{
+        color: $initial-text-color;
+    }
+    &--open{
+        color: $open-text-color;
+    }
+    &--fulfilled{
+        color: $fulfilled-text-color;
+    }
+    &--flagged{
+        color: $flagged-text-color;
+    }
+    &--closed{
+        color: $closed-text-color;
+    }
+    &---refund{
+        color: $refund-text-color;
+    }
+    &--release{
+        color: $release-text-color;
+    }
+    &--stop{
+        color: $stop-text-color;
+    }
+}

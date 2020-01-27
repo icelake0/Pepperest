@@ -17,10 +17,10 @@
     justify-content: center;
 
     &-md{
-        width: 128px;
+        width: auto;
         height: 32px;
         font-size: $font-size-1;
-        // padding: 8px 14px;
+        padding: 8px 14px;
     }
 
     &-facebook{
