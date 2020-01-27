@@ -31,7 +31,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 16px;
-    margin: 16px 0px;
+    margin-bottom: 16px;
+
+    &-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    &-icon{
+        margin-right: 16px;
+    }
 
     &__message{
         font-size: $font-size-2;

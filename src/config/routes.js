@@ -1,4 +1,14 @@
-import {Register, Login, UpdatePassword, ForgotPassword, PaymentPage, CustomersPage, OrdersPage, ProductsPage } from  'pages'
+import {
+  Register,
+  Login,
+  UpdatePassword,
+  ForgotPassword,
+  PaymentPage,
+  CustomersPage,
+  OrdersPage,
+  ProductsPage,
+  PaymentPageWithOnBoarding
+} from 'pages';
 
 
 const routes = [
@@ -36,6 +46,12 @@ const routes = [
     path: '/payment',
     exact: true,
     component: PaymentPage,
+    isProtected: false
+  },
+  {
+    path: '/payment-onboarding',
+    exact: true,
+    component: PaymentPageWithOnBoarding,
     isProtected: false
   },
   {

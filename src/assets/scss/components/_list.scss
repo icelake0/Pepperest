@@ -1,0 +1,148 @@
+.list{
+    &-header{
+        height: 56px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-top-left-radius: $border-radius-2;
+        border-top-right-radius: $border-radius-2;
+        background-color: $lavender;
+        padding: 12px 24px;
+        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+
+        .nsForm-input{
+            width: 400px;
+            background-color: $white;
+            height: 32px;
+            margin: 0px;
+            font-size: $font-size-1;
+        }
+
+        &__actions{
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        &__action{
+            width: 104px;
+            height: 32px;
+            border-radius: $border-radius-2;
+            background-color: rgb(209, 211, 219);
+            margin: 0px 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            &-text{
+                font-size: $font-size-1;
+                font-weight: 700;
+                color: $light-gray;
+            }
+            &:first-child{
+                margin-left: 0px;
+            }
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+
+    }
+
+    &-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 24px;
+
+        &-text{
+            font-size: $font-size-2;
+            color: $light-gray;
+
+            &-alt{
+                color: $black;
+            }
+        }
+
+        &__pagination{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &-page-number{
+                margin: 0px 8px;
+            }
+            &-next{
+                margin-right: 24px;
+                margin-left: 8px;
+            }
+            &-prev{
+                margin-left: 24px;
+                margin-right: 8px;
+            }
+            &-prev,&-next,&-page-number{
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-body{
+        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+    }
+
+    &-item{
+        height: 48px;
+        background: $white;
+        border: solid 0.5px rgba($color: #979797, $alpha: 0.5);
+        border-left: 0px;
+        border-right: 0px;
+        position: relative;
+        &:first-child{
+            border-top: 0px;
+        }
+        &:last-child{
+            border-bottom: 0px;
+        }
+
+        &__indicator{
+            position: absolute;
+            left: 0;
+            height: 32px;
+            width: 2px;
+            top: calc((48px - 32px ) / 2);
+
+            &-pending{
+                background-color: $pending ;
+            }
+            &-awaiting{
+                background-color: $awaiting;
+            }
+            &-open{
+                background-color: $open;
+            }
+            &-fulfilled{
+                background-color: $fulfilled ;
+            }
+            &-initial{
+                background-color: $initial;
+            }
+            &-flagged{
+                background-color:$flagged ;
+            }
+            &-closed{
+                background-color:$closed ;
+            }
+            &-refund{
+                background-color:$refund ;
+            }
+            &-released{
+                background-color: $released ;
+            }
+            &-stop{
+                background-color: $stop ;
+            }
+        }
+    }
+}

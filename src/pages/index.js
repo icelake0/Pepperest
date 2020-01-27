@@ -7,6 +7,16 @@ import CustomersPage from './CustomersPage'
 import ProductsPage from './ProductsPage'
 import OrdersPage from './OrdersPage'
 
+
+import PaymentPageWithOnBoarding from './PaymentPageWithOnBoarding';
 export {
-    Login, Register, UpdatePassword, ForgotPassword, PaymentPage, CustomersPage, ProductsPage, OrdersPage
-}
+  Login,
+  Register,
+  UpdatePassword,
+  ForgotPassword,
+  PaymentPage,
+  CustomersPage,
+  ProductsPage,
+  OrdersPage,
+  PaymentPageWithOnBoarding
+};

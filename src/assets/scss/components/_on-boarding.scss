@@ -9,6 +9,15 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &-container{
+        position: absolute;
+        top: 24px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        // height: 500px;
+    }
+
     &__content{
         // padding: 48px 0px;
         display: flex;
@@ -39,6 +48,16 @@
         align-items: center;
         justify-content: center;
         margin-top: auto;
+        margin-right: 8px;
+        margin-left: 8px;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+        &:last-child{
+            margin-right: 0px;
+            width: 184px;
+        }
     }
 
     &-image{
