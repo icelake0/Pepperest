@@ -10,7 +10,10 @@ const OnBoardingModal = props => (
       <p className="on-boarding__info">
         {props.info}
       </p>
-      <div className="button button--orange">{props.buttonText}</div>
+      <div className="d-flex flex-row mt-auto">
+        <div className="button button-md button--orange">{props.buttonText}</div>
+        {props.secondaryButtonText ? (<div className="button button-md button--orange">{props.secondaryButtonText}</div>) : null}
+      </div>
     </div>
     <div className="on-boarding-image__container">
       <img className="on-boarding-image"  src={props.imageUrl} alt="illustration"/>
@@ -22,6 +25,7 @@ OnBoardingModal.propTypes = {
   title: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
+  secondaryButtonText: PropTypes.string,
   imageUrl: PropTypes.string
 };
 

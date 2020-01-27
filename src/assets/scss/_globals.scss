@@ -35,6 +35,11 @@ a {
     margin: 0px auto;
     position: relative;
     overflow-x: hidden;
+    height: 100vh;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 

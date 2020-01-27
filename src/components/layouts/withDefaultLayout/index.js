@@ -1,5 +1,5 @@
 import React, {Component, Fragment } from  'react'
-import {Header} from 'components/shared';
+import {Header, HeaderAlternate} from 'components/shared';
 
 export default function withDefaultLayout(WrappedComponent, data = {}){
     return class extends Component{
@@ -14,6 +14,12 @@ export default function withDefaultLayout(WrappedComponent, data = {}){
             return (
               <Fragment>
                 <Header />
+                {this.state.hasAlternateHeader ? (
+                  <HeaderAlternate
+                    links={this.state.links}
+                    hasButton={this.state.alternateHeaderHasButton}
+                  />
+                ) : null}
                 <div className="max-content">
                   <WrappedComponent {...this.props} />
                 </div>
