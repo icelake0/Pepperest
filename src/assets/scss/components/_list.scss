@@ -287,5 +287,97 @@
                 margin-left: 8px;
             }
         }
+
+        &-detail{
+            &__container{
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                padding: 24px;
+                box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+                background-color: #f4f5f7;
+                display: flex;
+                flex-direction: column;
+
+
+
+                & .list-item__indicator{
+                    height: 98%;
+                }
+
+                &-close{
+                    width: 68px;
+                    height: 24px;
+                    border-radius: $border-radius-md;
+                    background-color: #E7E8EB;
+                    margin-bottom: 8px;
+                    align-self: flex-end;
+                    font-size: $font-size-1;
+                    font-weight: 600;
+                    color: $light-gray;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                }
+            }
+            &__main{
+                width: 100%;
+                height: 100%;
+                border-radius: $border-radius-2;
+                border: solid 1px #eaecee;
+                background-color: $white;
+
+                &-item{
+                    width: 100%;
+                    height: 48px;
+                    padding: 16px 24px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border: solid 0.5px rgba($color: #979797, $alpha: 0.5);
+                    border-right: 0px;
+                    border-left: 0px;
+                    &-alternate{
+                        min-height: 48px;
+                        height: auto;
+                    }
+                    &:first-child{
+                        border-top: 0px;
+                    }
+                    &:last-child{
+                        border-bottom: 0px;
+                    }
+
+                    &__title,&__details{
+                        font-size: $font-size-2;
+                        font-weight: 600;
+                        color: #46505e;
+                    }
+                    &__details{
+                        color: #778597;
+                        font-weight: 500;
+                    }
+
+                    & .button{
+                        margin: 0px 8px;
+                        &:first-child{
+                            margin-left: 0px;
+                        }
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+
+                    & .button--orange{
+                        margin-top: -8px;
+                    }
+
+                }
+            }
+
+        }
     }
 }
