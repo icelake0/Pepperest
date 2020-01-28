@@ -24,35 +24,469 @@ const List = props => (
     </div>
     <div className="list-body">
       <ul>
-        <li className="list-item">
-          <div className="list-item__indicator list-item__indicator-pending"></div>
+        <li>
+          <div className="list-item row mx-0">
+            <div className="list-item__indicator list-item__indicator-pending"></div>
+            <div className="col-md-4 px-0">
+              <div className="d-flex flex-row">
+                <div className="list-item__date">
+                  <p className="list-item__date-text">Jun 21, 2018</p>
+                </div>
+                <div className="list-item__status">
+                  <div className="list-item__status-container">
+                    <div className="list-item__status-tag list-item__status-tag--pending text--pending">
+                      Pending
+                    </div>
+                    <p className="list-item__status-text text--pending">
+                      Due in 4 days
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="list-item__details col-md-4 px-0">
+              <div className="list-item__details-container">
+                <p className="list-item__details-product">Ina Ankara Payment</p>
+                <p className="list-item__details-email">Tohbeey@gmail.com</p>
+              </div>
+            </div>
+            <div className="col-md-4 px-0">
+              <div className="d-flex flex-row justify-content-end">
+                <div className="list-item__payment">
+                  <div className="list-item__payment-container">
+                    <div className="button button-md button--orange">
+                      Make Payment
+                    </div>
+                    <p className="list-item__payment-price">NGN 20,000</p>
+                  </div>
+                </div>
+                <div className="list-item__more">
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item-detail__container">
+            <div className="list-item__indicator list-item__indicator-pending"></div>
+            <div className="list-item-detail__container-close">Close</div>
+            <div className="list-item-detail__main">
+              <div className="list-item-detail__main-item row mx-0">
+                <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Transaction ID</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">16835004G6739590D</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Customer</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">James Blunt</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Transaction Date</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">January 21, 2019 / 15:00:23pm</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Payment Name</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">Ina Ankara Payment</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Delivery Date</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">13th - 15th August ( Your expected delivery date is 2 days from payment date.)</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Amount</p>
+                </div>
+                <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__details">NGN 530,600</p>
+                </div>
+                <div className="ml-auto">
+                  <div className="button button-md button--orange">Make Payment</div>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Customer Email</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">Tohbeey@gmail.com</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Status</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details status-text text--pending">Pending, Due in 4 days</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item list-item-detail__main-item-alternate row mx-0">
+                  <div className="col-md-3 px-0">
+                  <p className="list-item-detail__main-item__title">Payment Description</p>
+                </div>
+                <div className="col-md-9 px-0">
+                  <p className="list-item-detail__main-item__details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis</p>
+                </div>
+              </div>
+              <div className="list-item-detail__main-item">
+                  <div className="button button-md button--grey">Print Reciept</div>
+                  <div className="button button-md button--grey">Report an issue</div>
+                  <div className="button button-md button--grey">Refund customer</div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item  row mx-0">
           <div className="list-item__indicator list-item__indicator-open"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--open text--open">
+                    Open
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Red shwad shoe</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 500,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-closed"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--closed text--closed">
+                    Closed
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Ina Ankara Payment</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 20,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-awaiting"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--awaiting text--awaiting">
+                    Awaiting Confirmation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Ina Ankara Payment</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 200,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-flagged"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--flagged text--flagged">
+                    Flagged
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Ina Ankara Payment</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 20,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-refund"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--refund text--refund">
+                    Refund
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Red shwad shoe</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 20,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-initial"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--initial text--initial">
+                    Initial
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Ina Ankara Payment</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 200,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
-          <div className="list-item__indicator list-item__indicator-released"></div>
+        <li className="list-item row mx-0">
+          <div className="list-item__indicator list-item__indicator-release"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--release text--release">
+                    Release Payment
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Red shwad shoe</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 20,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-stop"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--stop text--stop">
+                    Stop
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Ina Ankara Payment</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 500,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li className="list-item">
+        <li className="list-item row mx-0">
           <div className="list-item__indicator list-item__indicator-fulfilled"></div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row">
+              <div className="list-item__date">
+                <p className="list-item__date-text">Jun 21, 2018</p>
+              </div>
+              <div className="list-item__status">
+                <div className="list-item__status-container">
+                  <div className="list-item__status-tag list-item__status-tag--fulfilled text--fulfilled">
+                    Fulfilled
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="list-item__details col-md-4 px-0">
+            <div className="list-item__details-container">
+              <p className="list-item__details-product">Red shwad shoe</p>
+              <p className="list-item__details-email">Tohbeey@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-4 px-0">
+            <div className="d-flex flex-row justify-content-end">
+              <div className="list-item__payment">
+                <div className="list-item__payment-container">
+                  <p className="list-item__payment-price">NGN 20,000</p>
+                </div>
+              </div>
+              <div className="list-item__more">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

@@ -99,6 +99,11 @@
         border-left: 0px;
         border-right: 0px;
         position: relative;
+        padding: 8px 24px 8px 22px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         &:first-child{
             border-top: 0px;
         }
@@ -137,12 +142,242 @@
             &-refund{
                 background-color:$refund ;
             }
-            &-released{
+            &-release{
                 background-color: $released ;
             }
             &-stop{
                 background-color: $stop ;
             }
+        }
+        &__date{
+            &-text{
+                opacity: 0.5;
+                font-size: $font-size-2;
+                color: $black;
+            }
+        }
+        &__details{
+            &-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: 0px auto;
+            }
+            &-product{
+                font-size: $font-size-2;
+                color: $black;
+                font-weight: 700;
+                margin-right: 12px;
+                text-align: right;
+                width: 133px;
+                margin-left: auto;
+            }
+            &-email{
+                opacity: 0.5;
+                font-size: $font-size-2;
+                color: $black;
+                margin-left: 12px;
+                text-align: left;
+                width: 138px;
+                margin-right: auto;
+            }
+            &-product, &-email{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &__payment{
+            &-container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            & .button{
+                margin-right: 8px;
+            }
+
+            &-price{
+                font-size: $font-size-2;
+                color: $black;
+                font-weight: 700;
+                margin-left: 8px;
+                text-align: right;
+                width: 94px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &__more{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 40px;
+
+            & .dot {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #d8d8d8;
+                margin: 0px 4px;
+                &:first-child {
+                    margin-left: 0px;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        &__status{
+            margin-left: 24px;
+            &-container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &-tag{
+                padding: 6px 8px;
+                width: auto;
+                height: 24px;
+                border-radius: $border-radius-2;
+                font-size: $font-size-1;
+                font-weight: 600;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                &--pending{
+                    background-color:  $pending-tag;
+                }
+                &--initial{
+                    background-color: $initial-tag;
+                }
+                &--open{
+                    background-color: $open-tag;;
+                }
+                &--awaiting{
+                    background-color: $awaiting-tag;
+                }
+                &--fulfilled{
+                    background-color: $fulfilled-tag;
+                }
+                &--flagged{
+                    background-color: $flagged-tag;
+                }
+                &--closed{
+                    background-color: $closed-tag;
+                }
+                &--refund{
+                    background-color: $refund-tag;
+                }
+                &--release{
+                    background-color: $release-tag;
+                }
+                &--stop{
+                    background-color: $stop-tag;
+                }
+            }
+
+            &-text{
+                font-size: $font-size-1;
+                font-weight: 600;
+                margin-left: 8px;
+            }
+        }
+
+        &-detail{
+            &__container{
+                height: auto;
+                background-color: transparent;
+                position: relative;
+                padding: 24px;
+                box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+                background-color: #f4f5f7;
+                display: flex;
+                flex-direction: column;
+
+
+
+                & .list-item__indicator{
+                    height: 98%;
+                }
+
+                &-close{
+                    width: 68px;
+                    height: 24px;
+                    border-radius: $border-radius-md;
+                    background-color: #E7E8EB;
+                    margin-bottom: 8px;
+                    align-self: flex-end;
+                    font-size: $font-size-1;
+                    font-weight: 600;
+                    color: $light-gray;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                }
+            }
+            &__main{
+                width: 100%;
+                height: 100%;
+                border-radius: $border-radius-2;
+                border: solid 1px #eaecee;
+                background-color: $white;
+
+                &-item{
+                    width: 100%;
+                    height: 48px;
+                    padding: 16px 24px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border: solid 0.5px rgba($color: #979797, $alpha: 0.5);
+                    border-right: 0px;
+                    border-left: 0px;
+                    &-alternate{
+                        min-height: 48px;
+                        height: auto;
+                    }
+                    &:first-child{
+                        border-top: 0px;
+                    }
+                    &:last-child{
+                        border-bottom: 0px;
+                    }
+
+                    &__title,&__details{
+                        font-size: $font-size-2;
+                        font-weight: 600;
+                        color: #46505e;
+                    }
+                    &__details{
+                        color: #778597;
+                        font-weight: 500;
+                    }
+
+                    & .button{
+                        margin: 0px 8px;
+                        &:first-child{
+                            margin-left: 0px;
+                        }
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+
+                    & .button--orange{
+                        margin-top: -8px;
+                    }
+
+                }
+            }
+
         }
     }
 }
