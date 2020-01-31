@@ -12,7 +12,7 @@ const InputWithoutLabel = props => (
     type={props.type}
     value={props.value}
     id={props.id}
-    className="nsForm-input"
+    className={`nsForm-input ${props.classNames}`}
     placeholder={props.placeholder}
     onChange={handleChange(props.onChange)}
   />
@@ -24,6 +24,7 @@ InputWithoutLabel.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  classNames: PropTypes.string
 };
 export default InputWithoutLabel;
