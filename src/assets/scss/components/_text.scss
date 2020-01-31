@@ -1,5 +1,33 @@
 .text{
 
+
+    &--small{
+        font-size: $font-size-3;
+        color: $black;
+    }
+    &--smaller{
+        font-size: $font-size-2;
+        font-weight: normal;
+        color: $black;
+    }
+    &--smallest{
+        font-size: $font-size-1;
+        color: $black;
+    }
+
+
+    // text colors
+
+    &--gray{
+        color: $gray;
+    }
+
+
+
+
+
+
+
     &--pending{
         color: $pending-text-color;
     }

@@ -16,6 +16,9 @@
     align-items: center;
     justify-content: center;
 
+    &--auto{
+        width: auto;
+    }
     &-md{
         width: auto;
         height: 32px;
@@ -51,6 +54,11 @@
     &--grey{
         border: solid 1px #dadada;
         color: #707479;
+    }
+
+    &--neutral{
+        background-color: $whitesmoke;
+        color: #778597;
     }
 
 

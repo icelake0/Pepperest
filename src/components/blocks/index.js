@@ -16,6 +16,11 @@ import LoadingListItem from './LoadingListItem';
 import OnBoarding from './OnBoarding';
 import NavLinkAlternate from './NavLinkAlternate';
 import List from './List'
+import ListItem from './ListItem'
+import ListItemDetails from './ListItemDetails';
+import Modal from './Modal';
+import SelectInputWithoutLabel from './SelectInputWithoutLabel'
+import TextArea from  './TextArea'
 
 
 
@@ -36,5 +41,10 @@ export {
   LoadingListItem,
   OnBoarding,
   NavLinkAlternate,
-  List
+  List,
+  ListItem,
+  ListItemDetails,
+  Modal,
+  SelectInputWithoutLabel,
+  TextArea
 };

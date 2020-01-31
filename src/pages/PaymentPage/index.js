@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import {withDefaultLayout}  from 'components/layouts';
-import { List } from 'components/blocks';
+import { List, Modal } from 'components/blocks';
 import { paymentInnerRoutes } from 'config/inner-routes'
 
 const PaymentPage = props => (
@@ -8,6 +8,7 @@ const PaymentPage = props => (
     <div className="payment">
       <List />
     </div>
+    {/* <Modal /> */}
   </Fragment>
 );
 

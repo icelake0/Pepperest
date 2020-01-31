@@ -45,6 +45,17 @@
             border: solid 1px #ff721b;
         }
 
+
+        &__alternate{
+            border: 1px solid $whitesmoke;
+            background-color: transparent;
+            color: $black;
+            margin: 0;
+            &:hover{
+                box-shadow: none;
+            }
+        }
+
     }
     
     &-control{
@@ -110,6 +121,18 @@
             //     border: 1px solid $red !important;
             // }
         }
+
+        &__alternate{
+            background-color: transparent;
+            border: 1px solid $whitesmoke;
+            &:hover{
+                box-shadow: none;
+            }
+            select{
+                color: $black;
+                background: url(/assets/images/svg/down-chevron.svg) no-repeat 92% 53%; /* add custom arrow */
+            }
+        }
     }
 
     &-password{
@@ -122,5 +145,20 @@
             top: 24px;
             right: 16px;
         }
+    }
+
+    &-textarea{
+        width: 100%;
+        height: 96px;
+        font-size: $font-size-2;
+        letter-spacing: normal;
+        color: $gray;
+        line-height: normal;
+        padding: 16px;
+        outline: none !important;
+        border-radius: $border-radius-2;
+        background-color: transparent;
+        border: 1px solid $whitesmoke;
+        resize: none;
     }
 }

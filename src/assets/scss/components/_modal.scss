@@ -1,0 +1,176 @@
+.pModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $modal-color;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    z-index: 800;
+    
+
+
+    &-content{
+        margin: 100px 0px;
+        width: 586px;
+        min-height: 900px;
+        box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        background-color: #ffffff;
+        // opacity: 0.7;
+        z-index: 1000;
+    }
+
+    &-header{
+        height: 56px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 24px;
+
+        & .text--small{
+            font-weight: 700;
+        }
+    }
+    &-sub__header{
+        height: 64px;
+        width: 100%;
+        background-color: $whitesmoke;
+
+        &-half{
+            display: flex;
+            flex-direction: column;
+            padding: 9px 24px;
+            border: solid 1px #979797;
+            justify-content: space-between;
+            height: 100%;
+
+            & .text--smaller{
+                &:last-child{
+                    font-weight: 600;
+                }
+            }
+
+        }
+    }
+
+    &-main{
+        width: 100%;
+        padding: 24px 53px;
+
+
+        &__notification{
+            background-color: $initial-tag;
+            width: 100%;
+            height: 40px;
+            padding: 14px 32px;
+            font-weight: 600;
+            color: $brown;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            border-radius: $border-radius-1;
+
+            &--small{
+                padding: 12px 16px;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;;
+                & .icon{
+                    display: block;
+                    text-align: left;
+                    min-width: 14px;
+                    margin-right: 16px;
+                }
+                & .text--smallest{
+                    color: $brown;
+                    font-weight: normal;
+                    text-align: left;
+                    display: block;
+                    //   width: 211px;
+
+                }
+            }
+
+        }
+    }
+
+    &-form{
+        margin-top: 24px;
+        &__label{
+            font-size: $font-size-2;
+            color: $light-gray;
+            &-control{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                height: 100%;
+            }
+        }
+
+
+        &-control{
+            margin: 12px 0px;
+            &:first-child{
+                margin-top: 0px;
+            }
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+
+        &__datepicker{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px 16px;
+            height: 48px;
+            border: 1px solid $whitesmoke;
+            background-color: transparent;
+
+            & .text--smaller{
+                cursor: pointer;
+            }
+            & .icon{
+                margin: 0px auto;
+            }
+        }
+    }
+    
+    &-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        border-top: 1px solid rgba(119, 133, 151, 0.25);
+        padding: 18px 24px;
+
+        & .button{
+            height: 40px;
+            margin: 0px 8px;
+            &:first-child{
+                margin-left: 0px;
+            }
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+
+        & .button--orange{
+            
+            width: 145px;
+        }
+    }
+}
