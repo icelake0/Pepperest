@@ -6,13 +6,22 @@ import {
   SpinnerIcon
 } from 'components/vectors';
 import { InputWithoutLabel, SelectInputWithoutLabel,TextArea } from 'components/blocks';
+import { PepperestContext } from 'components/helpers/constant';
+
 
 const Modal = props => (
   <div className="pModal">
+    <div className="pModal-overlay"></div>
     <div className="pModal-content">
       <div className="pModal-header">
         <h6 className="text--small">Request Payment</h6>
-        <CloseIcon />
+        <PepperestContext.Consumer>
+          {context => (
+            <div onClick={() => context.updateShowModal(false)}>
+              <CloseIcon />
+            </div>
+          )}
+        </PepperestContext.Consumer>
       </div>
       <div className="pModal-sub__header row mx-0">
         <div className="col-lg-6 px-0">
@@ -151,7 +160,8 @@ const Modal = props => (
               <div className="pModal-main__notification pModal-main__notification--small">
                 <CalendarIcon />
                 <span className="text--smallest">
-                  Your expected delivery date is 2 days from payment date.
+                  Your expected delivery date is <strong>2 days</strong> from
+                  payment date.
                 </span>
               </div>
             </div>
