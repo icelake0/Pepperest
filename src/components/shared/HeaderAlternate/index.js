@@ -3,14 +3,30 @@ import PropTypes from 'prop-types'
 import {NavLinkAlternate} from 'components/blocks'
 import { getStringHash} from 'libs/utils'
 
+import { PepperestContext } from 'components/helpers/constant';
+
+
 const HeaderAlternate = props => (
   <div className="nsHeader-alternate">
     <div className="nsHeader-main">
       <nav className="nsHeader-nav nsHeader-alternate-nav">
-        {props.links.map(({url,title}, index) => ( <NavLinkAlternate key={getStringHash(title)} url = {url} title={title} />))}
+        {props.links.map(({ url, title }, index) => (
+          <NavLinkAlternate
+            key={getStringHash(title)}
+            url={url}
+            title={title}
+          />
+        ))}
       </nav>
-      {props.hasButton ? 
-      (<div className="button button-md button--orange"> Request Payment</div>) : null}
+      {props.hasButton ? (
+        <PepperestContext.Consumer>
+          {context => (
+            <div className="button button-md button--orange" onClick={() => {context.updateShowModal(true);}}>
+              Request Payment
+            </div>
+          )}
+        </PepperestContext.Consumer>
+      ) : null}
     </div>
   </div>
 );
