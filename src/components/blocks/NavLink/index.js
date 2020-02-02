@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { NavLink as Link } from 'react-router-dom';
+
 
 const NavLink = props => (
-  <li className="nsHeader-nav__item">
-    <a href={props.url}>{props.value}</a>
-  </li>
+  <Link to={props.url} className="nsHeader-nav__item" activeClassName="active">
+    {props.value}
+  </Link>
 );
 
 NavLink.propTypes = {

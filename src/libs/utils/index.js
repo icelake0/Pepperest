@@ -40,6 +40,10 @@ export const getStatusTextClass = status => {
       return 'text--stop';
     case 'fulfilled':
       return 'text--fulfilled';
+    case 'active':
+      return 'text--active';
+    case 'blocked':
+      return 'text--blocked';
     default:
       return 'text--pending';
   }
@@ -67,6 +71,10 @@ export const getIndicatorClass = status => {
       return 'list-item__indicator-stop';
     case 'fulfilled':
       return 'list-item__indicator-fulfilled';
+    case 'active':
+      return 'list-item__indicator-active';
+    case 'blocked':
+      return 'list-item__indicator-blocked';
     default:
       return 'list-item__indicator-pending';
   }
@@ -95,6 +103,10 @@ export const getStatusTagClass = status => {
       return 'list-item__status-tag--stop';
     case 'fulfilled':
       return 'list-item__status-tag--fulfilled';
+    case 'active':
+      return 'list-item__status-tag--active';
+    case 'blocked':
+      return 'list-item__status-tag--blocked';
     default:
       return 'list-item__status-tag--pending';
   }
@@ -122,6 +134,10 @@ export const getStatusText = status => {
       return 'Stop Payment';
     case 'fulfilled':
       return 'Fulfilled';
+    case 'active':
+      return 'Active';
+    case 'blocked':
+      return 'Blocked';
     default:
       return '';
   }

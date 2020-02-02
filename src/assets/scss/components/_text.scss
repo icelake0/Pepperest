@@ -27,7 +27,12 @@
 
 
 
-
+    &--active{
+        color: $refund-text-color;
+    }
+    &--blocked{
+        color: $closed-text-color;
+    }
     &--pending{
         color: $pending-text-color;
     }

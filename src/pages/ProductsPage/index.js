@@ -1,17 +1,20 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { withDefaultLayout } from 'components/layouts';
-import { OnBoarding } from 'components/blocks';
+import { ProductList } from 'components/blocks';
+
+import { PepperestContext } from 'components/helpers/constant';
 
 
 const ProductsPage = props => (
   <Fragment>
-    <OnBoarding
-      title="Set up your store in minutes and bring your brand to life"
-      info="Get on board with Pepperest and start selling to your customers or paying merchants in just a few minutes"
-      buttonText="Add product"
-      secondaryButtonText="Import from instagram"
-      imageUrl="assets/images/svg/customer-onboard.svg"
-    />
+    <Fragment>
+      <div className="payment">
+        <ProductList />
+      </div>
+      {/* <PepperestContext.Consumer>
+      {context => (context.state.showModal ? <Modal /> : null)}
+    </PepperestContext.Consumer> */}
+    </Fragment>
   </Fragment>
 );
 

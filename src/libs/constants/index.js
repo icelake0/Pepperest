@@ -135,7 +135,7 @@ const payments = [
     payment_description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque id nisl urna`
   },
   {
-    status: 'Closed',
+    status: 'Blocked',
     date: 'Jun 21, 2018',
     statusText: 'Pending, Due in 4 days',
     transaction_id: '16835004G6739590D',
@@ -152,6 +152,228 @@ const payments = [
 
 ];
 
+const customers = [
+  {
+    status: 'Active',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    datetime: 'January 21, 2019 / 15:00:23pm',
+    payment_name: 'Big sized shoe',
+    amount: '530,600',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  },
+  {
+    status: 'Blocked',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    payment_name: 'Big sized shoe',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  },
+  {
+    status: 'Active',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    payment_name: 'Big sized shoe',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  },
+  {
+    status: 'Blocked',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    payment_name: 'Big sized shoe',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  },
+  {
+    status: 'Active',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    payment_name: 'Big sized shoe',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  },
+  {
+    status: 'Active',
+    phone: '09020349834',
+    customer_name: 'James Blunt',
+    payment_name: 'Big sized shoe',
+    customer_email: 'grriend@gmail.com',
+    total_transactions: '4',
+    total_spent: '5,030,600',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '12,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '18,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Initial',
+        amount: '130,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Flagged',
+        amount: '530,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      },
+      {
+        status: 'Awaiting',
+        amount: '90,600',
+        datetime: 'January 21, 2019 / 15:00:23pm'
+      }
+    ]
+  }
+];
+
 export {
-    payments
+  payments,
+  customers
 }

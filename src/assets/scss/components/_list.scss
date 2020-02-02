@@ -122,6 +122,12 @@
             width: 2px;
             top: calc((48px - 32px ) / 2);
 
+            &-active{
+                background-color: $refund ;
+            }
+            &-blocked{
+                background-color: $closed;
+            }
             &-pending{
                 background-color: $pending ;
             }
@@ -158,6 +164,10 @@
                 opacity: 0.5;
                 font-size: $font-size-2;
                 color: $black;
+            }
+
+            & .text--smaller {
+                font-weight: 600;
             }
         }
         &__details{
@@ -254,6 +264,12 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                &--active{
+                    background-color:  $refund-tag;
+                }
+                &--blocked{
+                    background-color: $closed-tag;
+                }
                 &--pending{
                     background-color:  $pending-tag;
                 }
@@ -294,11 +310,45 @@
         }
 
         &-detail{
+
+            &__header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 48px;
+                margin-bottom: 8px;
+
+                &-menu{
+                    display: flex;
+                    flex-direction: row;
+
+                    &__item{
+                        font-size: $font-size-2;
+                        border-bottom: 2px solid transparent;
+                        padding: 15px 18px;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+                        &:first-child{
+                            margin-left: 0px;
+                        }
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+
+                        &.active{
+                           font-weight: 600;
+                           border-bottom: 2px solid $orange;
+                            
+                        }
+                    }
+                }
+            }
             &__container{
                 height: auto;
                 background-color: transparent;
                 position: relative;
                 padding: 24px;
+                padding-top: 0px;
                 box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
                 background-color: #f4f5f7;
                 display: flex;
@@ -315,7 +365,6 @@
                     height: 24px;
                     border-radius: $border-radius-md;
                     background-color: #E7E8EB;
-                    margin-bottom: 8px;
                     align-self: flex-end;
                     font-size: $font-size-1;
                     font-weight: 600;
@@ -325,6 +374,8 @@
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    margin: auto 0px;
+                    margin-left: auto;
 
                 }
             }
