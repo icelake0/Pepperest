@@ -6,6 +6,8 @@ import PaymentPage from './PaymentPage'
 import CustomersPage from './CustomersPage'
 import ProductsPage from './ProductsPage'
 import OrdersPage from './OrdersPage'
+import CustomersPageWithOnBoarding from './CustomersPageWithOnBoarding';
+import ProductPageWithOnBoarding from './ProductPageWithOnBoarding';
 
 
 import PaymentPageWithOnBoarding from './PaymentPageWithOnBoarding';
@@ -18,5 +20,7 @@ export {
   CustomersPage,
   ProductsPage,
   OrdersPage,
-  PaymentPageWithOnBoarding
+  PaymentPageWithOnBoarding,
+  CustomersPageWithOnBoarding,
+  ProductPageWithOnBoarding
 };

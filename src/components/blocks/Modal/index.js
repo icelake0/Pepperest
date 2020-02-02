@@ -25,13 +25,13 @@ const Modal = props => (
       </div>
       <div className="pModal-sub__header row mx-0">
         <div className="col-lg-6 px-0">
-          <div className="pModal-sub__header-half">
+          <div className="pModal-sub__header-half left">
             <h6 className="text--smaller text--gray">Total Amount</h6>
             <p className="text--smaller">NGN 41,3000</p>
           </div>
         </div>
         <div className="col-lg-6 px-0">
-          <div className="pModal-sub__header-half">
+          <div className="pModal-sub__header-half right">
             <h6 className="text--smaller text--gray">Pepperest Fee</h6>
             <p className="text--smaller">NGN 1,100.10</p>
           </div>

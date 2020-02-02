@@ -7,7 +7,9 @@ import {
   CustomersPage,
   OrdersPage,
   ProductsPage,
-  PaymentPageWithOnBoarding
+  PaymentPageWithOnBoarding,
+  CustomersPageWithOnBoarding,
+  ProductPageWithOnBoarding
 } from 'pages';
 
 
@@ -61,9 +63,21 @@ const routes = [
     isProtected: false
   },
   {
+    path: '/customers-onboarding',
+    exact: true,
+    component: CustomersPageWithOnBoarding,
+    isProtected: false
+  },
+  {
     path: '/products',
     exact: true,
     component: ProductsPage,
+    isProtected: false
+  },
+  {
+    path: '/products-onboarding',
+    exact: true,
+    component: ProductPageWithOnBoarding,
     isProtected: false
   },
   {

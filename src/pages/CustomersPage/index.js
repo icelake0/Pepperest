@@ -1,17 +1,19 @@
 import React, {Fragment} from 'react';
-import { withDefaultLayout } from 'components/layouts';
-import { OnBoarding } from 'components/blocks';
+import { withDefaultLayout } from 'components/layouts'
+import { CustomerList } from 'components/blocks';
 
+import { PepperestContext } from 'components/helpers/constant';
 
 const CustomersPage = props => (
   <Fragment>
-    <OnBoarding
-      title="All Customer details saved here for later use"
-      info="Create / adding a customer is very easy, click on the add customer"
-      buttonText="Add Customer"
-      imageUrl="assets/images/svg/customer-onboard.svg"
-    />
+    <div className="payment">
+      <CustomerList />
+    </div>
+    {/* <PepperestContext.Consumer>
+      {context => (context.state.showModal ? <Modal /> : null)}
+    </PepperestContext.Consumer> */}
   </Fragment>
 );
 
 export default withDefaultLayout(CustomersPage, {});
+

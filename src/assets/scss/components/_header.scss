@@ -29,6 +29,8 @@
             border-radius: 2px;
             background-color: transparent;
             transition: all ease-in-out 0.34s;
+            color: $white !important;
+            text-decoration: none;
             a{
                 color: $white !important;
                 text-decoration: none;
@@ -38,12 +40,17 @@
             }
 
             &:hover{
-                background-color: rgb(62, 74, 97);
+                color: $white !important;
+                text-decoration: none;
             }
             &-alternate{
                 &:hover{
                     background-color: transparent;
                 }
+            }
+            &.active{
+                background-color: rgb(62, 74, 97);
+
             }
         }
     }

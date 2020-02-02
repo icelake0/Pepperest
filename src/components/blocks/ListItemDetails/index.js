@@ -6,7 +6,9 @@ const ListItemDetails = props => {
     return (
       <div className="list-item-detail__container">
         <div className={`list-item__indicator ${getIndicatorClass(props.status)}`}></div>
-        <div className="list-item-detail__container-close" onClick={() => {props.onClick(false)}}>Close</div>
+        <div className="list-item-detail__header">
+          <div className="list-item-detail__container-close" onClick={() => {props.onClick(false)}}>Close</div>
+        </div>
         <div className="list-item-detail__main">
           <div className="list-item-detail__main-item row mx-0">
             <div className="col-md-3 px-0">
@@ -134,7 +136,7 @@ ListItemDetails.propTypes = {
     amount: PropTypes.string.isRequired,
     customer_email: PropTypes.string.isRequired,
     payment_description: PropTypes.string.isRequired,
-    onClick: PropTypes.any
+    onClick: PropTypes.func.isRequired
 
 }
 

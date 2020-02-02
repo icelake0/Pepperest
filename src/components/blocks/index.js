@@ -17,10 +17,17 @@ import OnBoarding from './OnBoarding';
 import NavLinkAlternate from './NavLinkAlternate';
 import List from './List'
 import ListItem from './ListItem'
+import CustomerList from './CustomerList'
+import CustomerListItem from './CustomerListItem';
+import CustomerListItemDetails from './CustomerListItemDetails';
 import ListItemDetails from './ListItemDetails';
 import Modal from './Modal';
 import SelectInputWithoutLabel from './SelectInputWithoutLabel'
 import TextArea from  './TextArea'
+import CustomerRecentTransaction from './CustomerRecentTransaction';
+import CustomerInfo from './CustomerInfo';
+import ProductList from './ProductList';
+import ProductListItem from './ProductListItem';
 
 
 
@@ -43,8 +50,15 @@ export {
   NavLinkAlternate,
   List,
   ListItem,
+  CustomerList,
+  CustomerListItem,
+  CustomerListItemDetails,
   ListItemDetails,
   Modal,
   SelectInputWithoutLabel,
-  TextArea
+  TextArea,
+  CustomerRecentTransaction,
+  CustomerInfo,
+  ProductList,
+  ProductListItem
 };

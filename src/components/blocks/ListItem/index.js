@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { ListItemDetails} from 'components/blocks'
 import { getStatusTextClass, getIndicatorClass, getStatusTagClass, getStatusText} from 'libs/utils';
@@ -9,7 +9,7 @@ const ListItem = props => {
     const updateListDetailsOpen = value => setListDetailsOpen(value);
 
     return (
-      <li>
+      <Fragment>
         <div className="list-item row mx-0">
           <div
             className={`list-item__indicator ${getIndicatorClass(
@@ -23,11 +23,19 @@ const ListItem = props => {
               </div>
               <div className="list-item__status">
                 <div className="list-item__status-container">
-                  <div className={`list-item__status-tag ${getStatusTagClass(props.status)} ${getStatusTextClass(props.status)}`}>
-                    { getStatusText(props.status)}
+                  <div
+                    className={`list-item__status-tag ${getStatusTagClass(
+                      props.status
+                    )} ${getStatusTextClass(props.status)}`}
+                  >
+                    {getStatusText(props.status)}
                   </div>
                   {props.status.toLowerCase() === 'pending' ? (
-                    <p className={`list-item__status-text ${getStatusTextClass(props.status)}`}>
+                    <p
+                      className={`list-item__status-text ${getStatusTextClass(
+                        props.status
+                      )}`}
+                    >
                       {props.statusText.substring(
                         props.statusText.indexOf(' ') + 1
                       )}
@@ -71,7 +79,7 @@ const ListItem = props => {
         {isListDetailsOpen ? (
           <ListItemDetails {...props} onClick={updateListDetailsOpen} />
         ) : null}
-      </li>
+      </Fragment>
     );
     
 };
