@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 
 const CustomerListItemDetails = props => {
-  const [showCustomerInfo, setShowCustomerInfo] = useState(false);
+  const [showCustomerInfo, setShowCustomerInfo] = useState(true);
     return (
       <div className="list-item-detail__container">
         <div

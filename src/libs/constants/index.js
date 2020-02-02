@@ -373,7 +373,71 @@ const customers = [
   }
 ];
 
+const products = [
+  {
+    date: 'Jul 21, 2019',
+    product_id: '16835004G6739590D',
+    product_name: 'iTec 32" HD LED Television',
+    date_created: 'January 21, 2019 / 15:00:23pm',
+    transactions: '4',
+    delivery_date:
+      '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
+    amount: '530,600',
+    product_description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+  },
+  {
+    date: 'Jul 21, 2019',
+    product_id: '16835004G6739590D',
+    product_name: 'iTec 32" HD LED Television',
+    date_created: 'January 21, 2019 / 15:00:23pm',
+    transactions: '4',
+    delivery_date:
+      '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
+    amount: '530,600',
+    product_description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+  },
+  {
+    date: 'Jul 21, 2019',
+    product_id: '16835004G6739590D',
+    product_name: 'iTec 32" HD LED Television',
+    date_created: 'January 21, 2019 / 15:00:23pm',
+    transactions: '4',
+    delivery_date:
+      '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
+    amount: '530,600',
+    product_description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+  },
+  {
+    date: 'Jul 21, 2019',
+    product_id: '16835004G6739590D',
+    product_name: 'iTec 32" HD LED Television',
+    date_created: 'January 21, 2019 / 15:00:23pm',
+    transactions: '4',
+    delivery_date:
+      '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
+    amount: '530,600',
+    product_description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+  },
+  {
+    date: 'Jul 21, 2019',
+    product_id: '16835004G6739590D',
+    product_name: 'iTec 32" HD LED Television',
+    date_created: 'January 21, 2019 / 15:00:23pm',
+    transactions: '4',
+    delivery_date:
+      '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
+    amount: '530,600',
+    product_description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+  }
+];
+
 export {
   payments,
-  customers
+  customers,
+  products
 }

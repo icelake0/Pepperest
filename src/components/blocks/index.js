@@ -28,6 +28,8 @@ import CustomerRecentTransaction from './CustomerRecentTransaction';
 import CustomerInfo from './CustomerInfo';
 import ProductList from './ProductList';
 import ProductListItem from './ProductListItem';
+import ProductListItemDetails from './ProductListItemDetails';
+import ProductInfo from './ProductInfo';
 
 
 
@@ -60,5 +62,7 @@ export {
   CustomerRecentTransaction,
   CustomerInfo,
   ProductList,
-  ProductListItem
+  ProductListItem,
+  ProductListItemDetails,
+  ProductInfo
 };
