@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { InputWithoutLabel, ProductListItem } from 'components/blocks';
-import { payments } from 'libs/constants';
+import { products } from 'libs/constants';
 
 
 const ProductList =  props => {
@@ -12,7 +12,7 @@ const ProductList =  props => {
           <InputWithoutLabel
             name="search"
             type="text"
-            placeholder="Search Transactions ID, customer name, email address"
+            placeholder="Search Product/Services"
             id="search"
             value={value}
             onChange={e => {
@@ -41,9 +41,9 @@ const ProductList =  props => {
         </div>
         <div className="list-body">
           <ul>
-            {payments &&
-              payments.map((payment, index) => (
-                <ProductListItem key={index} {...payment} />
+            {products &&
+              products.map((product, index) => (
+                <ProductListItem key={index} {...product} />
               ))}
           </ul>
         </div>
