@@ -1,7 +1,7 @@
 import React , {Fragment, useState} from 'react'
 import PropTypes from 'prop-types'
 
-import {ProductInfo} from 'components/blocks';
+import { ProductInfo, ProductRecentTransaction } from 'components/blocks';
 
 const ProductListItemDetails = props => {
     const [showProductInfo, setShowProductInfo] = useState(true);
@@ -42,14 +42,11 @@ const ProductListItemDetails = props => {
         <div className="list-item-detail__main">
           {showProductInfo ? (
             <ProductInfo {...props} />
-          ) : ( null
-            // props.recent_transactions &&
-            // props.recent_transactions.map((transaction, index) => (
-            // //   <CustomerRecentTransaction
-            // //     key={index}
-            // //     transaction={transaction}
-            // //   />
-            // ))
+          ) : (
+            props.recent_transactions &&
+            props.recent_transactions.map((transaction, index) => (
+              <ProductRecentTransaction key={index} transaction={transaction} />
+            ))
           )}
 
           <div className="list-item-detail__main-item">
@@ -81,6 +78,14 @@ ProductListItemDetails.propTypes = {
   delivery_date: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
   product_description: PropTypes.string.isRequired,
+  recent_transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      status: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      customer_email: PropTypes.string.isRequired,
+      datetime: PropTypes.string.isRequired
+    })
+  ),
   onClick: PropTypes.func.isRequired
 };
 export default ProductListItemDetails;
