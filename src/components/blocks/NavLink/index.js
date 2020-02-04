@@ -4,7 +4,7 @@ import { NavLink as Link } from 'react-router-dom';
 
 
 const NavLink = props => (
-  <Link to={props.url} className="nsHeader-nav__item" activeClassName="active" exact>
+  <Link to={props.url} className="nsHeader-nav__item" activeClassName="active" exact={false}>
     {props.value}
   </Link>
 );

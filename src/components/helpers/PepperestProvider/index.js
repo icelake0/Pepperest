@@ -3,11 +3,12 @@ import { PepperestContext} from 'components/helpers/constant';
 
 
 const PepperestProvider = props => {
-    const [localState, setLocalState] = useState({showModal: false});
+    const [localState, setLocalState] = useState({ showPaymentModal: false, showProductModal: false });
     return (
     <PepperestContext.Provider value={{
         state: {...localState},
-        updateShowModal: (value) => {setLocalState({...localState, showModal: value})}
+        updateShowPaymentModal: (value) => {setLocalState({...localState, showPaymentModal: value})},
+        updateShowProductModal: (value) => {setLocalState({...localState, showProductModal: value})}
     }}>
         {   props.children }
     </PepperestContext.Provider>
