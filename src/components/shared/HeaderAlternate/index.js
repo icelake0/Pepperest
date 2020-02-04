@@ -18,21 +18,40 @@ const HeaderAlternate = props => (
           />
         ))}
       </nav>
-      {props.hasButton ? (
-        <PepperestContext.Consumer>
-          {context => (
-            <div className="button button-md button--orange" onClick={() => {context.updateShowModal(true);}}>
-              Request Payment
-            </div>
-          )}
-        </PepperestContext.Consumer>
-      ) : null}
+
+      {
+        props.page.toLowerCase() === 'payments'? (
+          <PepperestContext.Consumer>
+            {context => (
+              <div
+                className="button button-md button--orange"
+                onClick={() => {
+                  context.updateShowPaymentModal(true);
+                }}>
+                  Request Payment
+              </div>
+            )}
+          </PepperestContext.Consumer>
+        ): (
+          <PepperestContext.Consumer>
+            {context => (
+              <div
+                className="button button-md button--orange"
+                onClick={() => {
+                  context.updateShowProductModal(true);
+                }}>
+                Add  Product / Services
+              </div>
+            ) }
+          </PepperestContext.Consumer>
+        )
+      }
     </div>
   </div>
 );
 
 HeaderAlternate.defaultProps = {
-  hasButton: true
+  // isPaymentButton:
 };
 
 HeaderAlternate.propTypes = {
@@ -42,6 +61,6 @@ HeaderAlternate.propTypes = {
       title: PropTypes.string.isRequired
     })
   ),
-  hasButton: PropTypes.bool
+  page: PropTypes.string.isRequired,
 }
 export default HeaderAlternate;

@@ -30,6 +30,8 @@ import ProductList from './ProductList';
 import ProductListItem from './ProductListItem';
 import ProductListItemDetails from './ProductListItemDetails';
 import ProductInfo from './ProductInfo';
+import ProductRecentTransaction from './ProductRecentTransaction';
+import ProductModal from './ProductModal';
 
 
 
@@ -64,5 +66,7 @@ export {
   ProductList,
   ProductListItem,
   ProductListItemDetails,
-  ProductInfo
+  ProductInfo,
+  ProductRecentTransaction,
+  ProductModal
 };

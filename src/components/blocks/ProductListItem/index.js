@@ -23,13 +23,13 @@ const ProductListItem = props => {
               </div>
             </div>
           </div>
-          <div className="list-item__details col-md-5 px-0">
+          <div className="list-item__details col-md-6 px-0">
             <div className="list-item__details-container">
               <p className="list-item__details-product">{props.product_name}</p>
               <p className="list-item__details-email">{props.product_description}</p>
             </div>
           </div>
-          <div className="col-md-4 px-0">
+          <div className="col-md-3 px-0">
             <div className="d-flex flex-row justify-content-end">
               <div className="list-item__payment">
                 <div className="list-item__payment-container">
@@ -62,6 +62,14 @@ ProductListItem.propTypes = {
   transactions: PropTypes.string.isRequired,
   delivery_date: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
-  product_description: PropTypes.string.isRequired
+  product_description: PropTypes.string.isRequired,
+  recent_transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      status: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      customer_email: PropTypes.string.isRequired,
+      datetime: PropTypes.string.isRequired
+    })
+  )
 };
 export default ProductListItem;

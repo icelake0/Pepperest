@@ -1,23 +1,25 @@
-import React from 'react'
+import React from 'react';
 import {
   CloseIcon,
   RightChevron,
-  CalendarIcon,
   SpinnerIcon
 } from 'components/vectors';
-import { InputWithoutLabel, SelectInputWithoutLabel,TextArea } from 'components/blocks';
+import {
+  InputWithoutLabel,
+  SelectInputWithoutLabel,
+  TextArea
+} from 'components/blocks';
 import { PepperestContext } from 'components/helpers/constant';
 
-
-const Modal = props => (
+const ProductModal = props => (
   <div className="pModal">
     <div className="pModal-overlay"></div>
     <div className="pModal-content">
       <div className="pModal-header">
-        <h6 className="text--small">Request Payment</h6>
+        <h6 className="text--small">Add Product / Service</h6>
         <PepperestContext.Consumer>
           {context => (
-            <div onClick={() => {context.updateShowPaymentModal(false);}}>
+            <div onClick={() => context.updateShowProductModal(false)}>
               <CloseIcon />
             </div>
           )}
@@ -27,25 +29,25 @@ const Modal = props => (
         <div className="col-lg-6 px-0">
           <div className="pModal-sub__header-half left">
             <h6 className="text--smaller text--gray">Total Amount</h6>
-            <p className="text--smaller">NGN 41,3000</p>
+            <p className="text--smaller">NGN 0</p>
           </div>
         </div>
         <div className="col-lg-6 px-0">
           <div className="pModal-sub__header-half right">
             <h6 className="text--smaller text--gray">Pepperest Fee</h6>
-            <p className="text--smaller">NGN 1,100.10</p>
+            <p className="text--smaller">NGN 0</p>
           </div>
         </div>
       </div>
       <div className="pModal-main">
         <div className="pModal-main__notification text--smallest">
-          A payment link would be created and sent to the customer email address
+          A payment link would be created
         </div>
         <div className="pModal-form">
           <div className="pModal-form-control row mx-0">
             <div className="col-md-5">
               <div className="pModal-form__label-control">
-                <label className="pModal-form__label">Product</label>
+                <label className="pModal-form__label">Product Name</label>
               </div>
             </div>
             <div className="col-md-7">
@@ -64,27 +66,7 @@ const Modal = props => (
             <div className="col-md-5">
               <div className="pModal-form__label-control">
                 <label className="pModal-form__label">
-                  Customer Email Address
-                </label>
-              </div>
-            </div>
-            <div className="col-md-7">
-              <InputWithoutLabel
-                name="email"
-                type="email"
-                placeholder=""
-                id="email"
-                value=""
-                onChange={() => {}}
-                classNames={'nsForm-input__alternate'}
-              />
-            </div>
-          </div>
-          <div className="pModal-form-control row mx-0">
-            <div className="col-md-5">
-              <div className="pModal-form__label-control">
-                <label className="pModal-form__label">
-                  Describe Item / Service
+                  Product Description
                 </label>
               </div>
             </div>
@@ -95,17 +77,7 @@ const Modal = props => (
           <div className="pModal-form-control row mx-0">
             <div className="col-md-5">
               <div className="pModal-form__label-control">
-                <label className="pModal-form__label">Product</label>
-              </div>
-            </div>
-            <div className="col-md-7">
-              <TextArea name="description" value="" onChange={() => {}} />
-            </div>
-          </div>
-          <div className="pModal-form-control row mx-0">
-            <div className="col-md-5">
-              <div className="pModal-form__label-control">
-                <label className="pModal-form__label">Cost of Item</label>
+                <label className="pModal-form__label">Amount</label>
               </div>
             </div>
             <div className="col-md-7">
@@ -154,18 +126,6 @@ const Modal = props => (
               </div>
             </div>
           </div>
-          <div className="pModal-form-control row mx-0">
-            <div className="col-md-5"></div>
-            <div className="col-md-7">
-              <div className="pModal-main__notification pModal-main__notification--small">
-                <CalendarIcon />
-                <span className="text--smallest">
-                  Your expected delivery date is <strong>2 days</strong> from
-                  payment date.
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div className="pModal-footer">
@@ -173,11 +133,12 @@ const Modal = props => (
           CANCEL
         </div>
         <div className="button button--orange">
-          <SpinnerIcon />
+          ADD A PRODUCT
+          {/* <SpinnerIcon /> */}
         </div>
       </div>
     </div>
   </div>
 );
 
-export default Modal
+export default ProductModal;

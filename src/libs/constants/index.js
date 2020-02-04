@@ -384,7 +384,39 @@ const products = [
       '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
     amount: '530,600',
     product_description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Awaiting',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      }
+    ]
   },
   {
     date: 'Jul 21, 2019',
@@ -396,7 +428,39 @@ const products = [
       '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
     amount: '530,600',
     product_description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Awaiting',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      }
+    ]
   },
   {
     date: 'Jul 21, 2019',
@@ -408,7 +472,39 @@ const products = [
       '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
     amount: '530,600',
     product_description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Awaiting',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      }
+    ]
   },
   {
     date: 'Jul 21, 2019',
@@ -420,7 +516,39 @@ const products = [
       '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
     amount: '530,600',
     product_description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Awaiting',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      }
+    ]
   },
   {
     date: 'Jul 21, 2019',
@@ -432,7 +560,39 @@ const products = [
       '13th - 15th August ( Your expected delivery date is 2 days from payment date.)',
     amount: '530,600',
     product_description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl urna. Aenean eget blandit magna, sit amet posuere erat. Integer posuere odio tincidunt velit ornare, feugiat venenatis',
+    recent_transactions: [
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Awaiting',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Fulfilled',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      },
+      {
+        status: 'Initial',
+        amount: '17,165.00',
+        customer_email: 'jameskane@gmail.com',
+        datetime: 'Jun 29, 2019 / 9:01 AM'
+      }
+    ]
   }
 ];
 

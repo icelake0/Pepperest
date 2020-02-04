@@ -12,8 +12,7 @@ const CustomerListItemDetails = props => {
     return (
       <div className="list-item-detail__container">
         <div
-          className={`list-item__indicator ${getIndicatorClass(props.status)}`}
-        ></div>
+          className={`list-item__indicator ${getIndicatorClass(props.status)}`}></div>
         <div className="list-item-detail__header">
           <ul className="list-item-detail__header-menu">
             <li

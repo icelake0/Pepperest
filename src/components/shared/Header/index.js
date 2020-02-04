@@ -5,7 +5,7 @@ import {Avatar} from 'components/shared'
 const navLinks = [
     {
         value: 'Payment',
-        url: '/payment'
+        url: '/payments'
     },
     {
         value: 'Product/Service',
@@ -37,7 +37,7 @@ const Header = props => (
         ))}
       </nav>
       <div className="d-flex flex-row align-items-center">
-        <Avatar imageUrl="assets/images/avatar.jpg" avatarSize="xs" />
+        <Avatar imageUrl="/assets/images/avatar.jpg" avatarSize="xs" />
         <div className="d-flex flex-row align-items-center">
           <li className="nsHeader-nav__item nsHeader-nav__item-alternate">
             My Account

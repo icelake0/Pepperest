@@ -17,7 +17,7 @@ export default function withDefaultLayout(WrappedComponent, data = {}){
                 {this.state.hasAlternateHeader ? (
                   <HeaderAlternate
                     links={this.state.links}
-                    hasButton={this.state.alternateHeaderHasButton}
+                    page={this.state.page}
                   />
                 ) : null}
                 <div className="max-content">

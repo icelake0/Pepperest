@@ -45,8 +45,8 @@ const routes = [
     isProtected: false
   },
   {
-    path: '/payment',
-    exact: true,
+    path: '/payments',
+    exact: false,
     component: PaymentPage,
     isProtected: false
   },
@@ -70,7 +70,7 @@ const routes = [
   },
   {
     path: '/products',
-    exact: true,
+    exact: false,
     component: ProductsPage,
     isProtected: false
   },

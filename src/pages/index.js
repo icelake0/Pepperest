@@ -11,6 +11,16 @@ import ProductPageWithOnBoarding from './ProductPageWithOnBoarding';
 
 
 import PaymentPageWithOnBoarding from './PaymentPageWithOnBoarding';
+
+import PaymentPendingPage from './PaymentPendingPage';
+import PaymentRefundPage from './PaymentRefundPage';
+import PaymentTransactionPage from './PaymentTransactionPage';
+import PaymentReleasePage from './PaymentReleasePage';
+import PaymentStopPage from './PaymentStopPage';
+
+import ProductSingleMultiplePage from './ProductSingleMultiplePage';
+import ProductInstagramPage from './ProductInstagramPage';
+
 export {
   Login,
   Register,
@@ -22,5 +32,12 @@ export {
   OrdersPage,
   PaymentPageWithOnBoarding,
   CustomersPageWithOnBoarding,
-  ProductPageWithOnBoarding
+  ProductPageWithOnBoarding,
+  PaymentPendingPage,
+  PaymentRefundPage,
+  PaymentTransactionPage,
+  PaymentReleasePage,
+  PaymentStopPage,
+  ProductSingleMultiplePage,
+  ProductInstagramPage
 };

@@ -24,7 +24,7 @@ const ProductList =  props => {
             <div className="list-header__action">
               <img
                 className="list-header__action-icon"
-                src="assets/images/svg/filter.svg"
+                src="/assets/images/svg/filter.svg"
                 alt="icon"
               />
               <span className="list-header__action-text">Filter By</span>
@@ -32,7 +32,7 @@ const ProductList =  props => {
             <div className="list-header__action">
               <img
                 className="list-header__action-icon"
-                src="assets/images/svg/sort.svg"
+                src="/assets/images/svg/sort.svg"
                 alt="icon"
               />
               <span className="list-header__action-text">Sort By</span>

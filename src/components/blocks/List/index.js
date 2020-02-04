@@ -21,11 +21,11 @@ const List = props => {
 
           <div className="list-header__actions">
             <div className="list-header__action">
-                <img className="list-header__action-icon" src="assets/images/svg/filter.svg" alt="icon"/> 
+                <img className="list-header__action-icon" src="/assets/images/svg/filter.svg" alt="icon"/> 
               <span className="list-header__action-text">Filter By</span>
             </div>
             <div className="list-header__action">
-                <img className="list-header__action-icon" src="assets/images/svg/sort.svg" alt="icon"/> 
+                <img className="list-header__action-icon" src="/assets/images/svg/sort.svg" alt="icon"/> 
               <span className="list-header__action-text">Sort By</span>
             </div>
           </div>
