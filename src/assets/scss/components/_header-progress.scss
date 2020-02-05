@@ -1,0 +1,44 @@
+.header{
+    &--nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &-progress{
+            height: 2px;
+            width: 198px;
+            background-color: $gray;
+
+            &.active{
+                background-color: $orange;
+            }
+        }
+        &-dot{
+            height: 16px;
+            width: 16px;
+            border: solid 2px #afb7c7;
+            border-radius: 50%;
+            cursor: pointer;
+            &.active{
+                border: solid 2px $orange;
+            }
+        }
+
+        &__menu{
+            display: flex;
+            flex-direction: row;
+            margin-top: 24px;
+            margin-bottom: 20px;
+            &-item{
+                font-size: $font-size-2;
+                color: $gray;
+                margin: 0px 44px;
+                &:first-child{
+                    margin-left: 0px;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}

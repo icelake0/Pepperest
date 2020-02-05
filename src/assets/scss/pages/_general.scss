@@ -1,0 +1,28 @@
+.instagram-page{
+
+    &__main{
+        width: 647px;
+        min-height: 400px;
+        height: auto;
+        background-color: #e7e9ed;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &-content{
+            width: 224px;
+
+            & .button{
+                margin: 8px 0px;
+                &:first-child{
+                    margin-top: 0px;
+                }
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}

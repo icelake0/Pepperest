@@ -33,6 +33,9 @@ import ProductInfo from './ProductInfo';
 import ProductRecentTransaction from './ProductRecentTransaction';
 import ProductModal from './ProductModal';
 
+import FacebookButtonAlternate from './FacebookButtonAlternate';
+import InstagramButton from './InstagramButton'
+
 
 
 export {
@@ -68,5 +71,7 @@ export {
   ProductListItemDetails,
   ProductInfo,
   ProductRecentTransaction,
-  ProductModal
+  ProductModal,
+  InstagramButton,
+  FacebookButtonAlternate
 };
