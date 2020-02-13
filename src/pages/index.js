@@ -8,6 +8,8 @@ import ProductsPage from './ProductsPage'
 import OrdersPage from './OrdersPage'
 import CustomersPageWithOnBoarding from './CustomersPageWithOnBoarding';
 import ProductPageWithOnBoarding from './ProductPageWithOnBoarding';
+import PageNotFound from './PageNotFound';
+import HomePage from './HomePage';
 
 
 import PaymentPageWithOnBoarding from './PaymentPageWithOnBoarding';
@@ -39,5 +41,7 @@ export {
   PaymentReleasePage,
   PaymentStopPage,
   ProductSingleMultiplePage,
-  ProductInstagramPage
+  ProductInstagramPage,
+  PageNotFound,
+  HomePage
 };

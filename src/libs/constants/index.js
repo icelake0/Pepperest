@@ -596,8 +596,119 @@ const products = [
   }
 ];
 
-export {
-  payments,
-  customers,
-  products
-}
+const instagramProducts = [
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '',
+    date: 'Jun 21, 2019',
+    product_name: 'Red shwad shoe',
+    product_price: '450,000',
+    hasImageUrl: false
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  },
+  {
+    imageUrl: '/assets/images/avatar.jpg',
+    date: 'Jun 21, 2019',
+    product_name: 'Lius Vulton Shade grey big bag',
+    product_price: '450,000',
+    hasImageUrl: true
+  }
+];
+
+export { payments, customers, products, instagramProducts };

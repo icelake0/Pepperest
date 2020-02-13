@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
-import { InputWithoutLabel, ProductListItem } from 'components/blocks';
-import { products } from 'libs/constants';
+import React, { useState } from 'react';
+import { InputWithoutLabel, InstagramProductListItem } from 'components/blocks';
+import {instagramProducts } from 'libs/constants'
 
 
-const ProductList =  props => {
+const InstagramProductList = props => {
     const [value, setValue] = useState(''); 
-
     return (
       <div className="list">
         <div className="list-header">
@@ -27,7 +26,9 @@ const ProductList =  props => {
                 src="/assets/images/svg/import.svg"
                 alt="icon"
               />
-              <span className="list-header__action-text list-header__action-text--alt">Import from Instagram</span>
+              <span className="list-header__action-text list-header__action-text--alt">
+                Import from Instagram
+              </span>
             </div>
             <div className="list-header__action">
               <img
@@ -48,12 +49,10 @@ const ProductList =  props => {
           </div>
         </div>
         <div className="list-body">
-          <ul>
-            {products &&
-              products.map((product, index) => (
-                <ProductListItem key={index} {...product} />
-              ))}
-          </ul>
+          {instagramProducts &&
+            instagramProducts.map(instagramProduct => (
+              <InstagramProductListItem {...instagramProduct} />
+            ))}
         </div>
         <div className="list-footer">
           <p className="list-footer-text">Showing 1 - 6 of 90 entries</p>
@@ -84,4 +83,4 @@ const ProductList =  props => {
     );
 }
 
-export default ProductList;
+export default InstagramProductList
