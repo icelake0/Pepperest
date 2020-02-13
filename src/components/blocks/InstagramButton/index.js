@@ -1,9 +1,61 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const InstagramButton = props => {
     return (
-      <div className="button button--white">Continue with Instagram</div>
+      <div className="button button--white__with-icon" onClick={() => {props.onClick(true)}}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          className="icon"
+        >
+          <defs>
+            <linearGradient id="a" x1="50%" x2="50%" y1="99.709%" y2=".777%">
+              <stop offset="0%" stop-color="#E09B3D" />
+              <stop offset="30%" stop-color="#C74C4D" />
+              <stop offset="60%" stop-color="#C21975" />
+              <stop offset="100%" stop-color="#7024C4" />
+            </linearGradient>
+            <linearGradient id="b" x1="50%" x2="50%" y1="146.099%" y2="-45.16%">
+              <stop offset="0%" stop-color="#E09B3D" />
+              <stop offset="30%" stop-color="#C74C4D" />
+              <stop offset="60%" stop-color="#C21975" />
+              <stop offset="100%" stop-color="#7024C4" />
+            </linearGradient>
+            <linearGradient
+              id="c"
+              x1="50%"
+              x2="50%"
+              y1="658.141%"
+              y2="-140.029%"
+            >
+              <stop offset="0%" stop-color="#E09B3D" />
+              <stop offset="30%" stop-color="#C74C4D" />
+              <stop offset="60%" stop-color="#C21975" />
+              <stop offset="100%" stop-color="#7024C4" />
+            </linearGradient>
+          </defs>
+          <g fill="none" fillRule="nonzero">
+            <path
+              fill="url(#a)"
+              d="M16.82 0H7.138A7.145 7.145 0 0 0 0 7.137v9.684a7.145 7.145 0 0 0 7.137 7.137h9.684a7.145 7.145 0 0 0 7.137-7.137V7.137C23.958 3.202 20.756 0 16.821 0zm4.728 16.82a4.727 4.727 0 0 1-4.727 4.728H7.137A4.727 4.727 0 0 1 2.41 16.82V7.137A4.727 4.727 0 0 1 7.137 2.41h9.684a4.727 4.727 0 0 1 4.727 4.727v9.684z"
+            />
+            <path
+              fill="url(#b)"
+              d="M11.979 5.783a6.203 6.203 0 0 0-6.196 6.196 6.203 6.203 0 0 0 6.196 6.196 6.203 6.203 0 0 0 6.196-6.196 6.203 6.203 0 0 0-6.196-6.196zm0 9.982a3.786 3.786 0 1 1 0-7.572 3.786 3.786 0 0 1 0 7.572z"
+            />
+            <circle cx="18.187" cy="5.829" r="1.485" fill="url(#c)" />
+          </g>
+        </svg>
+        Continue with Instagram
+      </div>
     );
+}
+
+InstagramButton.propTypes = {
+  onClick: PropTypes.func.isRequired
 }
 
 export default InstagramButton

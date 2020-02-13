@@ -32,9 +32,15 @@ import ProductListItemDetails from './ProductListItemDetails';
 import ProductInfo from './ProductInfo';
 import ProductRecentTransaction from './ProductRecentTransaction';
 import ProductModal from './ProductModal';
+import InstagramProductList from './InstagramProductList';
+import InstagramProductListItem from './InstagramProductListItem';
 
 import FacebookButtonAlternate from './FacebookButtonAlternate';
 import InstagramButton from './InstagramButton'
+ 
+import InstagramBusinessOnBoarding from './InstagramBusinessOnBoarding';
+import InstagramBusinessProductsSelect from './InstagramBusinessProductsSelect';
+import InstagramBusinessAccountsSelect from './InstagramBusinessAccountsSelect';
 
 
 
@@ -73,5 +79,10 @@ export {
   ProductRecentTransaction,
   ProductModal,
   InstagramButton,
-  FacebookButtonAlternate
+  FacebookButtonAlternate,
+  InstagramBusinessOnBoarding,
+  InstagramBusinessProductsSelect,
+  InstagramBusinessAccountsSelect,
+  InstagramProductList,
+  InstagramProductListItem
 };

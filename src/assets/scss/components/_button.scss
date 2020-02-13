@@ -50,6 +50,11 @@
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
         }
     }
+    &--orange-outline{
+        background: transparent;
+        border: 1px solid $orange;
+        color: $orange;
+    }
 
     &--grey{
         border: solid 1px #dadada;
@@ -61,10 +66,17 @@
         color: #778597;
     }
 
-    &--white{
+    &--white, &--white__with-icon{
         box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.04);
         background-color: $white;
         color: $black;
+    }
+    &--white__with-icon{
+        display: flex;
+        flex-direction: row;
+        & .icon{
+            margin-right: 16px;
+        }
     }
 
 

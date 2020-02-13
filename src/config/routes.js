@@ -9,7 +9,8 @@ import {
   ProductsPage,
   PaymentPageWithOnBoarding,
   CustomersPageWithOnBoarding,
-  ProductPageWithOnBoarding
+  ProductPageWithOnBoarding,
+  HomePage
 } from 'pages';
 
 
@@ -17,7 +18,7 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: PaymentPage,
+    component: HomePage,
     isProtected: false
   },
   {

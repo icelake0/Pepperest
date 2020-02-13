@@ -1,11 +1,5 @@
 import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types';
-import {
-  getStatusTextClass,
-  getIndicatorClass,
-  getStatusTagClass,
-  getStatusText
-} from 'libs/utils';
 import {ProductListItemDetails} from 'components/blocks'
 
 
