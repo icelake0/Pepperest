@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom'
 
 export default function withAuthLayout(WrappedComponent, data = {}) {
   return class extends Component {
@@ -14,7 +15,9 @@ export default function withAuthLayout(WrappedComponent, data = {}) {
         <div className="max-content">
           <div className="auth">
             <div className="auth-logo">
-              <img src="/assets/images/logo.png" alt="logo" />
+              <NavLink to="/">
+                <img src="/assets/images/logo.png" alt="logo" />
+              </NavLink>
             </div>
             <WrappedComponent {...this.props} />
           </div>

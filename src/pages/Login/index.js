@@ -54,9 +54,9 @@ const Login = props => (
       label="I DON'T HAVE AN ACCOUNT ?"
       isAlternate={true}
     />
-    {/* <Alert
+    <Alert
       message="your are successfully logged in"
-      /> */}
+      />
   </Fragment>
 );
 

@@ -5,6 +5,7 @@ import SpinnerIcon from './SpinnerIcon';
 import BrokenLink from './BrokenLink';
 import WhiteTick from './WhiteTick';
 import LeftChevron from './LeftChevron';
+import DownChevron from './DownChevron';
 
 
 export {
@@ -14,5 +15,6 @@ export {
   SpinnerIcon,
   BrokenLink,
   WhiteTick,
-  LeftChevron
+  LeftChevron,
+  DownChevron
 };

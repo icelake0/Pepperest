@@ -142,3 +142,10 @@ export const getStatusText = status => {
       return '';
   }
 };
+
+
+export const getCamelCase = value => {
+  let char = value.charAt(0).toUpperCase();
+  let restOfString = value.substring(1, value.length);
+  return `${char}${restOfString}`
+}

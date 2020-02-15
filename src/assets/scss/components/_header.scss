@@ -5,13 +5,17 @@
     margin: 0px auto;
 
     &-main{
-        width: 1024px;
+        width: 100%;
         height: inherit;
         margin: 0px auto;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        padding: 0px 24px;
+        @include desktop {
+            width: 1024px;
+        }
     }
 
     &-logo{
@@ -19,8 +23,11 @@
     }
 
     &-nav{
-        display: flex;
-        flex-direction: row;
+        display: none;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
         &__item{
             font-size: $font-size-2;
             font-weight: 500;
@@ -52,6 +59,23 @@
                 background-color: rgb(62, 74, 97);
 
             }
+            &-profile{
+                display: none;
+                @include desktop{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+            }
+        }
+        &__current-link{
+            font-size: $font-size-2;
+            font-weight: 600;
+            color: $black;
+            @include desktop {
+                display: none;
+            }
         }
     }
 
@@ -82,6 +106,19 @@
                     font-weight: 600;
                     border-bottom: 2px solid $orange;
                 }
+            }
+        }
+
+        & .icon{
+            margin-left: 24px;
+            @include desktop {
+                display: none;
+            }
+        }
+        & .button {
+            margin-left: auto;
+            @include desktop {
+                margin-left: unset;
             }
         }
     }
