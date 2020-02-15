@@ -396,13 +396,16 @@
         }
 
         &-detail{
-
+           
             &__header{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                height: 48px;
-                margin-bottom: 8px;
+                display: none;
+                @include desktop{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    height: 48px;
+                    margin-bottom: 8px;
+                }
 
                 &-menu{
                     display: flex;
@@ -430,15 +433,18 @@
                 }
             }
             &__container{
-                height: auto;
-                background-color: transparent;
-                position: relative;
-                padding: 24px;
-                padding-top: 0px;
-                box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
-                background-color: #f4f5f7;
-                display: flex;
-                flex-direction: column;
+                display: none;
+                @include desktop{
+                    height: auto;
+                    background-color: transparent;
+                    position: relative;
+                    padding: 24px;
+                    padding-top: 0px;
+                    box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+                    background-color: #f4f5f7;
+                    display: flex;
+                    flex-direction: column;
+                }
 
 
 
