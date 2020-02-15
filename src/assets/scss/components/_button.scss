@@ -41,7 +41,10 @@
     }
 
     &__icon{
-        margin-right: 40px;   
+        margin-right: 20px;
+        @include desktop{
+            margin-right: 40px; 
+        }   
     }
 
     &--orange{

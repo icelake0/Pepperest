@@ -10,20 +10,20 @@ const ProductListItem = props => {
     return (
       <Fragment>
         <div className="list-item row mx-0">
-          <div className="col-md-2 px-0">
+          <div className="col-2 col-md-2 px-0">
             <div className="d-flex flex-row">
               <div className="list-item__date">
                 <p className="list-item__date-text">{props.date}</p>
               </div>
             </div>
           </div>
-          <div className="list-item__details col-md-6 px-0">
+          <div className="col-6 list-item__details col-md-6 px-0">
             <div className="list-item__details-container">
               <p className="list-item__details-product">{props.product_name}</p>
               <p className="list-item__details-email">{props.product_description}</p>
             </div>
           </div>
-          <div className="col-md-3 px-0">
+          <div className="col-3 col-md-3 px-0">
             <div className="d-flex flex-row justify-content-end">
               <div className="list-item__payment">
                 <div className="list-item__payment-container">

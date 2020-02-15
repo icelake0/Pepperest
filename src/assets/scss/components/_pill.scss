@@ -14,7 +14,10 @@
     }
 
     &-xs{
-        width: 328px;
+        width: 100%;
+       @include desktop{
+            width: 328px;
+       }
     }
 
     &--primary{

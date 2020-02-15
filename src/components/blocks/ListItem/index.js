@@ -12,11 +12,9 @@ const ListItem = props => {
       <Fragment>
         <div className="list-item row mx-0">
           <div
-            className={`list-item__indicator ${getIndicatorClass(
-              props.status
-            )}`}
+            className={`list-item__indicator ${getIndicatorClass(props.status)}`}
           ></div>
-          <div className="col-md-4 px-0">
+          <div className="col-2 col-md-4 px-0">
             <div className="d-flex flex-row">
               <div className="list-item__date">
                 <p className="list-item__date-text">{props.date}</p>
@@ -26,8 +24,7 @@ const ListItem = props => {
                   <div
                     className={`list-item__status-tag ${getStatusTagClass(
                       props.status
-                    )} ${getStatusTextClass(props.status)}`}
-                  >
+                    )} ${getStatusTextClass(props.status)}`}>
                     {getStatusText(props.status)}
                   </div>
                   {props.status.toLowerCase() === 'pending' ? (
@@ -45,13 +42,13 @@ const ListItem = props => {
               </div>
             </div>
           </div>
-          <div className="list-item__details col-md-4 px-0">
+          <div className="col-6 list-item__details col-md-4 px-0">
             <div className="list-item__details-container">
               <p className="list-item__details-product">{props.payment_name}</p>
               <p className="list-item__details-email">{props.customer_email}</p>
             </div>
           </div>
-          <div className="col-md-4 px-0">
+          <div className="col-4 col-md-4 px-0">
             <div className="d-flex flex-row justify-content-end">
               <div className="list-item__payment">
                 <div className="list-item__payment-container">

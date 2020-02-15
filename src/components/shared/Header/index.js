@@ -38,7 +38,7 @@ const Header = props => (
       </nav>
       <div className="d-flex flex-row align-items-center">
         <Avatar imageUrl="/assets/images/avatar.jpg" avatarSize="xs" />
-        <div className="d-flex flex-row align-items-center">
+        <div className="nsHeader-nav__item-profile">
           <li className="nsHeader-nav__item nsHeader-nav__item-alternate">
             My Account
           </li>

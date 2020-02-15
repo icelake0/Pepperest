@@ -27,7 +27,9 @@ const ProductList =  props => {
                 src="/assets/images/svg/import.svg"
                 alt="icon"
               />
-              <span className="list-header__action-text list-header__action-text--alt">Import from Instagram</span>
+              <span className="list-header__action-text list-header__action-text--alt">
+                Import from Instagram
+              </span>
             </div>
             <div className="list-header__action">
               <img
@@ -56,7 +58,7 @@ const ProductList =  props => {
           </ul>
         </div>
         <div className="list-footer">
-          <p className="list-footer-text">Showing 1 - 6 of 90 entries</p>
+          <p className="list-footer-label">Showing 1 - 6 of 90 entries</p>
           <div className="list-footer__pagination">
             <span className="list-footer__pagination-prev list-footer-text">
               Previous

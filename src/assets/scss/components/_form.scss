@@ -133,6 +133,18 @@
                 background: url(/assets/images/svg/down-chevron.svg) no-repeat 92% 53%; /* add custom arrow */
             }
         }
+        &--orange{
+            background-color: transparent;
+            border: 1px solid $orange;
+            margin-top: 40px;
+            select{
+                color: $orange;
+                background: url(/assets/images/svg/down-chevron-orange.svg) no-repeat 92% 53%; /* add custom arrow */   
+            }
+            &:hover{
+                box-shadow: none;
+            }
+        }
     }
 
     &-password{

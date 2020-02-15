@@ -6,7 +6,8 @@ export default function withDefaultLayout(WrappedComponent, data = {}){
         constructor(props){
             super(props);
             this.state = {
-                ...data
+                ...data,
+                ...props
             }
         }
 
@@ -18,6 +19,7 @@ export default function withDefaultLayout(WrappedComponent, data = {}){
                   <HeaderAlternate
                     links={this.state.links}
                     page={this.state.page}
+                    location={this.state.location}
                   />
                 ) : null}
                 <div className="max-content">

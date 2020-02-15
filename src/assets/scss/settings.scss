@@ -93,3 +93,23 @@ $desktop-width: 1024px;
         @content;
     }
 }
+@mixin  mobile {
+    @media (min-width: #{$tablet-width}){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(min-width: #{$mobile-width}){
+        @content;
+    }
+}
+
+@mixin mobileAndTablet{
+    @include mobile{
+        @content;
+    }
+    @include tablet{
+        @content;
+    }
+}

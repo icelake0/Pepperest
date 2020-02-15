@@ -1,4 +1,5 @@
 .list{
+    width: 100%;
     &-header{
         height: 56px;
         display: flex;
@@ -12,11 +13,15 @@
         box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
 
         .nsForm-input{
-            width: 400px;
+            width: 200px;
             background-color: $white;
             height: 32px;
             margin: 0px;
             font-size: $font-size-1;
+
+            @include desktop{
+                width: 400px;
+            }
         }
 
         &__actions{
@@ -26,26 +31,36 @@
         }
 
         &__action{
-            min-width: 104px;
-            width: auto;
+            
+            width: 32px;
             height: 32px;
             border-radius: $border-radius-2;
             background-color: rgb(209, 211, 219);
             margin: 0px 8px;
-            padding: 0px 16px;
+            padding: 0px 8px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            @include desktop{
+                min-width: 104px;
+                width: auto;
+                padding: 0px 16px;
+            }
             &--alt{
                 background-color: $gray;
             }
 
             &-text{
+                display: none;
                 font-size: $font-size-1;
                 font-weight: 700;
                 color: $light-gray;
+
+                @include desktop{
+                    display: block;
+                }
 
                 &--alt{
                     color: $white;
@@ -59,7 +74,9 @@
             }
 
             &-icon{
-                margin-right: 8px;
+                @include desktop{
+                    margin-right: 8px;
+                }
             }
         }
 
@@ -68,16 +85,26 @@
     &-footer{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         margin-top: 24px;
+        justify-content: center;
+        @include desktop {
+            justify-content: space-between;
+        }
 
-        &-text{
+        &-text, &-label{
             font-size: $font-size-2;
             color: $light-gray;
 
             &-alt{
                 color: $black;
                 font-weight: 600;
+            }
+        }
+
+        &-label{
+            display: none;
+            @include desktop{
+                display: flex;
             }
         }
 
@@ -110,7 +137,8 @@
     }
 
     &-item{
-        height: 48px;
+        min-height: 48px;
+        height: auto;
         background: $white;
         border: solid 0.5px rgba($color: #979797, $alpha: 0.5);
         border-left: 0px;
@@ -119,8 +147,13 @@
         padding: 8px 24px 8px 22px;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
+        @include desktop{
+            height: 48px;
+            min-height: 48px;
+            align-items: center;
+        }
         &:first-child{
             border-top: 0px;
         }
@@ -140,9 +173,13 @@
         &__indicator{
             position: absolute;
             left: 0;
-            height: 32px;
+            height: 70%;
             width: 2px;
-            top: calc((48px - 32px ) / 2);
+            top: calc( 100% - 85%);
+            @include desktop{
+                top: calc( 100% - 85%);
+                height: 32px;
+            }
 
             &-active{
                 background-color: $refund ;
@@ -195,37 +232,50 @@
         &__details{
             &-container{
                 display: flex;
-                flex-direction: row;
-                justify-content: center;
-                margin: 0px auto;
+                flex-direction: column;
+                @include desktop{
+                    flex-direction: row;
+                    justify-content: center;
+                    margin: 0px auto;
+                }
             }
             &-product{
                 font-size: $font-size-2;
                 color: $black;
                 font-weight: 700;
-                margin-right: 12px;
-                text-align: right;
-                // width: 133px;
-                width: 50%;
-                margin-left: auto;
+                text-align: left;
+                margin-bottom: 4px;  
+                @include desktop{
+                    width: 50%;
+                    margin-left: auto;
+                    text-align: right;
+                    margin-right: 12px;
+                    margin-bottom: 0px;
+                }
             }
             &-email{
                 opacity: 0.5;
                 font-size: $font-size-2;
                 color: $black;
-                margin-left: 12px;
                 text-align: left;
-                // width: 138px;
-                width: 50%;
-                margin-right: auto;
+                margin-top: 4px;
+                @include desktop{
+                    width: 50%;
+                    margin-right: auto;
+                    margin-left: 12px;
+                    margin-top: 0px;
+                }
             }
             &-product, &-email{
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                @include desktop{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
         }
         &__payment{
+            // display: none;
             &-container{
                 display: flex;
                 flex-direction: row;
@@ -233,7 +283,11 @@
             }
 
             & .button{
-                margin-right: 8px;
+                display: none;
+                @include desktop{
+                    margin-right: 8px;
+                    display: block;
+                }
             }
 
             &-price{
@@ -249,11 +303,14 @@
             }
         }
         &__more{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-left: 40px;
-            cursor: pointer;
+            display: none;
+            @include desktop{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 40px;
+                cursor: pointer;
+            }
 
             & .dot {
                 width: 4px;
@@ -271,7 +328,12 @@
         }
 
         &__status{
-            margin-left: 24px;
+            display: none;
+            @include desktop{
+                margin-left: 24px;
+                display: block;
+
+            }
             &-container{
                 display: flex;
                 flex-direction: row;

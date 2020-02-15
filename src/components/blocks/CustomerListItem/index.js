@@ -18,7 +18,7 @@ const CustomerListItem = props => {
         <div
           className={`list-item__indicator ${getIndicatorClass(props.status)}`}
         ></div>
-        <div className="col-md-4 px-0">
+        <div className="col-4 col-md-4 px-0">
           <div className="d-flex flex-row">
             <div className="list-item__date">
               <p className="list-item__date-text">{props.phone}</p>
@@ -36,13 +36,13 @@ const CustomerListItem = props => {
             </div>
           </div>
         </div>
-        <div className="list-item__details col-md-4 px-0">
+        <div className="list-item__details col-6 col-md-4 px-0">
           <div className="list-item__details-container">
             <p className="list-item__details-product">{props.payment_name}</p>
             <p className="list-item__details-email">{props.customer_email}</p>
           </div>
         </div>
-        <div className="col-md-4 px-0">
+        <div className="col-2 col-md-4 px-0">
           <div className="d-flex flex-row justify-content-end">
             <div
               className="list-item__more"
