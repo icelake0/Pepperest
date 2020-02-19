@@ -1,22 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const handleChange = handleChange => event => {
-    // passing back the event to the function from the parent component
-    handleChange(event);
-}
+const handleChange = (onChange) => (event) => {
+  // passing back the event to the function from the parent component
+  onChange(event);
+};
 
-const Input = (props) => (
+const Input = ({
+  name, type, label, placeholder, id, value, onChange,
+}) => (
   <div className="nsForm-control">
-    <label htmlFor={props.id}>{props.label}</label>
+    <label htmlFor={id}>{label}</label>
     <input
-      name={props.name}
-      type={props.type}
-      value={props.value}
-      id = {props.id}
+      name={name}
+      type={type}
+      value={value}
+      id={id}
       className="nsForm-input"
-      placeholder={props.placeholder}
-      onChange={ handleChange(props.onChange)}
+      placeholder={placeholder}
+      onChange={handleChange(onChange)}
     />
   </div>
 );
@@ -28,6 +30,6 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 export default Input;

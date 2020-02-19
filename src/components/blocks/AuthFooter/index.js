@@ -1,28 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-const AuthFooter = props => (
+const AuthFooter = ({
+  isAlternate, label, url, value,
+}) => (
   <div className="auth-option">
-    <p className={`auth-option-label ${props.isAlternate ? 'auth-option-label--alternate' : ''}`}>{props.label}</p>
-    <a href={props.url} className="pill pill-xs pill--primary">
-        {props.value}
+    <p className={`auth-option-label ${isAlternate ? 'auth-option-label--alternate' : ''}`}>{label}</p>
+    <a href={url} className="pill pill-xs pill--primary">
+      {value}
     </a>
   </div>
 );
 
 AuthFooter.defaultProps = {
   url: '/',
-  isAlternate: false
+  isAlternate: false,
 };
 
 AuthFooter.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   url: PropTypes.string,
-  isAlternate: PropTypes.bool
+  isAlternate: PropTypes.bool,
 };
 
 
-
-export default AuthFooter
+export default AuthFooter;

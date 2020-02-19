@@ -1,42 +1,42 @@
-import React, {Fragment, useState} from 'react'
+import React, { useState } from 'react';
 import { CloseIcon, WhiteTick } from 'components/vectors';
 import {
   InstagramBusinessOnBoarding,
   InstagramBusinessProductsSelect,
   InstagramBusinessAccountsSelect,
-  InstagramProductList
+  InstagramProductList,
 } from 'components/blocks';
 
-const ProductInstagramPage = props => {
+const ProductInstagramPage = (props) => {
   const [onBoarding, setOnBoarding] = useState(true);
   const [hasSelectedAccount, setHasSelectedAccount] = useState(false);
   const [hasSelectedProducts, setHasSelectedProducts] = useState(false);
-  const [publishProducts, setPublishProducts] = useState(false)
+  const [publishProducts, setPublishProducts] = useState(false);
 
-  const updateOnBoarding = value => {
+  const updateOnBoarding = (value) => {
     setOnBoarding(value);
-  }
+  };
   const updateHasSelectedAccount = (value) => {
     setHasSelectedAccount(value);
     setHasSelectedProducts(true);
     setPublishProducts(false);
-  }
+  };
   const updateSetPublishProducts = (value) => {
     setHasSelectedProducts(false);
     setPublishProducts(value);
-  }
-  
+  };
+
   const onBoardingContent = (
     <div className="d-flex flex-column align-items-center instagram-page">
       <div className="header--nav">
         <div className={`header--nav-dot ${onBoarding ? 'active' : ''}`}>
           {onBoarding ? <WhiteTick /> : null}
         </div>
-        <div className={`header--nav-progress ${hasSelectedAccount ? 'active' : ''}`}></div>
+        <div className={`header--nav-progress ${hasSelectedAccount ? 'active' : ''}`} />
         <div className={`header--nav-dot ${hasSelectedAccount ? 'active' : ''}`}>
           { hasSelectedAccount ? <WhiteTick /> : null}
         </div>
-        <div className={`header--nav-progress ${publishProducts ? 'active' : ''}`}></div>
+        <div className={`header--nav-progress ${publishProducts ? 'active' : ''}`} />
         <div className={`header--nav-dot ${publishProducts ? 'active' : ''}`}>
           { publishProducts ? <WhiteTick /> : null}
         </div>
@@ -50,7 +50,7 @@ const ProductInstagramPage = props => {
         <InstagramBusinessOnBoarding click={updateHasSelectedAccount} />
       )}
       {hasSelectedAccount ? (
-        <Fragment>
+        <>
           <div className="current-account">
             <img
               src="/assets/images/avatar.jpg"
@@ -68,30 +68,28 @@ const ProductInstagramPage = props => {
             </p>
             <CloseIcon />
           </div>
-        </Fragment>
+        </>
       ) : null}
 
       {hasSelectedAccount && hasSelectedProducts ? (
         <InstagramBusinessAccountsSelect onClick={updateSetPublishProducts} />
       ) : null}
-      {hasSelectedAccount  && publishProducts ? (
-        <InstagramBusinessProductsSelect onClick={updateOnBoarding}/>
+      {hasSelectedAccount && publishProducts ? (
+        <InstagramBusinessProductsSelect onClick={updateOnBoarding} />
       ) : null}
     </div>
-  )
+  );
 
   const pageContent = <InstagramProductList />;
-    
-  return (
-    <Fragment>
-      {
-        onBoarding ? 
-        onBoardingContent : pageContent
-      }
-    </Fragment>
-  )
-    
-  
-}
 
-export default ProductInstagramPage;;
+  return (
+    <>
+      {
+        onBoarding
+          ? onBoardingContent : pageContent
+      }
+    </>
+  );
+};
+
+export default ProductInstagramPage;

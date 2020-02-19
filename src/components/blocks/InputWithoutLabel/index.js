@@ -1,22 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const handleChange = handleChange => event => {
+const handleChange = (onChange) => (event) => {
   // passing back the event to the function from the parent component
-  handleChange(event);
+  onChange(event);
 };
 
-const InputWithoutLabel = props => (
+const InputWithoutLabel = ({
+  name, type, value, id, classNames, placeholder, onChange,
+}) => (
   <input
-    name={props.name}
-    type={props.type}
-    value={props.value}
-    id={props.id}
-    className={`nsForm-input ${props.classNames}`}
-    placeholder={props.placeholder}
-    onChange={handleChange(props.onChange)}
+    name={name}
+    type={type}
+    value={value}
+    id={id}
+    className={`nsForm-input ${classNames}`}
+    placeholder={placeholder}
+    onChange={handleChange(onChange)}
   />
 );
+
+InputWithoutLabel.defaultProps = {
+  classNames: '',
+};
 
 InputWithoutLabel.propTypes = {
   type: PropTypes.string.isRequired,
@@ -25,6 +31,6 @@ InputWithoutLabel.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  classNames: PropTypes.string
+  classNames: PropTypes.string,
 };
 export default InputWithoutLabel;

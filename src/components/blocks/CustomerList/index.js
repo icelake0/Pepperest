@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InputWithoutLabel, CustomerListItem } from 'components/blocks';
-import { customers } from 'libs/constants';
+import { getStringHash } from 'libs/utils';
 
-const List = props => {
+const CustomerList = ({ customers }) => {
   const [value, setValue] = useState('');
 
   return (
@@ -15,7 +15,7 @@ const List = props => {
           placeholder="Search Customers"
           id="search"
           value={value}
-          onChange={e => {
+          onChange={(e) => {
             setValue(e.target.value);
           }}
         />
@@ -41,10 +41,20 @@ const List = props => {
       </div>
       <div className="list-body">
         <ul>
-          {customers &&
-            customers.map((payment, index) => (
-              <CustomerListItem key={index} {...payment} />
-            ))}
+          {customers
+          && customers.map((customer, index) => (
+            <CustomerListItem
+              key={getStringHash(index)}
+              status={customer.status}
+              phone={customer.phone}
+              customerName={customer.customerName}
+              paymentName={customer.paymentName}
+              customerEmail={customer.customerEmail}
+              totalTransactions={customer.totalTransactions}
+              totalSpent={customer.totalSpent}
+              recentTransactions={customer.recentTransactions}
+            />
+          ))}
         </ul>
       </div>
       <div className="list-footer">
@@ -76,8 +86,12 @@ const List = props => {
   );
 };
 
-List.propTypes = {
-  payments: PropTypes.arrayOf(
+CustomerList.defaultProps = {
+  customers: [],
+};
+
+CustomerList.propTypes = {
+  customers: PropTypes.arrayOf(
     PropTypes.shape({
       status: PropTypes.string.isRequired,
       statusText: PropTypes.string.isRequired,
@@ -89,9 +103,9 @@ List.propTypes = {
       delivery_datetime: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       customer_email: PropTypes.string.isRequired,
-      payment_description: PropTypes.string.isRequired
-    })
-  )
+      payment_description: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
-export default List;
+export default CustomerList;

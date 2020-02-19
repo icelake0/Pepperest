@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const GoogleButton = props => (
-  <div className="button button-google">
+  <div className="button button-google" role="button" tabIndex={0}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -33,4 +33,4 @@ const GoogleButton = props => (
   </div>
 );
 
-export default GoogleButton
+export default GoogleButton;

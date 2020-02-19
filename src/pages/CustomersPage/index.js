@@ -1,19 +1,22 @@
-import React, {Fragment} from 'react';
-import { withDefaultLayout } from 'components/layouts'
+import React from 'react';
+import { withDefaultLayout } from 'components/layouts';
 import { CustomerList } from 'components/blocks';
+import { customers } from 'libs/constants';
 
-import { PepperestContext } from 'components/helpers/constant';
 
-const CustomersPage = props => (
-  <Fragment>
+// import { PepperestContext } from 'components/helpers/constant';
+
+const CustomersPage = () => (
+  <>
     <div className="payment">
-      <CustomerList />
+      <CustomerList
+        customers={customers}
+      />
     </div>
     {/* <PepperestContext.Consumer>
       {context => (context.state.showModal ? <Modal /> : null)}
     </PepperestContext.Consumer> */}
-  </Fragment>
+  </>
 );
 
 export default withDefaultLayout(CustomersPage, {});
-

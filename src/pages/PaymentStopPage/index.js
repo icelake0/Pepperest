@@ -1,12 +1,9 @@
-import React from 'react'
-import  {List} from 'components/blocks'
+import React from 'react';
+import { List } from 'components/blocks';
+import { payments } from 'libs/constants';
 
 
-const PaymentStopPage = props => {
 
-    return (
-        <List />
-    )
-}
+const PaymentStopPage = () => <List payments={payments} />;
 
 export default PaymentStopPage;

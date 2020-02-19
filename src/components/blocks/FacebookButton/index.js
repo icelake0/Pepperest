@@ -1,9 +1,7 @@
 import React from 'react';
 
-
-
-const FacebookButton = props => (
-  <div className="button button-facebook">
+const FacebookButton = () => (
+  <div className="button button-facebook" role="button" tabIndex={0}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -20,7 +18,5 @@ const FacebookButton = props => (
     <span>Continue with Facebook</span>
   </div>
 );
-
-
 
 export default FacebookButton;

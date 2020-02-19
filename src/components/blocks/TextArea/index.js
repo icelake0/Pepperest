@@ -1,14 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const TextArea = props => (
-    <textarea className="nsForm-textarea" name={props.name} id={props.name} value={props.value} onChange={(e) => {props.onChange()}}></textarea>
-)
+const TextArea = ({ name ,value, onChange }) => (
+  <textarea className="nsForm-textarea" name={name} id={name} value={value} onChange={(e) => { onChange(e); }} />
+);
+
+TextArea.defaultProps = {
+  value: '',
+};
 
 TextArea.propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    onChange: PropTypes.func.isRequired
-}
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default TextArea;

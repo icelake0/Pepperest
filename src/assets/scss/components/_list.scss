@@ -310,6 +310,7 @@
                 align-items: center;
                 margin-left: 40px;
                 cursor: pointer;
+                outline: none;
             }
 
             & .dot {
@@ -449,7 +450,8 @@
 
 
                 & .list-item__indicator{
-                    height: 97%;
+                    height: 90%;
+                    top: calc( (100% - 90%) / 2);
                 }
 
                 &-close{
@@ -468,6 +470,7 @@
                     cursor: pointer;
                     margin: auto 0px;
                     margin-left: auto;
+                    outline: none;
 
                 }
             }
