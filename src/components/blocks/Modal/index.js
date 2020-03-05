@@ -14,8 +14,8 @@ import EscapeCloseModalHelper from 'components/helpers/EscapeCloseModalHelper';
 
 const Modal = (props) => (
   <>
+    <div className="pModal-overlay" />
     <div className="pModal">
-      <div className="pModal-overlay" />
       <div className="pModal-content">
         <div className="pModal-header">
           <h6 className="text--small">Request Payment</h6>
@@ -34,13 +34,13 @@ const Modal = (props) => (
           </PepperestContext.Consumer>
         </div>
         <div className="pModal-sub__header row mx-0">
-          <div className="col-lg-6 px-0">
+          <div className="col-12 col-lg-6 px-0">
             <div className="pModal-sub__header-half left">
               <h6 className="text--smaller text--gray">Total Amount</h6>
               <p className="text--smaller">NGN 41,3000</p>
             </div>
           </div>
-          <div className="col-lg-6 px-0">
+          <div className="col-12 col-lg-6 px-0">
             <div className="pModal-sub__header-half right">
               <h6 className="text--smaller text--gray">Pepperest Fee</h6>
               <p className="text--smaller">NGN 1,100.10</p>

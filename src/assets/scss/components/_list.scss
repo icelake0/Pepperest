@@ -140,7 +140,7 @@
         min-height: 48px;
         height: auto;
         background: $white;
-        border: solid 0.5px rgba($color: #979797, $alpha: 0.5);
+        border: solid 0.5px $border-color-1;
         border-left: 0px;
         border-right: 0px;
         position: relative;
@@ -455,7 +455,7 @@
                 }
 
                 &-close{
-                    width: 68px;
+                    width: 64px;
                     height: 24px;
                     border-radius: $border-radius-md;
                     background-color: #E7E8EB;
@@ -546,5 +546,83 @@
         & .button--orange-outline{
             margin-left: 24px;
         }
+    }
+
+
+    &-modal{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        @include desktop {
+            display: none;
+        }
+        &-overlay{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0.7;
+            background-color: #6F6F6F;
+            height: 100vh;
+            // pointer-events: auto;
+            @include desktop{
+                display: none;
+            }
+        }
+
+        &__body {
+            position: relative;
+            top: 350px;
+            height: auto;
+            box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+            background-color: $white;
+        }
+
+        &__header{
+            display: flex;
+            flex-direction: row;
+            padding: 12px 24px;
+            border-bottom: 1px solid $border-color-1;
+        }
+
+        &__list{
+
+            &-item{
+                border-bottom: 1px solid $border-color-1;
+                padding: 12px 24px;
+                height: auto;
+
+                &__alternate{
+                    padding: 16px 24px;
+                    border: none;
+
+                    & .button {
+                        margin: 8px 0px;
+                        &:first-child{
+                            margin-top: 0px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+                & .list-item__status-text {
+                    font-weight: 600;
+                    margin-left: 0px;
+                }
+                & .list-item__payment-container{
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        
+
+
     }
 }

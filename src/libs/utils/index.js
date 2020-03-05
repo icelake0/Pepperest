@@ -4,21 +4,21 @@
  * @param stringValue
  * @returns {number}
  */
-export const getStringHash = stringValue => {
+export const getStringHash = (stringValue) => {
   let hash = 0;
   if (stringValue.length === 0) {
     return hash;
   }
   for (let i = 0; i < stringValue.length; i++) {
-    let char = stringValue.charCodeAt(i);
+    const char = stringValue.charCodeAt(i);
     hash = (hash << 5) - hash + char;
-    hash = hash & hash; // Convert to 32bit integer
+    hash &= hash; // Convert to 32bit integer
   }
   return hash;
 };
 
 
-export const getStatusTextClass = status => {
+export const getStatusTextClass = (status) => {
   switch (status.toLowerCase()) {
     case 'pending':
       return 'text--pending';
@@ -47,9 +47,9 @@ export const getStatusTextClass = status => {
     default:
       return 'text--pending';
   }
-}
+};
 
-export const getIndicatorClass = status => {
+export const getIndicatorClass = (status) => {
   switch (status.toLowerCase()) {
     case 'pending':
       return 'list-item__indicator-pending';
@@ -81,7 +81,7 @@ export const getIndicatorClass = status => {
 };
 
 
-export const getStatusTagClass = status => {
+export const getStatusTagClass = (status) => {
   switch (status.toLowerCase()) {
     case 'pending':
       return 'list-item__status-tag--pending';
@@ -110,9 +110,9 @@ export const getStatusTagClass = status => {
     default:
       return 'list-item__status-tag--pending';
   }
-}
+};
 
-export const getStatusText = status => {
+export const getStatusText = (status) => {
   switch (status.toLowerCase()) {
     case 'pending':
       return 'Pending';
@@ -144,8 +144,8 @@ export const getStatusText = status => {
 };
 
 
-export const getCamelCase = value => {
-  let char = value.charAt(0).toUpperCase();
-  let restOfString = value.substring(1, value.length);
-  return `${char}${restOfString}`
-}
+export const getCamelCase = (value) => {
+  const char = value.charAt(0).toUpperCase();
+  const restOfString = value.substring(1, value.length);
+  return `${char}${restOfString}`;
+};
