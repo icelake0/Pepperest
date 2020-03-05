@@ -1,13 +1,7 @@
-import React from 'react'
-import { List,  } from 'components/blocks';
+import React from 'react';
+import { List } from 'components/blocks';
+import { payments } from 'libs/constants';
 
-
-const PaymentPendingPage = props => {
-
-    return (
-        <List />
-    )
-}
-
+const PaymentPendingPage = () => <List payments={payments} />;
 
 export default PaymentPendingPage;

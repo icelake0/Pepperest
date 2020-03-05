@@ -1,8 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { withAuthLayout } from 'components/layouts';
 import { PasswordInput, Button, AuthFooter } from 'components/blocks';
-const UpdatePassword = props => (
-  <Fragment>
+
+const UpdatePassword = (props) => (
+  <>
     <div className="auth-panel auth-panel--alternate">
       <div className="auth-panel__head">
         <h4 className="auth-panel__head-header">Forgot Password?</h4>
@@ -46,7 +47,7 @@ const UpdatePassword = props => (
       label="Already have an account ?"
       isAlternate={false}
     />
-  </Fragment>
+  </>
 );
 
 export default withAuthLayout(UpdatePassword, {});

@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const FeatureListItem = props => (
+const FeatureListItem = ({ value }) => (
   <li className="auth-register__info-section-feature__list-item">
     <svg
       className="auth-register__info-section-feature__list-item__icon"
@@ -19,12 +19,12 @@ const FeatureListItem = props => (
         />
       </g>
     </svg>
-    <span>{props.value}</span>
+    <span>{value}</span>
   </li>
 );
 
 FeatureListItem.propTypes = {
-    value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
 
 export default FeatureListItem;

@@ -1,24 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { BankAlert, OnBoardingModal, LoadingListItem } from 'components/blocks';
 
-const OnBoarding = props => (
+const OnBoarding = ({
+  info, title, secondaryButtonText, buttonText, imageUrl,
+}) => (
   <div className="on-boarding-container">
     <BankAlert />
-    {!props.secondaryButtonText ? (
+    {!secondaryButtonText ? (
       <OnBoardingModal
-        title={props.title}
-        info={props.info}
-        buttonText={props.buttonText}
-        imageUrl={props.imageUrl}
+        title={title}
+        info={info}
+        buttonText={buttonText}
+        imageUrl={imageUrl}
       />
     ) : (
       <OnBoardingModal
-        title={props.title}
-        info={props.info}
-        buttonText={props.buttonText}
-        secondaryButtonText={props.secondaryButtonText}
-        imageUrl={props.imageUrl}
+        title={title}
+        info={info}
+        buttonText={buttonText}
+        secondaryButtonText={secondaryButtonText}
+        imageUrl={imageUrl}
       />
     )}
 
@@ -32,12 +34,17 @@ const OnBoarding = props => (
   </div>
 );
 
+OnBoarding.defaultProps = {
+  imageUrl: '',
+  secondaryButtonText: '',
+};
+
 OnBoarding.propTypes = {
   title: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   secondaryButtonText: PropTypes.string,
-  imageUrl: PropTypes.string
+  imageUrl: PropTypes.string,
 };
 
 export default OnBoarding;

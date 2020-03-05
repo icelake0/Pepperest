@@ -7,10 +7,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100%;
+    height: auto;
     width: 100%;
     overflow-y: scroll;
     z-index: 800;
+    pointer-events: all;
 
     &-overlay{
         background-color: $modal-color;
@@ -26,14 +27,27 @@
 
 
     &-content{
-        margin: 100px 0px;
-        width: 586px;
-        min-height: 900px;
+        margin: 0;
+        width: 100%;
         box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
         background-color: #ffffff;
         z-index: 1000;
         display: flex;
         flex-direction: column;
+
+        position: fixed;
+        overflow-y: scroll;
+        top: 104px;
+        bottom: 0;
+
+        @include desktop{
+            margin: 100px 0px;
+            width: 586px;
+            min-height: 900px;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+        }
     }
 
     &-header{
@@ -54,27 +68,36 @@
         }
     }
     &-sub__header{
-        height: 64px;
+        height: auto;
         width: 100%;
         background-color: $whitesmoke;
         border: solid 1px $gainsboro;
         border-left: none;
         border-right: none;
+        @include desktop{
+            height: 64px;
+        }
 
         &-half{
             display: flex;
             flex-direction: column;
             padding: 9px 24px;
             // border: solid 1px #979797;
-            border-right: solid 1px $gainsboro;
+            border-bottom: solid 1px $gainsboro;
             // border-left: solid 0.5px #979797;
             justify-content: space-between;
             height: 100%;
+
+            @include desktop{
+                border-right: solid 1px $gainsboro;
+            }
             &.left{
                 border-left: none;
+                
             }
             &.right{
                 border-right: none;
+                border-bottom: none;
             }
 
             & .text--smaller{
@@ -88,13 +111,16 @@
 
     &-main{
         width: 100%;
-        padding: 24px 53px;
+        padding: 24px;
+        @include desktop{
+            padding: 24px 53px;
+        }
 
 
         &__notification{
             background-color: $initial-tag;
             width: 100%;
-            height: 40px;
+            height: 56px;
             padding: 14px 32px;
             font-weight: 600;
             color: $brown;
@@ -104,6 +130,9 @@
             justify-content: center;
             text-align: center;
             border-radius: $border-radius-1;
+            @include desktop {
+                height: 40px;
+            }
 
             &--small{
                 padding: 12px 16px;
@@ -139,9 +168,13 @@
             &-control{
                 display: flex;
                 flex-direction: column;
-                align-items: flex-end;
+                align-items: flex-start;
                 justify-content: center;
                 height: 100%;
+
+                @include desktop{
+                    align-items: flex-end;
+                }
             }
         }
 
@@ -178,15 +211,23 @@
     &-footer{
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         border-top: 1px solid rgba(119, 133, 151, 0.25);
         padding: 18px 24px;
         margin-top: auto;;
 
+        @include desktop{
+            justify-content: flex-end;
+        }
+
         & .button{
             height: 40px;
             margin: 0px 8px;
+            width: 50%;
+            @include desktop{
+                width: auto;
+            }
             &:first-child{
                 margin-left: 0px;
             }

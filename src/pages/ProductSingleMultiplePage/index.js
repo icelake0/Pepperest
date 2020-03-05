@@ -1,10 +1,8 @@
-import React from 'react'
-import {ProductList} from 'components/blocks'
+import React from 'react';
+import { ProductList } from 'components/blocks';
 
-const ProductSingleMultiplePage = props => {
-    return (
-        <ProductList />
-    )
-}
+const ProductSingleMultiplePage = (props) => (
+  <ProductList />
+);
 
 export default ProductSingleMultiplePage;

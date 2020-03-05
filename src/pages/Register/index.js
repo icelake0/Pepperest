@@ -1,35 +1,38 @@
-import React, {Fragment, useState} from 'react';
-import {withAuthLayout} from 'components/layouts'
-import {AuthFooter ,Input, PasswordInput, SelectInput, SelectInputWithoutLabel, FeatureListItem, Button} from 'components/blocks'
+import React, { useState } from 'react';
+import { withAuthLayout } from 'components/layouts';
+import { getStringHash } from 'libs/utils';
+import {
+  AuthFooter, Input, PasswordInput, SelectInput, SelectInputWithoutLabel, FeatureListItem, Button,
+} from 'components/blocks';
 
 const FEATURES = [
   '24/7 Customer Care Support',
   'Fastest refunds',
   'Zero setup costs',
-  'Merchant Financing available'
+  'Merchant Financing available',
 ];
 const OPTIONS = [
   { value: '', label: 'View less about pepperest' },
-  { value: 'view-more', label: 'View more about pepperest' }
+  { value: 'view-more', label: 'View more about pepperest' },
 ];
 const Register = () => {
   const [viewMore, setViewMore] = useState('');
-  const updateViewMore = value => setViewMore(value);
+  const updateViewMore = (value) => setViewMore(value);
   return (
-    <Fragment>
+    <>
       <div className="auth-register">
         <div className="auth-register__info-section">
           <h2 className="auth-register__info-section-header">
             Start selling with Pepperest
           </h2>
-          <p className={`auth-register__info-section-detail ${viewMore.toLowerCase() === '' ? 'hide-mobile': 'show-mobile-block'}`}>
+          <p className={`auth-register__info-section-detail ${viewMore.toLowerCase() === '' ? 'hide-mobile' : 'show-mobile-block'}`}>
             Get on board with Pepperest and start selling to your customers or
             paying merchants in just a few minutes
           </p>
           <div>
-            <ul className={`auth-register__info-section-feature__list ${viewMore.toLowerCase() === '' ? 'hide-mobile': 'show-mobile-flex'}`}>
+            <ul className={`auth-register__info-section-feature__list ${viewMore.toLowerCase() === '' ? 'hide-mobile' : 'show-mobile-flex'}`}>
               {FEATURES.map((feature, index) => (
-                <FeatureListItem key={index} value={feature} />
+                <FeatureListItem key={getStringHash(index)} value={feature} />
               ))}
             </ul>
           </div>
@@ -38,7 +41,7 @@ const Register = () => {
             name="view_more"
             id="view_more"
             value=""
-            classNames={'nsForm-select--orange d-lg-none'}
+            classNames="nsForm-select--orange d-lg-none"
             onChange={updateViewMore}
           />
         </div>
@@ -94,8 +97,14 @@ const Register = () => {
             />
           </form>
           <p className="auth-terms-condition">
-            I agree to the <a href="/">Pepperest Agreement</a> and{' '}
-            <a href="/">Terms</a>.
+            I agree to the
+            {' '}
+            <a href="/">Pepperest Agreement</a>
+            {' '}
+            and
+            {' '}
+            <a href="/">Terms</a>
+            .
           </p>
         </div>
       </div>
@@ -105,8 +114,8 @@ const Register = () => {
         label="ALREADY HAVE AN ACCOUNT ?"
         isAlternate={false}
       />
-    </Fragment>
+    </>
   );
-}
+};
 
 export default withAuthLayout(Register, {});
