@@ -10,6 +10,7 @@ import CustomersPageWithOnBoarding from './CustomersPageWithOnBoarding';
 import ProductPageWithOnBoarding from './ProductPageWithOnBoarding';
 import PageNotFound from './PageNotFound';
 import HomePage from './HomePage';
+import ProfilePage from './ProfilePage';
 
 
 import PaymentPageWithOnBoarding from './PaymentPageWithOnBoarding';
@@ -22,6 +23,13 @@ import PaymentStopPage from './PaymentStopPage';
 
 import ProductSingleMultiplePage from './ProductSingleMultiplePage';
 import ProductInstagramPage from './ProductInstagramPage';
+
+import NotificationPage from './NotificationPage';
+import UserAccountPage from './UserAccountPage';
+import BankAccountPage from './BankAccountPage';
+import RequestLoanPage from './RequestLoanPage';
+import ApiConfigPage from './ApiConfigPage';
+import LinkMediaAccountPage from './LinkMediaAccountPage';
 
 export {
   Login,
@@ -44,4 +52,11 @@ export {
   ProductInstagramPage,
   PageNotFound,
   HomePage,
+  ProfilePage,
+  NotificationPage,
+  UserAccountPage,
+  BankAccountPage,
+  RequestLoanPage,
+  ApiConfigPage,
+  LinkMediaAccountPage,
 };

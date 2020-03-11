@@ -1,35 +1,39 @@
-import React from 'react'
-import PropTypes from 'prop-types' 
-import {NavLinkAlternate} from 'components/blocks'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'components/blocks';
 import { getStringHash, getCamelCase } from 'libs/utils';
-import {DownChevron} from 'components/vectors'
+import { DownChevron } from 'components/vectors';
 
 import { PepperestContext } from 'components/helpers/constant';
 
 
-const HeaderAlternate = ({page,links, location}) => {
-
+const HeaderAlternate = ({ page, links, location }) => {
   const getPathName = () => {
-    let pathname = location.pathname;
-    let indexOfLastSlash = pathname.lastIndexOf('/');
+    const { pathname } = location;
+    const indexOfLastSlash = pathname.lastIndexOf('/');
     return pathname.substring(indexOfLastSlash + 1, pathname.length);
-  }
+  };
+
   return (
     <div className="nsHeader-alternate">
       <div className="nsHeader-main">
         <nav className="nsHeader-nav nsHeader-alternate-nav">
           {links.map(({ url, title }, index) => (
-            <NavLinkAlternate
+            <NavLink
               key={getStringHash(title)}
               url={url}
               title={title}
+              classNames="nsHeader-nav__item nsHeader-alternate-nav__item"
+              exact
             />
           ))}
         </nav>
         <h3 className="nsHeader-nav__current-link">{getCamelCase(getPathName())}</h3>
         {page.toLowerCase() === 'payments' ? (
           <PepperestContext.Consumer>
-            {context => (
+            {(context) => (
               <div
                 className="button button-md button--orange"
                 onClick={() => {
@@ -42,7 +46,7 @@ const HeaderAlternate = ({page,links, location}) => {
           </PepperestContext.Consumer>
         ) : (
           <PepperestContext.Consumer>
-            {context => (
+            {(context) => (
               <div
                 className="button button-md button--orange"
                 onClick={() => {
@@ -58,8 +62,7 @@ const HeaderAlternate = ({page,links, location}) => {
       </div>
     </div>
   );
-
-}
+};
 HeaderAlternate.defaultProps = {
   // isPaymentButton:
 };
@@ -68,9 +71,10 @@ HeaderAlternate.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       url: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
-  ),
+      title: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   page: PropTypes.string.isRequired,
-}
+};
+
 export default HeaderAlternate;

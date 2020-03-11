@@ -1,0 +1,28 @@
+.menu{
+
+    &__list{
+        &-item {
+            font-family: $medium-font;
+            font-size: $font-size-3;
+            color: $gray;
+            margin: 12px 0px;
+            transition: 0.23s all ease-in-out;
+            a{
+                text-decoration: none;
+                &:hover {
+                    color: $black;
+                }
+            }
+            &:first-child{
+                margin-top: 0px;
+            }
+            &:last-child{
+                margin-bottom: 0px;
+            }
+            
+            & .active{
+                color: $black;
+            }
+        }
+    }
+}

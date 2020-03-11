@@ -12,7 +12,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0px 24px;
+        // padding: 0px 24px;
         @include desktop {
             width: 1024px;
         }
@@ -65,6 +65,24 @@
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+                    cursor: pointer;
+                }
+
+                &__wrapper{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    position: relative;
+                    .avatar {
+                        cursor: pointer;
+                        
+                    }
+                    &:hover {
+                        .nsHeader-profile__dropdown {
+                            display: block;
+                            opacity: 1;
+                        }
+                    }
                 }
 
             }
@@ -75,6 +93,95 @@
             color: $black;
             @include desktop {
                 display: none;
+            }
+        }
+    }
+
+    &-profile__dropdown{
+        display: none;
+        @include desktop{
+            display: none;
+            width: 360px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+            background-color: #ffffff;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            padding: 16px;
+            z-index: $z-index-2;
+            opacity: 0;
+            transition: all 12s ease-in-out;;
+        }
+
+        & .dropdown{
+            &__user-details{
+                display: flex;
+                flex-direction: row;
+                margin: 16px 0px;
+                padding: 0px 24px;
+
+                .avatar{
+                    margin-right: 10px;
+                }
+
+                &__email, &__role{
+                    font-family: $medium-font;
+                    font-size: $font-size-2;
+                    color: $black;
+                }
+                &__role{
+                    font-family: $primary-font;
+                    font-size: $font-size-0;
+                }
+            }
+            &__list {
+                &-item {
+                    padding: 8px 16px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 4px 0px;
+                    height: 40px;
+                    border-radius: $border-radius-2;
+                    background-color: transparent;
+                    transition: 0.3s all ease-in-out;
+                    font-family: $medium-font;
+                    font-weight: 500;
+                    font-size: $font-size-2;
+                    color: $black;
+                    cursor: pointer;
+                    text-decoration: none !important;
+
+                    &:hover {
+                        background-color: $whitesmoke;
+                        text-decoration:  none !important;
+
+                    }
+
+                    &:first-child {
+                        margin-top: 0px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+
+                &-header {
+                    padding: 8px 0px;
+                    margin: 8px 16px 16px 16px;
+                    height: 40px;
+                    border-bottom: 1px solid $border-color-1;
+                    font-family: $semibold-font;
+                    color: $orange;
+                    font-size: $font-size-1;
+
+                }
+
+
             }
         }
     }

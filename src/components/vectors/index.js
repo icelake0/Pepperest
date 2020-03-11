@@ -6,6 +6,7 @@ import BrokenLink from './BrokenLink';
 import WhiteTick from './WhiteTick';
 import LeftChevron from './LeftChevron';
 import DownChevron from './DownChevron';
+import TrashIcon from './TrashIcon';
 
 
 export {
@@ -16,5 +17,6 @@ export {
   BrokenLink,
   WhiteTick,
   LeftChevron,
-  DownChevron
+  DownChevron,
+  TrashIcon
 };

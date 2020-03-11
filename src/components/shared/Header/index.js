@@ -1,26 +1,32 @@
-import React from 'react'
-import {NavLink} from 'components/blocks'
-import {Avatar} from 'components/shared'
+import React from 'react';
+import { NavLink } from 'components/blocks';
+import { Avatar } from 'components/shared';
+import { DownChevron } from 'components/vectors';
 
 const navLinks = [
-    {
-        value: 'Payment',
-        url: '/payments'
-    },
-    {
-        value: 'Product/Service',
-        url: '/products'
-    },
-    {
-        value: 'Customers',
-        url: '/customers'
-    },
-    {
-        value: 'My Orders',
-        url: '/orders'
-    }];
+  {
+    title: 'Payment',
+    url: '/payments',
+    exact: false,
+  },
+  {
+    title: 'Product/Service',
+    url: '/products',
+    exact: false,
+  },
+  {
+    title: 'Customers',
+    url: '/customers',
+    exact: false,
+  },
+  {
+    title: 'My Orders',
+    url: '/orders',
+    exact: false,
+  },
+];
 
-const Header = props => (
+const Header = (props) => (
   <div className="nsHeader">
     <div className="nsHeader-main">
       <a className="nsHeader-logo" href="/">
@@ -32,29 +38,43 @@ const Header = props => (
         />
       </a>
       <nav className="nsHeader-nav">
-        {navLinks.map(({ value, url }, index) => (
-          <NavLink key={index} value={value} url={url} />
+        {navLinks.map(({ title, url, exact }, index) => (
+          <NavLink key={index} title={title} url={url} classNames="nsHeader-nav__item" exact={exact} />
         ))}
       </nav>
-      <div className="d-flex flex-row align-items-center">
+      <div className="nsHeader-nav__item-profile__wrapper">
         <Avatar imageUrl="/assets/images/avatar.jpg" avatarSize="xs" />
         <div className="nsHeader-nav__item-profile">
           <li className="nsHeader-nav__item nsHeader-nav__item-alternate">
             My Account
           </li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="8"
-            viewBox="0 0 14 8"
-          >
-            <path
-              fill="#868686"
-              fillRule="evenodd"
-              stroke="#868686"
-              d="M12.877 1.116a.446.446 0 0 0-.6 0L7.007 6.053 1.724 1.116a.446.446 0 0 0-.6 0 .378.378 0 0 0 0 .56l5.572 5.208a.448.448 0 0 0 .6 0l5.57-5.208a.371.371 0 0 0 .011-.56z"
-            />
-          </svg>
+          <DownChevron />
+        </div>
+        <div className="nsHeader-profile__dropdown">
+          <div className="dropdown__user-details">
+            <Avatar imageUrl="/assets/images/avatar.jpg" avatarSize="md" />
+            <div>
+              <p className="dropdown__user-details__email">Mylocarson@gmail.com</p>
+              <p className="dropdown__user-details__role">Member</p>
+            </div>
+          </div>
+          <ul className="dropdown__list">
+            <a href="/user-account/notifications" className="dropdown__list-item">
+              Notification
+              <span className="mBadge mBadge--secondary">4</span>
+            </a>
+            <a href="/user-account/profile" className="dropdown__list-item">Settings</a>
+            <a href="/user-account/profile" className="dropdown__list-item">Payout</a>
+            <a href="/user-account/loans" className="dropdown__list-item">Request Loan</a>
+            <a href="/" className="dropdown__list-item">Logout</a>
+          </ul>
+          <div className="dropdown__list-header">
+            QUICK LINK
+          </div>
+          <ul className="dropdown__list">
+            <a href="/user-account/profile" className="dropdown__list-item">Change Password</a>
+            <a href="/user-account/bank-account" className="dropdown__list-item">Add a Bank Account</a>
+          </ul>
         </div>
       </div>
     </div>

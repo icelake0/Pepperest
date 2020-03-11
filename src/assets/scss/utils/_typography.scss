@@ -5,8 +5,30 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    src: url('/assets/fonts/Graphik.WOFF') format('woff');
+    src: url('/assets/fonts/Graphik-400-Regular.WOFF') format('woff');
 }
+
+@font-face {
+    font-family: 'Graphik Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    src: url('/assets/fonts/Graphik-500-Medium.WOFF') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Graphik Semibold';
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    src: url('/assets/fonts/Graphik-600-Semibold.WOFF') format('woff');
+}
+
 
 @font-face {
     font-family: 'Merriweather';
@@ -17,4 +39,6 @@
 
 
 $primary-font: 'Graphik Regular','Helvetica Neue', Arial, sans-serif;
+$medium-font : 'Graphik Medium','Helvetica Neue', Arial, sans-serif;
+$semibold-font : 'Graphik Semibold','Helvetica Neue', Arial, sans-serif;
 $secondary-font: 'Merriweather',Arial, "Helvetica Neue", Arial, sans-serif;

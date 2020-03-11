@@ -17,6 +17,17 @@ export const getStringHash = (stringValue) => {
   return hash;
 };
 
+export const getAvatarSize = (size) => {
+  switch (size) {
+    case 'xs':
+      return 'avatar-xs';
+    case 'md':
+      return 'avatar-md';
+    default:
+      return ' ';
+  }
+};
+
 
 export const getStatusTextClass = (status) => {
   switch (status.toLowerCase()) {
