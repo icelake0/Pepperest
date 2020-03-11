@@ -14,7 +14,6 @@ import BankAlert from './BankAlert';
 import OnBoardingModal from './OnBoardingModal';
 import LoadingListItem from './LoadingListItem';
 import OnBoarding from './OnBoarding';
-import NavLinkAlternate from './NavLinkAlternate';
 import List from './List';
 import ListItem from './ListItem';
 import CustomerList from './CustomerList';
@@ -43,8 +42,6 @@ import InstagramBusinessOnBoarding from './InstagramBusinessOnBoarding';
 import InstagramBusinessProductsSelect from './InstagramBusinessProductsSelect';
 import InstagramBusinessAccountsSelect from './InstagramBusinessAccountsSelect';
 
-
-
 export {
   Input,
   InputWithoutLabel,
@@ -61,7 +58,6 @@ export {
   OnBoardingModal,
   LoadingListItem,
   OnBoarding,
-  NavLinkAlternate,
   List,
   ListItem,
   CustomerList,

@@ -11,6 +11,7 @@ import {
   CustomersPageWithOnBoarding,
   ProductPageWithOnBoarding,
   HomePage,
+  UserAccountPage,
 } from 'pages';
 
 
@@ -79,6 +80,12 @@ const routes = [
     path: '/products-onboarding',
     exact: true,
     component: ProductPageWithOnBoarding,
+    isProtected: false,
+  },
+  {
+    path: '/user-account',
+    exact: false,
+    component: UserAccountPage,
     isProtected: false,
   },
   {

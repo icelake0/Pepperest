@@ -6,6 +6,7 @@
 @import 'components/pill';
 @import 'components/alert';
 @import 'components/header';
+@import 'components/menu';
 @import 'components/avatar';
 @import 'components/on-boarding';
 @import 'components/loading-list';
@@ -15,12 +16,15 @@
 @import 'components/header-progress';
 @import 'components/checkbox';
 @import 'components/radio';
+@import 'components/badge';
+@import 'components/card';
 
 @import 'layout/auth';
 
 
 @import 'pages/payment';
 @import 'pages/general';
+@import 'pages/user-account';
 
 
 @import 'globals';

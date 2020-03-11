@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import { NavLink as Link } from 'react-router-dom';
 
 
-const NavLink = ({ url, value }) => (
-  <Link to={url} className="nsHeader-nav__item" activeClassName="active" exact={false}>
-    {value}
+const NavLink = ({
+  url, title, classNames, exact,
+}) => (
+  <Link to={url} className={classNames} activeClassName="active" exact={exact}>
+    {title}
   </Link>
 );
 
 NavLink.propTypes = {
   url: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  classNames: PropTypes.string.isRequired,
+  exact: PropTypes.bool.isRequired,
 };
 
 export default NavLink;

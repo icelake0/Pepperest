@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
 import { withDefaultLayout } from 'components/layouts';

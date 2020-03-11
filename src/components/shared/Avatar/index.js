@@ -1,19 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { getAvatarSize } from 'libs/utils';
 
-const Avatar = props => (
-    <div className={`avatar ${props.avatarSize === 'xs' ? 'avatar-xs' : ''}`}>
-        <img className="avatar-image" src={props.imageUrl} alt="user avatar"/>
-    </div>
+const Avatar = ({ avatarSize, imageUrl }) => (
+  <div className={`avatar ${getAvatarSize(avatarSize)}`}>
+    <img className="avatar-image" src={imageUrl} alt="user avatar" />
+  </div>
 );
 
 Avatar.defaultProps = {
-  avatarSize: 'xs' // possibles sizes can be xs,md,lg , e.t.c
+  avatarSize: ' ', // possibles sizes can be xs,md,lg , e.t.c
 };
 
 Avatar.propTypes = {
-    imageUrl: PropTypes.string.isRequired,
-    avatarSize: PropTypes.string.isRequired
-}
+  imageUrl: PropTypes.string.isRequired,
+  avatarSize: PropTypes.string,
+};
 
 export default Avatar;
