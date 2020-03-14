@@ -9,7 +9,7 @@ const LinkMediaAccountPage = () => (
         <h3 className="pcard-header__title">Link Media Account</h3>
       </div>
       <div className="pcard-body">
-        <div className="row justify-item-center">
+        <div className="row justify-item-center nsForm-control">
           <div className="col-md-6 ml-auto">
             <InputWithoutLabel
               name="link_account"
@@ -25,7 +25,7 @@ const LinkMediaAccountPage = () => (
             <TrashIcon />
           </div>
         </div>
-        <div className="row justify-item-center">
+        <div className="row justify-item-center nsForm-control">
           <div className="col-md-6 ml-auto">
             <InputWithoutLabel
               name="link_account"
