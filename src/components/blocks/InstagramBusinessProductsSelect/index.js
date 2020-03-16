@@ -23,7 +23,7 @@ const InstagramBusinessProductsSelect = (props) => (
         </div>
         <img
           className="instagram-page__main-list-item__avatar"
-          src="/assets/images/avatar.jpg"
+          src="/assets/images/laptop.jpeg"
           alt="product"
         />
         <p className="text--smallest text--gray">
@@ -37,7 +37,7 @@ const InstagramBusinessProductsSelect = (props) => (
         </div>
         <img
           className="instagram-page__main-list-item__avatar"
-          src="/assets/images/avatar.jpg"
+          src="/assets/images/laptop.jpeg"
           alt="product"
         />
         <p className="text--smallest text--gray">
@@ -51,7 +51,7 @@ const InstagramBusinessProductsSelect = (props) => (
         </div>
         <img
           className="instagram-page__main-list-item__avatar"
-          src="/assets/images/avatar.jpg"
+          src="/assets/images/laptop.jpeg"
           alt="product"
         />
         <p className="text--smallest text--gray">
@@ -65,7 +65,7 @@ const InstagramBusinessProductsSelect = (props) => (
         </div>
         <img
           className="instagram-page__main-list-item__avatar"
-          src="/assets/images/avatar.jpg"
+          src="/assets/images/laptop.jpeg"
           alt="product"
         />
         <p className="text--smallest text--gray">
@@ -79,7 +79,7 @@ const InstagramBusinessProductsSelect = (props) => (
         </div>
         <img
           className="instagram-page__main-list-item__avatar"
-          src="/assets/images/avatar.jpg"
+          src="/assets/images/laptop.jpeg"
           alt="product"
         />
         <p className="text--smallest text--gray">

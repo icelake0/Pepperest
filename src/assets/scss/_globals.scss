@@ -61,6 +61,17 @@ a {
     }
 }
 
+.page-container{
+    padding-top: 24px;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    @include desktop {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
 
 .spinner{
     animation: spin 2s linear infinite;

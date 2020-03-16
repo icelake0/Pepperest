@@ -37,10 +37,14 @@ import InstagramProductListItem from './InstagramProductListItem';
 
 import FacebookButtonAlternate from './FacebookButtonAlternate';
 import InstagramButton from './InstagramButton';
- 
+
 import InstagramBusinessOnBoarding from './InstagramBusinessOnBoarding';
 import InstagramBusinessProductsSelect from './InstagramBusinessProductsSelect';
 import InstagramBusinessAccountsSelect from './InstagramBusinessAccountsSelect';
+
+import OrderList from './OrderList';
+import OrderListItem from './OrderListItem';
+import OrderListItemDetails from './OrderListItemDetails';
 
 export {
   Input,
@@ -82,5 +86,8 @@ export {
   InstagramBusinessProductsSelect,
   InstagramBusinessAccountsSelect,
   InstagramProductList,
-  InstagramProductListItem
+  InstagramProductListItem,
+  OrderList,
+  OrderListItem,
+  OrderListItemDetails,
 };

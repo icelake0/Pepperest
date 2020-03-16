@@ -31,6 +31,9 @@ import RequestLoanPage from './RequestLoanPage';
 import ApiConfigPage from './ApiConfigPage';
 import LinkMediaAccountPage from './LinkMediaAccountPage';
 
+import OrderDashboard from './OrderDashboard';
+import OrderAll from './OrderAll';
+
 export {
   Login,
   Register,
@@ -59,4 +62,6 @@ export {
   RequestLoanPage,
   ApiConfigPage,
   LinkMediaAccountPage,
+  OrderDashboard,
+  OrderAll,
 };
