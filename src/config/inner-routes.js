@@ -1,37 +1,64 @@
 export const paymentInnerRoutes = [
   {
     url: '/payments/transactions',
-    title: 'Transactions'
+    title: 'Transactions',
   },
   {
     url: '/payments/pending',
-    title: 'Pending'
+    title: 'Pending',
   },
   {
     url: '/payments/refund',
-    title: 'Refund'
+    title: 'Refund',
   },
   {
     url: '/payments/release',
-    title: 'Release Payment'
+    title: 'Release Payment',
   },
   {
     url: '/payments/stop',
-    title: 'Stop Payment'
+    title: 'Stop Payment',
   },
   {
     url: '/payments/instagram',
-    title: 'Instagram'
-  }
+    title: 'Instagram',
+  },
 ];
 
 export const productInnerRoutes = [
   {
     url: '/products/single',
-    title: 'Single/Multiple Product'
+    title: 'Single/Multiple Product',
   },
   {
     url: '/products/instagram',
-    title: 'Instagram Business'
-  }
-]
+    title: 'Instagram Business',
+  },
+];
+
+export const ordersInnerRoutes = [
+  {
+    url: '/orders/dashboard',
+    title: 'Dashboard',
+  },
+  {
+    url: '/orders/all',
+    title: 'All Orders',
+  },
+  {
+    url: '/orders/cancel',
+    title: 'Single/Multiple Product',
+  },
+  {
+    url: '/orders/pending',
+    title: 'Pending Orders',
+  },
+  {
+    url: '/orders/shipped',
+    title: 'Shipped',
+  },
+  {
+    url: '/orders/delivered',
+    title: 'Delivered',
+  },
+];

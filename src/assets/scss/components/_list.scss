@@ -1,5 +1,6 @@
 .list{
     width: 100%;
+    
     &-header{
         height: 56px;
         display: flex;
@@ -159,6 +160,8 @@
         }
         &:last-child{
             border-bottom: 0px;
+            border-bottom-right-radius: $border-radius-1;
+            border-bottom-left-radius: $border-radius-1;
         }
         &__alt{
             height: 64px;
@@ -252,6 +255,31 @@
                     margin-right: 12px;
                     margin-bottom: 0px;
                 }
+                &__alt {
+                    @include desktop {
+                        width: 30%;
+                    }
+                }
+
+                &__image{
+                    width: 72px;
+                    height: 72px;
+                    object-fit: cover;
+                    border-radius: $border-radius-1;
+                    margin: 0px 12px;
+                    &:first-child{
+                        margin-left: 0px;
+                    }
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+
+                    &-container{
+                        display: flex;
+                        flex-direction: row;
+                        // padding: 24px 0px;
+                    }
+                }
             }
             &-email{
                 opacity: 0.5;
@@ -264,6 +292,12 @@
                     margin-right: auto;
                     margin-left: 12px;
                     margin-top: 0px;
+                }
+
+                &__alt{
+                    @include desktop{
+                        width: 70%;
+                    }
                 }
             }
             &-product, &-email{
@@ -494,6 +528,11 @@
                     &-alternate{
                         min-height: 48px;
                         height: auto;
+                        & > div {
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: auto;
+                        }
                     }
                     &:first-child{
                         border-top: 0px;

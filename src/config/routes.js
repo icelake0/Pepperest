@@ -90,7 +90,7 @@ const routes = [
   },
   {
     path: '/orders',
-    exact: true,
+    exact: false,
     component: OrdersPage,
     isProtected: false,
   },

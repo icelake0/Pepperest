@@ -16,6 +16,43 @@ const HeaderAlternate = ({ page, links, location }) => {
     return pathname.substring(indexOfLastSlash + 1, pathname.length);
   };
 
+  const determineButton = (pageTitle) => {
+    switch (pageTitle.toLowerCase()) {
+      case 'payments':
+        return (
+          <PepperestContext.Consumer>
+            {(context) => (
+              <div
+                className="button button-md button--orange"
+                onClick={() => {
+                  context.updateShowPaymentModal(true);
+                }}
+              >
+                Request Payment
+              </div>
+            )}
+          </PepperestContext.Consumer>
+        );
+      case 'products':
+        return (
+          <PepperestContext.Consumer>
+            {(context) => (
+              <div
+                className="button button-md button--orange"
+                onClick={() => {
+                  context.updateShowProductModal(true);
+                }}
+              >
+                Add Product / Services
+              </div>
+            )}
+          </PepperestContext.Consumer>
+        );
+
+      default:
+        return null;
+    }
+  };
   return (
     <div className="nsHeader-alternate">
       <div className="nsHeader-main">
@@ -31,33 +68,7 @@ const HeaderAlternate = ({ page, links, location }) => {
           ))}
         </nav>
         <h3 className="nsHeader-nav__current-link">{getCamelCase(getPathName())}</h3>
-        {page.toLowerCase() === 'payments' ? (
-          <PepperestContext.Consumer>
-            {(context) => (
-              <div
-                className="button button-md button--orange"
-                onClick={() => {
-                  context.updateShowPaymentModal(true);
-                }}
-              >
-                Request Payment
-              </div>
-            )}
-          </PepperestContext.Consumer>
-        ) : (
-          <PepperestContext.Consumer>
-            {(context) => (
-              <div
-                className="button button-md button--orange"
-                onClick={() => {
-                  context.updateShowProductModal(true);
-                }}
-              >
-                Add Product / Services
-              </div>
-            )}
-          </PepperestContext.Consumer>
-        )}
+        {determineButton(page)}
         <DownChevron />
       </div>
     </div>

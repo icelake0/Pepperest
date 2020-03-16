@@ -30,7 +30,7 @@ const ListItem = ({
     <>
       <PepperestContext.Consumer>
         {(context) => (
-          <div className="list-item row mx-0" onClick={() => {context.updateShowPaymentListModal(true); }}>
+          <div className="list-item row mx-0" onClick={() => { context.updateShowPaymentListModal(true); }}>
             <div
               className={`list-item__indicator ${getIndicatorClass(status)}`}
             />

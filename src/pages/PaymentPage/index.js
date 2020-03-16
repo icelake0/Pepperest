@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable react/prop-types */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
 import { Modal, ListItemDetailMobileModal } from 'components/blocks';
 import { paymentInnerRoutes } from 'config/inner-routes';

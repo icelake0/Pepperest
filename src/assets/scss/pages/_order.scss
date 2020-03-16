@@ -1,0 +1,17 @@
+.order{
+
+    &-dashboard{
+
+        &__section{
+            &-title{
+                font-size: $font-size-3;
+                text-align: left;
+                color: $light-gray;
+                &-main{
+                    margin-top: 24px;
+                    margin-bottom: 48px;
+                }
+            }
+        }
+    }
+}

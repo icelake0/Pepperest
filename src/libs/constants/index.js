@@ -720,6 +720,127 @@ const instagramProducts = [
   },
 ];
 
+const orders = [
+  {
+    status: 'Processing',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '420,000',
+  },
+  {
+    status: 'Shipped',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'In Transit',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Delivered',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Canceled',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '200,000',
+  },
+  {
+    status: 'In Transit',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Delivered',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Shipped',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Processing',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '420,000',
+  },
+  {
+    status: 'Canceled',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '200,000',
+  },
+  {
+    status: 'Shipped',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Delivered',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'In Transit',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Delivered',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+  {
+    status: 'Canceled',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '200,000',
+  }, {
+    status: 'Processing',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '420,000',
+  },
+  {
+    status: 'In Transit',
+    date: 'Jun 21, 2018',
+    orderId: '#9999202241',
+    address: '40 Abiodun Alakemo str, off ikorodu road, maryland lagos',
+    cost: '20,000',
+  },
+];
+
 export {
-  payments, customers, products, instagramProducts,
+  payments, customers, products, instagramProducts, orders,
 };
