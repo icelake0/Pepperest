@@ -47,7 +47,7 @@ export const ordersInnerRoutes = [
   },
   {
     url: '/orders/cancel',
-    title: 'Single/Multiple Product',
+    title: 'Canceled Orders',
   },
   {
     url: '/orders/pending',

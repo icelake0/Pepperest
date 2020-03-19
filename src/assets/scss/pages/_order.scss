@@ -13,5 +13,58 @@
                 }
             }
         }
+
+        &-metric{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 24px;
+            width: calc(100% /4);
+            position: relative;
+            &:last-child{
+
+                .order-dashboard-metric-divider{
+                    display: none;
+                }
+
+            }
+
+            &-divider{
+                width: 1px;
+                height: 128px;
+                position: absolute;
+                top: -40px;
+                right: 0;
+                background-color: $border-color-1;
+                opacity: 0.53;
+            }
+            &__content{
+                
+                &-price{
+                    font-size: $font-size-5;
+                    font-family: $medium-font;
+                    font-weight: 600;
+                    text-align: right;
+                }
+                &-title{
+                    font-size: $font-size-2;
+                    color: $light-gray;
+                    text-align: right;
+                }
+            }
+
+            &-wrapper{
+                width: 100%;
+                height: 128px;
+                box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+                background-color: $white;
+                border-radius: $border-radius-2;
+                margin-bottom: 24px;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+            }
+        }
     }
 }

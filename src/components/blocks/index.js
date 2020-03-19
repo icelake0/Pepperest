@@ -45,6 +45,7 @@ import InstagramBusinessAccountsSelect from './InstagramBusinessAccountsSelect';
 import OrderList from './OrderList';
 import OrderListItem from './OrderListItem';
 import OrderListItemDetails from './OrderListItemDetails';
+import OrderDashboardMetric from './OrderDashboardMetric';
 
 export {
   Input,
@@ -90,4 +91,5 @@ export {
   OrderList,
   OrderListItem,
   OrderListItemDetails,
+  OrderDashboardMetric,
 };
