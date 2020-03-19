@@ -7,6 +7,10 @@ import WhiteTick from './WhiteTick';
 import LeftChevron from './LeftChevron';
 import DownChevron from './DownChevron';
 import TrashIcon from './TrashIcon';
+import OrderCancelIcon from './OrderCancelIcon';
+import OrderTotalIcon from './OrderTotalIcon';
+import OrderPendingIcon from './OrderPendingIcon';
+import OrderShippedIcon from './OrderShippedIcon';
 
 
 export {
@@ -18,5 +22,9 @@ export {
   WhiteTick,
   LeftChevron,
   DownChevron,
-  TrashIcon
+  TrashIcon,
+  OrderCancelIcon,
+  OrderTotalIcon,
+  OrderPendingIcon,
+  OrderShippedIcon,
 };
