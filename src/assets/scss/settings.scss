@@ -17,6 +17,7 @@ $yellowish: #ffecd0;
 $brown: #904306;
 $light-gray: #878b94;
 $modal-color: #E4E5EA;
+$silver: #c7c7c7;
 
 
 
@@ -59,32 +60,46 @@ $refund-text-color: #084c05;
 $release-text-color: #0a485a;
 $stop-text-color: #a72461;
 
+$base-font-size: 16px;
+
+// @mixin font-size($font-size) {
+//     font-size: $font-size;
+//     font-size: ($font-size/$base-font-size)*1rem;
+// }
+
+@function font-size ($font-size){
+    @return ($font-size/$base-font-size)*1rem;
+}
+
 
 //Font-sizes
-$font-size-0: 8px;
-$font-size-1: 12px;
-$font-size-2: 14px;
-$font-size-3: 16px;
-$font-size-4: 18px;
-$font-size-5: 24px;
-$font-size-6: 26px;
-$font-size-7: 28px;
-$font-size-8: 32px;
-$font-size-md: 26px;
-$font-size-small: 20px;
-$font-size-smaller: 22px;
-$font-size-large: 40px;
-$font-size-largest: 48px;
-$font-size-max: 64px;
+$font-size-0: font-size(8px);
+$font-size-1: font-size(12px);
+$font-size-2: font-size(14px);
+$font-size-3: font-size(16px);
+$font-size-4: font-size(18px);
+$font-size-5: font-size(24px);
+$font-size-6: font-size(26px);
+$font-size-7: font-size(28px);
+$font-size-8: font-size(32px);
+$font-size-md: font-size(26px);
+$font-size-small: font-size(20px);
+$font-size-smaller: font-size(22px);
+$font-size-large: font-size(40px);
+$font-size-largest: font-size(48px);
+$font-size-semi: font-size(56px);
+$font-size-max: font-size(64px);
 
 //border radius
 $border-radius-1: 2px;
 $border-radius-2: 4px;
+$border-radius-3: 8px;
 $border-radius-md: 16px;
 $border-radius-lg: 24px;
 
  //border-color
 $border-color-1: rgba($color: #979797, $alpha: 0.5);
+
 
 //z-index
 $z-index-1: 1;

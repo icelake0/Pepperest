@@ -30,10 +30,17 @@ a {
     color: inherit;
 }
 
+.fluid-content{
+    width: 100%;
+}
+.max-container {
+    max-width: 1440px;
+    margin: 0px auto;
+}
 .max-content {
     width: 100%;
     position: relative;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     min-height: 100vh;
     -ms-overflow-style: none;
     &::-webkit-scrollbar{
@@ -43,6 +50,7 @@ a {
     @include desktop{
         max-width: 1024px;
         margin: 0px auto;
+        min-height: unset;
     }
 }
 
