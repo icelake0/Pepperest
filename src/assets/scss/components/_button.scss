@@ -25,6 +25,9 @@
         font-size: $font-size-1;
         padding: 8px 14px;
     }
+    &-lg{
+        height: 40px;
+    }
 
     &-facebook{
         background: #4367b2;
@@ -81,6 +84,16 @@
             margin-right: 16px;
         }
     }
+    &--gray {
+        background-color: $gray;
+        color: $white;
+    }
+    &--transparent {
+        background-color: transparent;
+        color: $white;
+        border: 1px solid $border-color-1;
+    }
+
 
 
 }

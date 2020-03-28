@@ -11,6 +11,11 @@ import OrderCancelIcon from './OrderCancelIcon';
 import OrderTotalIcon from './OrderTotalIcon';
 import OrderPendingIcon from './OrderPendingIcon';
 import OrderShippedIcon from './OrderShippedIcon';
+import Globe from './Globe';
+import GrowthIllustrationTop from './GrowthIllustrationTop';
+import GrowthIllustrationBottom from './GrowthIllustrationBottom';
+import FlutterwaveIcon from './FlutterwaveIcon';
+import OrangeRightArrowIcon from './OrangeRightArrowIcon';
 
 
 export {
@@ -27,4 +32,9 @@ export {
   OrderTotalIcon,
   OrderPendingIcon,
   OrderShippedIcon,
+  Globe,
+  GrowthIllustrationTop,
+  GrowthIllustrationBottom,
+  FlutterwaveIcon,
+  OrangeRightArrowIcon,
 };
