@@ -16,6 +16,8 @@ import GrowthIllustrationTop from './GrowthIllustrationTop';
 import GrowthIllustrationBottom from './GrowthIllustrationBottom';
 import FlutterwaveIcon from './FlutterwaveIcon';
 import OrangeRightArrowIcon from './OrangeRightArrowIcon';
+import UpChevron from './UpChevron';
+import HamburgerIcon from './HamburgerIcon';
 
 
 export {
@@ -37,4 +39,6 @@ export {
   GrowthIllustrationBottom,
   FlutterwaveIcon,
   OrangeRightArrowIcon,
+  UpChevron,
+  HamburgerIcon,
 };

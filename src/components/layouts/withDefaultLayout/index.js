@@ -19,7 +19,6 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
             <HeaderAlternate
               links={this.state.links}
               page={this.state.page}
-              location={this.state.location}
             />
           ) : null}
           <div className="max-content">
