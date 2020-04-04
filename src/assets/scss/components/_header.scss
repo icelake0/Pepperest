@@ -3,6 +3,10 @@
     width: 100vw;
     height: 64px;
     margin: 0px auto;
+    padding: 0px 24px;
+    @include desktop{
+        padding: 0px;
+    }
 
     &-main{
         width: 100%;
@@ -73,14 +77,29 @@
                     flex-direction: row;
                     align-items: center;
                     position: relative;
+
+                    & .icon{
+                        &:first-child{
+                            margin-right: 12px;
+                            @include desktop{
+                                display: none;
+                            }
+                        }
+                    }
                     .avatar {
                         cursor: pointer;
+                        margin-left: 12px;
+                        @include desktop{
+                            margin-left: 0px;
+                        }
                         
                     }
-                    &:hover {
-                        .nsHeader-profile__dropdown {
-                            display: block;
-                            opacity: 1;
+                    @include desktop{
+                        &:hover {
+                            .nsHeader-profile__dropdown {
+                                display: block;
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -114,21 +133,50 @@
     }
 
     &-profile__dropdown{
+        // display: block;
         display: none;
+        width: 312px;
+        height: 100vh;
+        border-radius: 0px;
+        background-color: $white;
+        position: fixed;
+        top: 0px;
+        right: 0;
+        z-index: $z-index-2;
+        transition: all 12s ease-in-out;
+        opacity: 1;
+
         @include desktop{
             display: none;
+            position: absolute;
             width: 360px;
+            height: auto;
+            right: 0;
+            top: 15px;
             height: auto;
             border-radius: 4px;
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
-            background-color: #ffffff;
-            position: absolute;
-            top: 15px;
-            right: 0;
             padding: 16px;
-            z-index: $z-index-2;
             opacity: 0;
-            transition: all 12s ease-in-out;;
+
+        }
+
+        &-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            opacity: 0.7;
+            z-index: $z-index-1;
+            background-color: #6F6F6F;
+
+            display: none;
+
+            @include desktop {
+                display: none;
+            }
         }
 
         & .dropdown{
@@ -152,7 +200,29 @@
                     font-size: $font-size-0;
                 }
             }
+
+            &-quick__links{
+                padding: 0px 16px;
+                @include desktop{
+                    display: none;
+                }
+            }
+
+            &__base{
+                background-color: $whitesmoke;
+                padding: 0px 16px;
+                height: 100%;
+                @include desktop{
+                    background-color: transparent;
+                    padding: 0px;
+                    height: auto;
+                }
+            }
             &__list {
+                // background-color: $whitesmoke;
+                // @include desktop{
+                //     background-color: transparent;;
+                // }
                 &-item {
                     padding: 8px 16px;
                     display: flex;
@@ -194,6 +264,11 @@
                     font-family: $semibold-font;
                     color: $orange;
                     font-size: $font-size-1;
+                    &:first-child {
+                        @include desktop{
+                            display: none;
+                        }
+                    }
 
                 }
 
@@ -206,6 +281,12 @@
         background-color: $white;
         width: 100vw;
         height: 48px;
+        padding: 0px 24px;
+        position: relative;
+
+        @include desktop {
+            padding: 0px;
+        }
         &-nav{
             
             &__item{
@@ -228,6 +309,51 @@
                     background-color: transparent;
                     font-weight: 600;
                     border-bottom: 2px solid $orange;
+                }
+            }
+
+            &__mobile{
+
+                &-overlay{
+                    position: fixed;
+                    top: 64px + 48px ;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 100%;
+                    opacity: 0.7;
+                    z-index: $z-index-1;
+                    background-color: #6F6F6F;
+                    @include desktop {
+                        display: none;
+                    }
+
+                }
+                position: absolute;
+                top: 48px;
+                z-index: $z-index-1;
+                height: 100vh;
+                left: 0;
+                right: 0;
+                @include desktop{
+                    display:  none;
+                }
+
+                &-menu{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $white;
+                }
+                // padding: 0px 24px;
+                & .nsHeader-alternate-nav__item{
+                    padding: 12px 24px;
+                    border-top: 1px solid $border-color-1;
+                    border-left: 0;
+                    border-right: 0;
+                    border-bottom: 0;
+                    &:last-child{
+                        border-bottom: 1px solid $border-color-1;
+                    }   
                 }
             }
         }

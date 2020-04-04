@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'components/blocks';
 import { getStringHash, getCamelCase } from 'libs/utils';
-import { DownChevron } from 'components/vectors';
+import { DownChevron, UpChevron } from 'components/vectors';
+import { withRouter } from 'react-router-dom';
 
 import { PepperestContext } from 'components/helpers/constant';
 
@@ -15,6 +17,7 @@ const HeaderAlternate = ({ page, links, location }) => {
     const indexOfLastSlash = pathname.lastIndexOf('/');
     return pathname.substring(indexOfLastSlash + 1, pathname.length);
   };
+  const presentRouteString = getCamelCase(getPathName());
 
   const determineButton = (pageTitle) => {
     switch (pageTitle.toLowerCase()) {
@@ -53,6 +56,8 @@ const HeaderAlternate = ({ page, links, location }) => {
         return null;
     }
   };
+
+  const [state, setState] = useState({ isOpen: false });
   return (
     <div className="nsHeader-alternate">
       <div className="nsHeader-main">
@@ -67,9 +72,50 @@ const HeaderAlternate = ({ page, links, location }) => {
             />
           ))}
         </nav>
-        <h3 className="nsHeader-nav__current-link">{getCamelCase(getPathName())}</h3>
+        <h3 className="nsHeader-nav__current-link">{presentRouteString}</h3>
         {determineButton(page)}
-        <DownChevron />
+        {state.isOpen ? (
+          <div
+            onClick={() => {
+              setState({ ...state, isOpen: !state.isOpen });
+            }}
+          >
+            <UpChevron />
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              setState({ ...state, isOpen: !state.isOpen });
+            }}
+          >
+            <DownChevron />
+          </div>
+        )}
+        {state.isOpen ? (
+          <>
+            <div className="nsHeader-alternate-nav__mobile-overlay" />
+            <div
+              className="nsHeader-alternate-nav__mobile"
+              onClick={() => {
+                setState({ ...state, isOpen: !state.isOpen });
+              }}
+            >
+              <ul className="nsHeader-alternate-nav__mobile-menu">
+                {links
+                  .filter(({ title }) => !title.includes(presentRouteString))
+                  .map(({ url, title }) => (
+                    <NavLink
+                      key={getStringHash(title)}
+                      url={url}
+                      title={title}
+                      classNames="nsHeader-alternate-nav__item"
+                      exact
+                    />
+                  ))}
+              </ul>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );
@@ -88,4 +134,4 @@ HeaderAlternate.propTypes = {
   page: PropTypes.string.isRequired,
 };
 
-export default HeaderAlternate;
+export default withRouter(HeaderAlternate);

@@ -6,7 +6,7 @@ import {
   OrangeRightArrowIcon,
   GrowthIllustrationTop,
   GrowthIllustrationBottom,
-  FlutterwaveIcon
+  FlutterwaveIcon,
 } from 'components/vectors';
 
 const navLinks = [
@@ -66,35 +66,37 @@ const HomePage = (props) => (
           </div>
         </div>
       </div>
-      <div className="max-container hero-wrapper">
-        <div className="hero">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="hero-details">
-                <div className="hero-details--attention">
-                  <div className="hero-details--attention-badge">New</div>
-                  <p className="hero-details--attention-text">
-                    Upgrade to Merchant Portal in 4 minutes
-                  </p>
-                </div>
-                <h2 className="title">
-                  Accept online payments today. Start growing your business with
-                  effortless payments.
-                </h2>
-                <p className="info">
-                  Explore how Pepperest can help you do more with your
-                  business—no matter what you sell.
-                </p>
-                <div className="hero-actions">
-                  <div className="button button--orange button--no-hover">
-                    Create Invoice
+      <div className="max-width hero-wrapper">
+        <div className="max-container">
+          <div className="hero">
+            <div className="row">
+              <div className="col-md-4">
+                <div className="hero-details">
+                  <div className="hero-details--attention">
+                    <div className="hero-details--attention-badge">New</div>
+                    <p className="hero-details--attention-text">
+                      Upgrade to Merchant Portal in 4 minutes
+                    </p>
                   </div>
-                  <div className="button button--gray">View Fair Pricing</div>
+                  <h2 className="title">
+                    Accept online payments today. Start growing your business
+                    with effortless payments.
+                  </h2>
+                  <p className="info">
+                    Explore how Pepperest can help you do more with your
+                    business—no matter what you sell.
+                  </p>
+                  <div className="hero-actions">
+                    <div className="button button--orange button--no-hover">
+                      Create Invoice
+                    </div>
+                    <div className="button button--gray">View Fair Pricing</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-8">
-              <Globe />
+              <div className="col-md-8">
+                <Globe />
+              </div>
             </div>
           </div>
         </div>
@@ -132,61 +134,58 @@ const HomePage = (props) => (
           </div>
         </div>
       </div>
-      <div className="max-container">
-        <div className="section-two">
-          <div className="max-content">
-            <div className="row">
-              <div className="col-md-5 mr-auto">
-                <div className="section-two__image-wrapper">
-                  <div className="section-two__image-container">
-                    <img
-                      src="/assets/images/guy.jpg"
-                      className="section-two__image"
-                      alt="user"
-                    />
-                  </div>
-                  <div className="mycard">
-                    <div className="item-wrapper" />
-                    <p className="item__title">Phoebe Brown Sandal</p>
-                    <p className="item__price">NGN 244,213 </p>
-                    <div className="mycard-footer">
-                      <div className="mycard-footer-content">
-                        Payment Received
-                      </div>
+      <div className="max-width section-two">
+        <div className="max-content">
+          <div className="row">
+            <div className="col-md-5 mr-auto">
+              <div className="section-two__image-wrapper">
+                <div className="section-two__image-container">
+                  <img
+                    src="/assets/images/guy.jpg"
+                    className="section-two__image"
+                    alt="user"
+                  />
+                </div>
+                <div className="mycard">
+                  <div className="item-wrapper" />
+                  <p className="item__title">Phoebe Brown Sandal</p>
+                  <p className="item__price">NGN 244,213 </p>
+                  <div className="mycard-footer">
+                    <div className="mycard-footer-content">
+                      Payment Received
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="section-two__main-content">
-                  <h3 className="title">
-                    Do you sell on social media, Jiji, OLX or messaging
-                    platforms?
-                  </h3>
-                  <p className="info">
-                    Add a mobile friendly, secure checkout experience to your
-                    business page and discover 60% increase in sales
-                    {' '}
-                  </p>
-                  <div className="mycard">
-                    <div className="mycard-header">
-                      <div className="mycard-header__title">
-                        Make secure and safe payment anytime, any day.
-                      </div>
-                    </div>
-                    <div className="mycard-body">
-                      <p className="mycard-body-content">
-                        Your customers get the ability to pay for products
-                        before delivery but only credit your account when they
-                        confirm delivery.
-                      </p>
+            </div>
+            <div className="col-md-6">
+              <div className="section-two__main-content">
+                <h3 className="title">
+                  Do you sell on social media, Jiji, OLX or messaging platforms?
+                </h3>
+                <p className="info">
+                  Add a mobile friendly, secure checkout experience to your
+                  business page and discover 60% increase in sales
+                  {' '}
+                </p>
+                <div className="mycard">
+                  <div className="mycard-header">
+                    <div className="mycard-header__title">
+                      Make secure and safe payment anytime, any day.
                     </div>
                   </div>
-                  <div className="mycard">
-                    <div className="mycard-header">
-                      <div className="mycard-header__title">
-                        Refund guaranteed incase merchant fails to deliver.
-                      </div>
+                  <div className="mycard-body">
+                    <p className="mycard-body-content">
+                      Your customers get the ability to pay for products before
+                      delivery but only credit your account when they confirm
+                      delivery.
+                    </p>
+                  </div>
+                </div>
+                <div className="mycard">
+                  <div className="mycard-header">
+                    <div className="mycard-header__title">
+                      Refund guaranteed incase merchant fails to deliver.
                     </div>
                   </div>
                 </div>
@@ -370,8 +369,8 @@ const HomePage = (props) => (
         </div>
       </div>
     </div>
-    <footer className="max-container homepage-footer">
-      <div className="max-content">
+    <footer className="max-width homepage-footer">
+      <div className="max-container">
         <div className="homepage-footer-container">
           <div className="homepage-footer__header">
             <div className="row">
