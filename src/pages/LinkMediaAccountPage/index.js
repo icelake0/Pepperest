@@ -10,7 +10,7 @@ const LinkMediaAccountPage = () => (
       </div>
       <div className="pcard-body">
         <div className="row justify-item-center nsForm-control">
-          <div className="col-md-6 ml-auto">
+          <div className="col-10 col-md-6 ml-md-auto">
             <InputWithoutLabel
               name="link_account"
               type="text"
@@ -21,12 +21,12 @@ const LinkMediaAccountPage = () => (
               classNames="nsForm-input__alternate"
             />
           </div>
-          <div className="col-md-1 mr-auto d-flex flex-column justify-content-center">
+          <div className="col-1 col-md-1 mr-md-auto d-flex flex-column justify-content-center">
             <TrashIcon />
           </div>
         </div>
         <div className="row justify-item-center nsForm-control">
-          <div className="col-md-6 ml-auto">
+          <div className="col-10 col-md-6 ml-md-auto">
             <InputWithoutLabel
               name="link_account"
               type="text"
@@ -37,7 +37,7 @@ const LinkMediaAccountPage = () => (
               classNames="nsForm-input__alternate"
             />
           </div>
-          <div className="col-md-1 mr-auto d-flex flex-column justify-content-center">
+          <div className="col-1 col-md-1 mr-md-auto d-flex flex-column justify-content-center">
             <TrashIcon />
           </div>
         </div>

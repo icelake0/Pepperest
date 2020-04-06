@@ -46,6 +46,7 @@ import OrderList from './OrderList';
 import OrderListItem from './OrderListItem';
 import OrderListItemDetails from './OrderListItemDetails';
 import OrderDashboardMetric from './OrderDashboardMetric';
+import SettingsNavigationBar from './SettingsNavigationBar';
 
 export {
   Input,
@@ -92,4 +93,5 @@ export {
   OrderListItem,
   OrderListItemDetails,
   OrderDashboardMetric,
+  SettingsNavigationBar,
 };

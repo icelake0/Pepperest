@@ -3,6 +3,8 @@ import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
 import { NavLink } from 'components/blocks';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { getStringHash } from 'libs/utils';
+import { settingsInnerRoutes } from 'config/inner-routes';
 
 import {
   ProfilePage, NotificationPage, BankAccountPage,
@@ -10,43 +12,11 @@ import {
 } from 'pages';
 
 const config = {
-  hasAlternateHeader: false,
-  links: [],
-  page: 'profile',
+  hasAlternateHeader: true,
+  links: settingsInnerRoutes,
+  page: 'settings',
+  isSettings: true,
 };
-
-const menus = [
-  {
-    url: '/user-account/profile',
-    title: 'Profile',
-    exact: true,
-  },
-  {
-    url: '/user-account/notifications',
-    title: 'Notifications',
-    exact: true,
-  },
-  {
-    url: '/user-account/bank-account',
-    title: 'Bank Account',
-    exact: true,
-  },
-  {
-    url: '/user-account/linked-media-account',
-    title: 'Linked Media Accounts',
-    exact: true,
-  },
-  {
-    url: '/user-account/api-configurations',
-    title: 'API Configuration',
-    exact: true,
-  },
-  {
-    url: '/user-account/loans',
-    title: 'Request Loan',
-    exact: true,
-  },
-];
 
 
 const UserAccountPage = ({ match }) => (
@@ -55,13 +25,14 @@ const UserAccountPage = ({ match }) => (
       <h3 className="text--md">Settings</h3>
     </div>
     <div className="row">
-      <div className="col-lg-3">
+      <div className="col-lg-3 d-none d-lg-flex">
         <ul className="menu__list">
-          {menus
-            && menus.map(({ url, title, exact }) => (
+          {settingsInnerRoutes
+            && settingsInnerRoutes.map(({ url, title, exact }, index) => (
               <>
                 <li className="menu__list-item">
                   <NavLink
+                    key={getStringHash}
                     url={url}
                     title={title}
                     exact={exact}
@@ -72,7 +43,7 @@ const UserAccountPage = ({ match }) => (
             ))}
         </ul>
       </div>
-      <div className="col-lg-9">
+      <div className="col-12 col-lg-9">
         <div>
           <Switch>
             <Route path={`${match.url}/profile`} component={ProfilePage} />
