@@ -9,10 +9,10 @@ const NotificationPage = () => (
     <div className="pcard-body">
       <div className="notification-wrapper">
         <div className="notification-item row">
-          <div className="col-md-3">
+          <div className="col-12 col-md-3">
             <h4 className="notification__list-item__title">Payment</h4>
           </div>
-          <div className="col-md-9">
+          <div className="col-12 col-md-9">
             <ul className="notification__list">
               <li className="notification__list-item">
                 <div className="input-control">
@@ -69,10 +69,10 @@ const NotificationPage = () => (
           </div>
         </div>
         <div className="notification-item row">
-          <div className="col-md-3">
+          <div className="col-12 col-md-3">
             <h4 className="notification__list-item__title">Transfer</h4>
           </div>
-          <div className="col-md-9">
+          <div className="col-12 col-md-9">
             <ul className="notification__list">
               <li className="notification__list-item">
                 <div className="input-control">
@@ -96,10 +96,10 @@ const NotificationPage = () => (
           </div>
         </div>
         <div className="notification-item row">
-          <div className="col-md-3">
+          <div className="col-12 col-md-3">
             <h4 className="notification__list-item__title">Payout</h4>
           </div>
-          <div className="col-md-9">
+          <div className="col-12 col-md-9">
             <ul className="notification__list">
               <li className="notification__list-item">
                 <div className="input-control">

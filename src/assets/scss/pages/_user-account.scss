@@ -1,13 +1,48 @@
 .user-account{
+
+    padding: 16px 16px;
+    @include desktop{
+        padding: 0px;
+    }
     &__header{
+        display: none;
         margin: 40px 0px;
         .text--md{
             font-family: $medium-font;
 
         }
+        @include desktop{
+            display: block;
+        }
     }
 
     padding-bottom: 200px;
+
+    & .pcard-form_control-wrapper {
+        @include mobileAndTablet {
+            flex-direction: column;
+            align-items: unset;
+            justify-content: unset;
+        }
+    }
+
+    & .pcard-body {
+        @include mobileAndTablet {
+            padding: 0px 16px;
+        }
+    }
+
+
+    & .pcard-form_control:last-child,
+    & .pcard-form_control:first-child {
+        @include mobileAndTablet {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    & .pcard-header-status {
+        margin-left: 16px;
+    }
 }
 
 .profile-settings{
@@ -25,11 +60,17 @@
         flex-direction: row;
         align-items: flex-start;
         padding-left: 24px;
-        padding-top: 64px;
+        padding-top: 24px;
+        @include desktop {
+            padding-top: 64px;
+        }
 
         & .notification__list {
             border-bottom: 1px solid $border-color-1;
-            padding-bottom: 64px;
+            padding-bottom: 24px;
+            @include desktop{
+                padding-bottom: 64px;
+            }
         }
 
         &:first-child {
@@ -70,6 +111,10 @@
             &__title {
                 font-size: $font-size-2;
                 color: $gray;
+                margin-bottom: 24px;
+                @include desktop{
+                    margin-bottom: 0px;
+                }
             }
 
             &-text{

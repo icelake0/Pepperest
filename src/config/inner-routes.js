@@ -62,3 +62,35 @@ export const ordersInnerRoutes = [
     title: 'Delivered',
   },
 ];
+export const settingsInnerRoutes = [
+  {
+    url: '/user-account/profile',
+    title: 'Profile',
+    exact: true,
+  },
+  {
+    url: '/user-account/notifications',
+    title: 'Notifications',
+    exact: true,
+  },
+  {
+    url: '/user-account/bank-account',
+    title: 'Bank Account',
+    exact: true,
+  },
+  {
+    url: '/user-account/linked-media-account',
+    title: 'Linked Media Accounts',
+    exact: true,
+  },
+  {
+    url: '/user-account/api-configurations',
+    title: 'API Configuration',
+    exact: true,
+  },
+  {
+    url: '/user-account/loans',
+    title: 'Request Loan',
+    exact: true,
+  },
+];

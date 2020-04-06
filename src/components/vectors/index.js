@@ -18,6 +18,7 @@ import FlutterwaveIcon from './FlutterwaveIcon';
 import OrangeRightArrowIcon from './OrangeRightArrowIcon';
 import UpChevron from './UpChevron';
 import HamburgerIcon from './HamburgerIcon';
+import BackArrow from './BackArrow';
 
 
 export {
@@ -41,4 +42,5 @@ export {
   OrangeRightArrowIcon,
   UpChevron,
   HamburgerIcon,
+  BackArrow,
 };
