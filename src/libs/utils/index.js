@@ -18,7 +18,7 @@ import { v4 as uuidv4 } from 'uuid';
 //   return hash;
 // };
 
-export const getStringHash = (stringValue) => uuidv4().match(/(\w?\d)/g).join('').substring(0, 16);
+export const getStringHash = (stringValue = '') => uuidv4().match(/(\w?\d)/g).join('').substring(0, 16);
 
 export const getAvatarSize = (size) => {
   switch (size) {

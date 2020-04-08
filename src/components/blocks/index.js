@@ -48,6 +48,12 @@ import OrderListItemDetails from './OrderListItemDetails';
 import OrderDashboardMetric from './OrderDashboardMetric';
 import SettingsNavigationBar from './SettingsNavigationBar';
 
+
+import FooterListItem from './FooterListItem';
+import FooterList from './FooterList';
+
+import HomePageFeatureItem from './HomePageFeatureItem';
+
 export {
   Input,
   InputWithoutLabel,
@@ -94,4 +100,7 @@ export {
   OrderListItemDetails,
   OrderDashboardMetric,
   SettingsNavigationBar,
+  FooterListItem,
+  FooterList,
+  HomePageFeatureItem,
 };
