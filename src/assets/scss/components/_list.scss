@@ -589,12 +589,12 @@
 
 
     &-modal{
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow-y: scroll;
+        // position: fixed;
+        // left: 0;
+        // right: 0;
+        // top: 0;
+        // bottom: 0;
+        // overflow-y: scroll;
         @include desktop {
             display: none;
         }
@@ -614,7 +614,7 @@
         }
 
         &__body {
-            position: relative;
+            position: absolute;
             top: 350px;
             height: auto;
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
