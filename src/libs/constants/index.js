@@ -841,6 +841,61 @@ const orders = [
   },
 ];
 
+const extraBusinessFeatures = [
+  {
+    isActive: false,
+    title: 'Customer',
+  },
+  {
+    isActive: false,
+    title: 'Product / Services',
+  },
+  {
+    isActive: false,
+    title: 'My Orders',
+  },
+  {
+    isActive: false,
+    title: 'Settings',
+  },
+  {
+    isActive: false,
+    title: 'Payment',
+  },
+  {
+    isActive: false,
+    title: 'Create an invoice',
+  },
+];
+
+const businessFeatures = [
+  {
+    isActive: false,
+    title: 'Generate Payment Link',
+  },
+  {
+    isActive: false,
+    title: 'Customer Pay',
+  },
+  {
+    isActive: false,
+    title: 'You Deliver Product',
+  },
+  {
+    isActive: false,
+    title: 'You Get Paid',
+  },
+  {
+    isActive: false,
+    title: 'Successful Transaction',
+  },
+];
 export {
-  payments, customers, products, instagramProducts, orders,
+  payments,
+  customers,
+  products,
+  instagramProducts,
+  orders,
+  businessFeatures,
+  extraBusinessFeatures,
 };

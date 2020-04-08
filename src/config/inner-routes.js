@@ -94,3 +94,119 @@ export const settingsInnerRoutes = [
     exact: true,
   },
 ];
+
+export const footerLinks = {
+  0: [
+    {
+      url: '/',
+      title: 'SOLUTIONS',
+      isLink: false,
+    },
+    {
+      url: '/',
+      title: 'Marketplace Payments',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Invoice Payments',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Real Time Payments',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Outbound Payouts',
+      isLink: true,
+    },
+  ],
+  1: [
+    {
+      url: '/',
+      title: 'COMPANY',
+      isLink: false,
+    },
+    {
+      url: '/',
+      title: 'About',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Careers',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Blog',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Press Kit',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Terms of Service',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Privacy Policy',
+      isLink: true,
+    },
+  ],
+  2: [
+    {
+      url: '/',
+      title: 'DOCUMENTATION',
+      isLink: false,
+    },
+    {
+      url: '/',
+      title: 'Support',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Docs',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'API Reference',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Status',
+      isLink: true,
+    },
+  ],
+  3: [
+    {
+      url: '/',
+      title: 'CONNECT',
+      isLink: false,
+    },
+    {
+      url: '/',
+      title: 'Linkedin',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Twitter',
+      isLink: true,
+    },
+    {
+      url: '/',
+      title: 'Facebook',
+      isLink: true,
+    },
+  ],
+};

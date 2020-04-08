@@ -141,9 +141,12 @@
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
 
                 & .icon {
                     margin-left: 16px;
+                    animation: fadeIn 0.2s linear 0s forwards;
                 }
 
                 &:first-child {
@@ -420,7 +423,14 @@
 
     & .section-four {
 
+        width: 1200px;
+        min-height: 925px;
+        margin: auto;
+        height: auto;
         margin-top: 75px;
+        background: url(/assets/images/svg/background-3x.svg) no-repeat;
+        background-size: cover;
+        padding-bottom: 72px;
 
         &__title {
             font-size: $font-size-8;
@@ -675,10 +685,14 @@
         & .footer-list {
 
             &-item {
+                display: block;
                 font-size: $font-size-3;
                 line-height: 2;
                 color: $gray;
                 margin: 4px 0px;
+                &:hover{
+                    text-decoration-color: $gray;
+                }
 
                 &:first-child {
                     font-family: $medium-font !important;
@@ -707,4 +721,18 @@
     }
 
 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
