@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, {useState } from 'react';
+import React, {useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import {
   getStatusTextClass,
@@ -9,16 +9,19 @@ import {
   getStatusText,
 } from 'libs/utils';
 import { CustomerListItemDetails } from 'components/blocks';
+import { PepperestContext } from 'components/helpers/constant';
+
 
 const CustomerListItem = ({
   status, recentTransactions, phone, customerEmail, customerName, totalSpent, totalTransactions,paymentName,
 }) => {
   const [isListDetailsOpen, setListDetailsOpen] = useState(false);
+  const pepperestContext = useContext(PepperestContext);
   const updateListDetailsOpen = (value) => setListDetailsOpen(value);
 
   return (
     <>
-      <div className="list-item row mx-0">
+      <div className="list-item row mx-0" onClick={() => { pepperestContext.updateShowCustomerListModal(true); }}>
         <div
           className={`list-item__indicator ${getIndicatorClass(status)}`}
         />

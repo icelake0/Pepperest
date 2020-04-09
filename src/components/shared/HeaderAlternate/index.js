@@ -76,6 +76,7 @@ const HeaderAlternate = ({ page, links, location }) => {
         {determineButton(page)}
         {state.isOpen ? (
           <div
+            className="d-block d-lg-none"
             onClick={() => {
               setState({ ...state, isOpen: !state.isOpen });
             }}
@@ -84,6 +85,7 @@ const HeaderAlternate = ({ page, links, location }) => {
           </div>
         ) : (
           <div
+            className="d-block d-lg-none"
             onClick={() => {
               setState({ ...state, isOpen: !state.isOpen });
             }}

@@ -54,6 +54,9 @@ import FooterList from './FooterList';
 
 import HomePageFeatureItem from './HomePageFeatureItem';
 
+import CustomerListItemDetailMobileModal from './CustomerListItemDetailMobileModal';
+import OrderListItemDetailMobileModal from './OrderListItemDetailMobileModal';
+
 export {
   Input,
   InputWithoutLabel,
@@ -103,4 +106,6 @@ export {
   FooterListItem,
   FooterList,
   HomePageFeatureItem,
+  CustomerListItemDetailMobileModal,
+  OrderListItemDetailMobileModal,
 };

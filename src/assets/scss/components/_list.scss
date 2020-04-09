@@ -276,7 +276,10 @@
 
                     &-container{
                         display: flex;
-                        flex-direction: row;
+                        flex-flow: row nowrap;
+                        overflow-x: scroll;
+                        width: 100%;
+
                         // padding: 24px 0px;
                     }
                 }
@@ -589,12 +592,12 @@
 
 
     &-modal{
-        // position: fixed;
-        // left: 0;
-        // right: 0;
-        // top: 0;
-        // bottom: 0;
-        // overflow-y: scroll;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
         @include desktop {
             display: none;
         }
@@ -605,7 +608,7 @@
             top: 0;
             bottom: 0;
             opacity: 0.7;
-            background-color: #6F6F6F;
+            background-color: $overlay;
             height: 100vh;
             // pointer-events: auto;
             @include desktop{
@@ -614,9 +617,12 @@
         }
 
         &__body {
-            position: absolute;
-            top: 350px;
-            height: auto;
+             position: relative;
+             top: 350px;
+             left: 0;
+             right: 0;
+             height: auto;
+             z-index: 1000;
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
             background-color: $white;
         }
@@ -626,9 +632,29 @@
             flex-direction: row;
             padding: 12px 24px;
             border-bottom: 1px solid $border-color-1;
+
+            &-label{
+                font-size: $font-size-2;
+                font-weight: 400;
+                padding: 16px 16px;
+                border-bottom: 2px solid transparent;
+                transition: all 0.2s ease-in-out;
+                // margin: 0px 4px;
+                &:first-child{}
+
+                &.active{
+                    font-family: $medium-font !important;
+                    font-weight: 500;
+                    border-bottom: 2px solid $orange;
+                }
+            }
         }
 
         &__list{
+            // min-height: calc( 100vh - 350px);
+            // display: flex;
+            // flex-flow: column nowrap;
+
 
             &-item{
                 border-bottom: 1px solid $border-color-1;
@@ -638,6 +664,8 @@
                 &__alternate{
                     padding: 16px 24px;
                     border: none;
+                    margin-top: auto;
+
 
                     & .button {
                         margin: 8px 0px;
@@ -656,6 +684,17 @@
                 }
                 & .list-item__payment-container{
                     justify-content: space-between;
+                }
+                & .list-item__details-product__image-container{
+                    margin-top: 16px;
+                }
+
+                &--alt{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 24px;
                 }
             }
         }

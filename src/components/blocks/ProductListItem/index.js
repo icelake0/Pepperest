@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ProductListItemDetails } from 'components/blocks';
+import { PepperestContext } from 'components/helpers/constant';
 
 
 const ProductListItem = ({
@@ -10,10 +11,12 @@ const ProductListItem = ({
 }) => {
   const [isProductListDetailsOpen, setProductListDetailsOpen] = useState(false);
   const updateProductListDetailsOpen = (value) => setProductListDetailsOpen(value);
+  const pepperestContext = useContext(PepperestContext);
+
 
   return (
     <>
-      <div className="list-item row mx-0">
+      <div className="list-item row mx-0" onClick={() => { pepperestContext.updateShowProductListModal(true); }}>
         <div className="col-2 col-md-2 px-0">
           <div className="d-flex flex-row">
             <div className="list-item__date">

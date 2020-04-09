@@ -3,6 +3,8 @@ import { withDefaultLayout } from 'components/layouts';
 import { ordersInnerRoutes } from 'config/inner-routes';
 import { OrderDashboard, OrderAll } from 'pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { OrderListItemDetailMobileModal } from 'components/blocks';
+import { PepperestContext } from 'components/helpers/constant';
 
 
 const config = {
@@ -23,6 +25,9 @@ const OrdersPage = ({ match }) => (
         <Redirect to={`${match.url}/dashboard`} />
       </Switch>
     </div>
+    <PepperestContext.Consumer>
+      {(context) => (context.state.showOrdersListModal ? <OrderListItemDetailMobileModal /> : null)}
+    </PepperestContext.Consumer>
   </>
 );
 

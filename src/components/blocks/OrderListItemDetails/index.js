@@ -113,6 +113,16 @@ const OrderListItemDetails = ({ status, onClick }) => (
               src="/assets/images/product.jpeg"
               alt="product"
             />
+            <img
+              className="list-item__details-product__image"
+              src="/assets/images/product.jpeg"
+              alt="product"
+            />
+            <img
+              className="list-item__details-product__image"
+              src="/assets/images/product.jpeg"
+              alt="product"
+            />
           </div>
         </div>
       </div>

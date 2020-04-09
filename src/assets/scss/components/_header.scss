@@ -170,7 +170,7 @@
             height: 100%;
             opacity: 0.7;
             z-index: $z-index-1;
-            background-color: #6F6F6F;
+            background-color: $overlay;
 
             display: none;
 
@@ -323,7 +323,7 @@
                     height: 100%;
                     opacity: 0.7;
                     z-index: $z-index-1;
-                    background-color: #6F6F6F;
+                    background-color: $overlay;
                     @include desktop {
                         display: none;
                     }

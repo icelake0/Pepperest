@@ -1,10 +1,13 @@
 import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
-import { CustomerList } from 'components/blocks';
+import {
+  CustomerList,
+  CustomerListItemDetailMobileModal,
+} from 'components/blocks';
 import { customers } from 'libs/constants';
 
 
-// import { PepperestContext } from 'components/helpers/constant';
+import { PepperestContext } from 'components/helpers/constant';
 
 const CustomersPage = () => (
   <>
@@ -13,9 +16,9 @@ const CustomersPage = () => (
         customers={customers}
       />
     </div>
-    {/* <PepperestContext.Consumer>
-      {context => (context.state.showModal ? <Modal /> : null)}
-    </PepperestContext.Consumer> */}
+    <PepperestContext.Consumer>
+      {context => (context.state.showCustomerListModal ? <CustomerListItemDetailMobileModal /> : null)}
+    </PepperestContext.Consumer>
   </>
 );
 

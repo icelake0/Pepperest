@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { OrderListItemDetails } from 'components/blocks';
+import { PepperestContext } from 'components/helpers/constant';
+
 import {
   getStatusTextClass,
   getIndicatorClass,
@@ -14,9 +17,16 @@ const OrderListItem = ({
 }) => {
   const [isListDetailsOpen, setListDetailsOpen] = useState(false);
   const updateListDetailsOpen = (value) => setListDetailsOpen(value);
+  const pepperestContext = useContext(PepperestContext);
+
   return (
     <>
-      <div className="list-item row mx-0">
+      <div
+        className="list-item row mx-0"
+        onClick={() => {
+          pepperestContext.updateShowOrdersListModal(true);
+        }}
+      >
         <div className={`list-item__indicator ${getIndicatorClass(status)}`} />
         <div className="col-2 col-md-4 px-0">
           <div className="d-flex flex-row">
@@ -26,7 +36,9 @@ const OrderListItem = ({
             <div className="list-item__status">
               <div className="list-item__status-container">
                 <div
-                  className={`list-item__status-tag ${getStatusTagClass(status)} ${getStatusTextClass(status)}`}
+                  className={`list-item__status-tag ${getStatusTagClass(
+                    status,
+                  )} ${getStatusTextClass(status)}`}
                 >
                   {getStatusText(status)}
                 </div>
@@ -50,7 +62,6 @@ const OrderListItem = ({
               <div className="list-item__payment-container">
                 <p className="list-item__payment-price">
                   NGN
-                  {' '}
                   {cost}
                 </p>
               </div>
