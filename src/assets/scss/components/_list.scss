@@ -44,6 +44,12 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+
+            &:hover{
+                background-color: $white;
+            }
             @include desktop{
                 min-width: 104px;
                 width: auto;
@@ -69,14 +75,118 @@
             }
             &:first-child{
                 margin-left: 0px;
+                &:hover{
+                    @include desktop{
+                        & .list-header__action-menu {
+                            display: block;
+                            opacity: 1;
+                        }
+                        
+                    }
+                }
             }
             &:last-child{
                 margin-right: 0px;
+                
+                &:hover {
+                    @include desktop {
+                        & .list-header__action-menu__alt {
+                            display: block;
+                            opacity: 1;
+                        }
+
+                    }
+                }
             }
 
             &-icon{
                 @include desktop{
                     margin-right: 8px;
+                }
+            }
+
+            &-menu, &-menu__alt{
+                position: absolute;
+                top: 56px;
+                left: 0;
+                right: 0;
+                width: 264px;
+                height: auto;
+                z-index: $z-index-1;
+                border-radius: $border-radius-1;
+                box-shadow: 0 0 30px 0 #e7e7e7;
+                background-color: $white;
+                padding: 24px;
+                display: none;
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+                @include mobileAndTablet{
+                    display: none !important;
+                }
+
+                &__body{
+                    display: flex;
+                    flex-flow: column nowrap;
+
+
+                    & .nsForm-input, .nsForm-textarea{
+                        width: 100%;
+                        height: 40px;
+                    }
+                }
+                &-control{
+                    margin: 8px 0px;
+                    &:first-child{
+                        margin-top: 0px;
+                    }
+                    &:last-child{
+                        margin-bottom: 0px;
+                    }
+                }
+                &-base{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    margin-top: 8px;
+
+                    & .button{
+                        // width: auto;
+                        margin: 0px 8px;
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+
+                        &:last-child {
+                            margin-right: 0px;
+                        }
+                        
+                    }
+                }
+            }
+
+            &-menu{
+                &::after {
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    background-color: $white;
+                    position: absolute;
+                    top: -12px;
+                    transform: rotate(45deg);
+                    left: 24px;
+                }
+            }
+
+            &-menu__alt {
+                left: unset;
+                ::after {
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    background-color: $white;
+                    position: absolute;
+                    top: -12px;
+                    transform: rotate(45deg);
+                    right: 24px;
                 }
             }
         }
@@ -699,6 +809,10 @@
             }
         }
 
+        & .list-header__action-menu__body,
+        .list-header__action-menu__alt__body{
+            padding: 24px;
+        }
         
 
 

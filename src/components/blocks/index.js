@@ -23,7 +23,7 @@ import ListItemDetails from './ListItemDetails';
 import ListItemDetailMobileModal from './ListItemDetailMobileModal';
 import Modal from './Modal';
 import SelectInputWithoutLabel from './SelectInputWithoutLabel';
-import TextArea from  './TextArea';
+import TextArea from './TextArea';
 import CustomerRecentTransaction from './CustomerRecentTransaction';
 import CustomerInfo from './CustomerInfo';
 import ProductList from './ProductList';
@@ -56,6 +56,10 @@ import HomePageFeatureItem from './HomePageFeatureItem';
 
 import CustomerListItemDetailMobileModal from './CustomerListItemDetailMobileModal';
 import OrderListItemDetailMobileModal from './OrderListItemDetailMobileModal';
+
+import FilterBy from './FilterBy';
+import SortBy from './SortBy';
+import SortByModal from './SortByModal';
 
 export {
   Input,
@@ -108,4 +112,7 @@ export {
   HomePageFeatureItem,
   CustomerListItemDetailMobileModal,
   OrderListItemDetailMobileModal,
+  FilterBy,
+  SortBy,
+  SortByModal,
 };

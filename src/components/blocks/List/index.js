@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { InputWithoutLabel, ListItem } from 'components/blocks';
+import {
+  InputWithoutLabel,
+  ListItem,
+  FilterBy,
+  SortBy,
+} from 'components/blocks';
 import { getStringHash } from 'libs/utils';
 
 const List = ({ payments }) => {
@@ -28,6 +33,7 @@ const List = ({ payments }) => {
               alt="icon"
             />
             <span className="list-header__action-text">Filter By</span>
+            <FilterBy />
           </div>
           <div className="list-header__action">
             <img
@@ -36,6 +42,7 @@ const List = ({ payments }) => {
               alt="icon"
             />
             <span className="list-header__action-text">Sort By</span>
+            <SortBy />
           </div>
         </div>
       </div>
