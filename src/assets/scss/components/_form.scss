@@ -145,6 +145,11 @@
                 box-shadow: none;
             }
         }
+        &--sm{
+            select {
+                height: 40px;
+            }
+        }
     }
 
     &-password{

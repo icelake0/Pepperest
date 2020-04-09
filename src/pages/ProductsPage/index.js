@@ -6,11 +6,12 @@ import { ProductSingleMultiplePage, ProductInstagramPage } from 'pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { PepperestContext } from 'components/helpers/constant';
+import ProductListItemDetailMobileModal from 'components/blocks/ProductListItemDetailMobileModal';
 
 const config = {
   hasAlternateHeader: true,
   links: productInnerRoutes,
-  page: 'products'
+  page: 'products',
 };
 
 const ProductsPage = ({ match }) => (
@@ -30,7 +31,10 @@ const ProductsPage = ({ match }) => (
         </Switch>
       </div>
       <PepperestContext.Consumer>
-        {context => (context.state.showProductModal ? <ProductModal /> : null)}
+        {(context) => (context.state.showProductModal ? <ProductModal /> : null)}
+      </PepperestContext.Consumer>
+      <PepperestContext.Consumer>
+        {(context) => (context.state.showProductListModal ? <ProductListItemDetailMobileModal /> : null)}
       </PepperestContext.Consumer>
     </>
   </>

@@ -1,22 +1,32 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import { PepperestContext } from 'components/helpers/constant';
 
-
-const ListItemDetailMobileModal = () => {
+const OrderListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
 
   return (
     <>
       <div className="list-modal-overlay" />
-      <div className="list-modal" onClick={() => { pepperestContext.updateShowPaymentListModal(false); }} >
-        <div className="list-modal__body" onClick={(event) => { event.stopPropagation(); }}>
+      <div
+        className="list-modal"
+        onClick={() => {
+          pepperestContext.updateShowOrdersListModal(false);
+        }}
+      >
+        <div
+          className="list-modal__body"
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
+        >
           <div className="list-modal__header">
             <div
               className="list-item-detail__container-close"
               onClick={() => {
-                pepperestContext.updateShowPaymentListModal(false);
+                pepperestContext.updateShowOrdersListModal(false);
               }}
             >
               Close
@@ -24,11 +34,9 @@ const ListItemDetailMobileModal = () => {
           </div>
           <ul className="list-modal__list">
             <li className="list-modal__list-item">
-              <p className="list-item-detail__main-item__title">
-                Transaction ID
-              </p>
+              <p className="list-item-detail__main-item__title">Order ID</p>
               <p className="list-item-detail__main-item__details">
-                16835004G6739590D
+                #9999202241
               </p>
             </li>
             <li className="list-modal__list-item">
@@ -39,39 +47,19 @@ const ListItemDetailMobileModal = () => {
             </li>
             <li className="list-modal__list-item">
               <p className="list-item-detail__main-item__title">
-                Transaction Date
+                Order Date
               </p>
               <p className="list-item-detail__main-item__details">
                 January 21, 2019 / 15:00:23pm
               </p>
             </li>
             <li className="list-modal__list-item">
-              <p className="list-item-detail__main-item__title">Payment Name</p>
-              <p className="list-item-detail__main-item__details">
-                Ina Ankara Payment
-              </p>
-            </li>
-            <li className="list-modal__list-item">
               <p className="list-item-detail__main-item__title">
-                Delivery Date
+                Total Amount
               </p>
               <p className="list-item-detail__main-item__details">
-                13th - 15th August ( Your expected delivery date is 2 days from
-                payment date.)
+                NGN 530,600
               </p>
-            </li>
-            <li className="list-modal__list-item">
-              <div className="list-item__payment-container">
-                <div>
-                  <p className="list-item-detail__main-item__title">Amount</p>
-                  <p className="list-item-detail__main-item__details">
-                    NGN 530,600
-                  </p>
-                </div>
-                <div className="button button-md button--orange">
-                  Make Payment
-                </div>
-              </div>
             </li>
             <li className="list-modal__list-item">
               <p className="list-item-detail__main-item__title">
@@ -83,28 +71,44 @@ const ListItemDetailMobileModal = () => {
             </li>
             <li className="list-modal__list-item">
               <p className="list-item-detail__main-item__title">Status</p>
-              <p className="list-item-detail__main-item__details list-item__status-text text--pending">
-                Pending, Due in 4 days
+              <p className="list-item-detail__main-item__details list-item__status-text text--active">
+                Active
               </p>
             </li>
             <li className="list-modal__list-item">
               <p className="list-item-detail__main-item__title">
-                Payment Description
+                Delivery Addresss
               </p>
               <p className="list-item-detail__main-item__details">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque id nisl urna. Aenean eget blandit magna, sit amet
-                posuere erat. Integer posuere odio tincidunt velit ornare,
-                feugiat venenatis
+                40 Abiodun Alakemo str, off ikorodu road, ketu, lagos state.
               </p>
             </li>
+            <li className="list-modal__list-item">
+              <p className="list-item-detail__main-item__title">
+                Items in Order
+              </p>
+              <div className="list-item__details-product__image-container">
+                <img className="list-item__details-product__image" src="/assets/images/product.jpeg" alt="product" />
+                <img className="list-item__details-product__image" src="/assets/images/product.jpeg" alt="product" />
+                <img className="list-item__details-product__image" src="/assets/images/product.jpeg" alt="product" />
+                <img className="list-item__details-product__image" src="/assets/images/product.jpeg" alt="product" />
+              </div>
+            </li>
+            <li className="list-modal__list-item">
+              <p className="list-item-detail__main-item__title">
+                Payment Method
+              </p>
+              <p className="list-item-detail__main-item__details">
+                Flutterwave
+              </p>
+            </li>
+
             <div className="list-modal__list-item list-modal__list-item__alternate">
-              <div className="button button-md button--grey">Print Receipt</div>
               <div className="button button-md button--grey">
-                Report an issue
+                Print Receipt
               </div>
               <div className="button button-md button--grey">
-                Refund customer
+                Report an issue
               </div>
             </div>
           </ul>
@@ -114,4 +118,4 @@ const ListItemDetailMobileModal = () => {
   );
 };
 
-export default ListItemDetailMobileModal;
+export default OrderListItemDetailMobileModal;
