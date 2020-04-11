@@ -1,14 +1,19 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import {
   InputWithoutLabel,
   SelectInputWithoutLabel,
 } from 'components/blocks';
+import PropTypes from 'prop-types';
 
-const FilterBy = () => {
+
+const FilterBy = ({ isActive }) => {
   const [state, setState] = useState({});
 
   return (
-    <div className="list-header__action-menu">
+    <div className="list-header__action-menu" style={{ display: isActive ? 'block' : 'none' }} onClick={(event) => { event.stopPropagation(); }}>
       <form
         className="list-header__action-menu__body"
         onSubmit={(event) => {
@@ -78,6 +83,15 @@ const FilterBy = () => {
       </form>
     </div>
   );
+};
+
+
+FilterBy.defaultProps = {
+  isActive: false,
+};
+
+FilterBy.propTypes = {
+  isActive: PropTypes.bool,
 };
 
 export default FilterBy;

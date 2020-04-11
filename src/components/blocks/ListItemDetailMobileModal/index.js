@@ -1,17 +1,46 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useContext } from 'react';
+import React, {
+  useContext, useRef, useEffect, useState,
+} from 'react';
 import { PepperestContext } from 'components/helpers/constant';
+
 
 
 const ListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
+  const ref = useRef(null);
+  const [style, setStyle] = useState({});
+  
+  // useEffect(() => {
+  //   // setStyle({
+  //   //   top: ref.current.clientHeight >= (window.innerHeight - 350) ? '350px' : 'unset',
+  //   //   bottom: ref.current.clientHeight >= (window.innerHeight - 350) ? 'unset' : '0',
+  //   // });
 
+  //   const r = new MutationObserver((mutations) => {
+  //     console.log('size changed!');
+  //   });
+  //   r.observe(document.getElementById('elem'));
+  // }, [ref]);
   return (
     <>
       <div className="list-modal-overlay" />
-      <div className="list-modal" onClick={() => { pepperestContext.updateShowPaymentListModal(false); }} >
-        <div className="list-modal__body" onClick={(event) => { event.stopPropagation(); }}>
+      <div
+        className="list-modal"
+        onClick={() => {
+          pepperestContext.updateShowPaymentListModal(false);
+        }}
+      >
+        <div
+          className="list-modal__body"
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
+          ref={ref}
+          style={style}
+          id="elem"
+        >
           <div className="list-modal__header">
             <div
               className="list-item-detail__container-close"

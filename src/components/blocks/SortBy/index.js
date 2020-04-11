@@ -1,11 +1,14 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { SelectInputWithoutLabel } from 'components/blocks';
 
-const SortBy = () => {
+const SortBy = ({ isActive }) => {
   const [state, setState] = useState({});
 
   return (
-    <div className="list-header__action-menu__alt">
+    <div className="list-header__action-menu__alt" style={{ display: isActive ? 'block' : 'none' }} onClick={(event) => { event.stopPropagation(); }}>
       <form
         className="list-header__action-menu__body"
         onSubmit={(event) => {
@@ -33,6 +36,14 @@ const SortBy = () => {
       </form>
     </div>
   );
+};
+
+SortBy.defaultProps = {
+  isActive: false,
+};
+
+SortBy.propTypes = {
+  isActive: PropTypes.bool,
 };
 
 export default SortBy;

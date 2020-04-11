@@ -10,6 +10,8 @@ const PepperestProvider = (props) => {
     showCustomerListModal: false,
     showProductListModal: false,
     showOrdersListModal: false,
+    showFilterModal: false,
+    showSortModal: false,
   });
   return (
     <PepperestContext.Provider
@@ -32,6 +34,12 @@ const PepperestProvider = (props) => {
         },
         updateShowOrdersListModal: (value) => {
           setLocalState({ ...localState, showOrdersListModal: value });
+        },
+        updateShowFilterModal: (value) => {
+          setLocalState({ ...localState, showFilterModal: value });
+        },
+        updateShowSortModal: (value) => {
+          setLocalState({ ...localState, showSortModal: value });
         },
       }}
     >

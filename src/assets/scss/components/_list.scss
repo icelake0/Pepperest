@@ -47,8 +47,14 @@
             transition: all 0.2s ease-in-out;
             position: relative;
 
-            &:hover{
-                background-color: $white;
+            
+            @include desktop{
+                &:hover {
+                    background-color: $white;
+                }
+                &.active {
+                    background-color: $white;
+                }
             }
             @include desktop{
                 min-width: 104px;
@@ -75,28 +81,28 @@
             }
             &:first-child{
                 margin-left: 0px;
-                &:hover{
-                    @include desktop{
-                        & .list-header__action-menu {
-                            display: block;
-                            opacity: 1;
-                        }
+                // &:hover{
+                //     @include desktop{
+                //         & .list-header__action-menu {
+                //             display: block;
+                //             opacity: 1;
+                //         }
                         
-                    }
-                }
+                //     }
+                // }
             }
             &:last-child{
                 margin-right: 0px;
                 
-                &:hover {
-                    @include desktop {
-                        & .list-header__action-menu__alt {
-                            display: block;
-                            opacity: 1;
-                        }
+                // &:hover {
+                //     @include desktop {
+                //         & .list-header__action-menu__alt {
+                //             display: block;
+                //             opacity: 1;
+                //         }
 
-                    }
-                }
+                //     }
+                // }
             }
 
             &-icon{
@@ -727,10 +733,11 @@
         }
 
         &__body {
-             position: relative;
-             top: 350px;
+             position: absolute;
+            //  top: 350px;
              left: 0;
              right: 0;
+             bottom: 0;
              height: auto;
              z-index: 1000;
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);

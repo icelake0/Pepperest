@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputWithoutLabel, ProductListItem } from 'components/blocks';
+import { InputWithoutLabel, ProductListItem, ListHeader } from 'components/blocks';
 import { products } from 'libs/constants';
 import { getStringHash } from 'libs/utils';
 
@@ -9,47 +9,7 @@ const ProductList = () => {
 
   return (
     <div className="list">
-      <div className="list-header">
-        <InputWithoutLabel
-          name="search"
-          type="text"
-          placeholder="Search Product/Services"
-          id="search"
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-        />
-
-        <div className="list-header__actions">
-          <div className="list-header__action list-header__action--alt">
-            <img
-              className="list-header__action-icon"
-              src="/assets/images/svg/import.svg"
-              alt="icon"
-            />
-            <span className="list-header__action-text list-header__action-text--alt">
-              Import from Instagram
-            </span>
-          </div>
-          <div className="list-header__action">
-            <img
-              className="list-header__action-icon"
-              src="/assets/images/svg/filter.svg"
-              alt="icon"
-            />
-            <span className="list-header__action-text">Filter By</span>
-          </div>
-          <div className="list-header__action">
-            <img
-              className="list-header__action-icon"
-              src="/assets/images/svg/sort.svg"
-              alt="icon"
-            />
-            <span className="list-header__action-text">Sort By</span>
-          </div>
-        </div>
-      </div>
+      <ListHeader isProduct />
       <div className="list-body">
         <ul>
           {products

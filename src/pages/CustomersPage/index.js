@@ -3,6 +3,8 @@ import { withDefaultLayout } from 'components/layouts';
 import {
   CustomerList,
   CustomerListItemDetailMobileModal,
+  FilterByModal,
+  SortByModal,
 } from 'components/blocks';
 import { customers } from 'libs/constants';
 
@@ -18,6 +20,12 @@ const CustomersPage = () => (
     </div>
     <PepperestContext.Consumer>
       {context => (context.state.showCustomerListModal ? <CustomerListItemDetailMobileModal /> : null)}
+    </PepperestContext.Consumer>
+    <PepperestContext.Consumer>
+      {(context) => (context.state.showFilterModal ? <FilterByModal /> : null)}
+    </PepperestContext.Consumer>
+    <PepperestContext.Consumer>
+      {(context) => (context.state.showSortModal ? <SortByModal /> : null)}
     </PepperestContext.Consumer>
   </>
 );

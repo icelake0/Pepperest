@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
-import { Modal, ListItemDetailMobileModal, SortByModal } from 'components/blocks';
+import { Modal, ListItemDetailMobileModal, FilterByModal ,SortByModal } from 'components/blocks';
 import { paymentInnerRoutes } from 'config/inner-routes';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import {
@@ -52,7 +52,12 @@ const PaymentPage = ({ match }) => (
     <PepperestContext.Consumer>
       {(context) => (context.state.showPaymentModal ? <Modal /> : null)}
     </PepperestContext.Consumer>
-    {/* <SortByModal /> */}
+    <PepperestContext.Consumer>
+      {(context) => (context.state.showFilterModal ? <FilterByModal /> : null)}
+    </PepperestContext.Consumer>
+    <PepperestContext.Consumer>
+      {(context) => (context.state.showSortModal ? <SortByModal /> : null)}
+    </PepperestContext.Consumer>
   </>
 );
 
