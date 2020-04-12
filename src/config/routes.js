@@ -1,20 +1,19 @@
-import {
-  Register,
-  Login,
-  UpdatePassword,
-  ForgotPassword,
-  PaymentPage,
-  CustomersPage,
-  OrdersPage,
-  ProductsPage,
-  PaymentPageWithOnBoarding,
-  CustomersPageWithOnBoarding,
-  ProductPageWithOnBoarding,
-  HomePage,
-  UserAccountPage,
-  MerchantProductsPage
-} from 'pages';
+import React, { lazy } from 'react';
 
+const Register = lazy(() => import('pages/Register'));
+const Login = lazy(() => import('pages/Login'));
+const UpdatePassword = lazy(() => import('pages/UpdatePassword'));
+const ForgotPassword = lazy(() => import('pages/ForgotPassword'));
+const PaymentPage = lazy(() => import('pages/PaymentPage'));
+const CustomersPage = lazy(() => import('pages/CustomersPage'));
+const OrdersPage = lazy(() => import('pages/OrdersPage'));
+const ProductsPage = lazy(() => import('pages/ProductsPage'));
+const PaymentPageWithOnBoarding = lazy(() => import('pages/PaymentPageWithOnBoarding'));
+const CustomersPageWithOnBoarding = lazy(() => import('pages/CustomersPageWithOnBoarding'));
+const ProductPageWithOnBoarding = lazy(() => import('pages/ProductPageWithOnBoarding'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const UserAccountPage = lazy(() => import('pages/UserAccountPage'));
+const MerchantProductsPage = lazy(() => import('pages/MerchantProductsPage'));
 
 const routes = [
   {
