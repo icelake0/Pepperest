@@ -14,12 +14,12 @@ import { PepperestContext } from 'components/helpers/constant';
 const CustomersPage = () => (
   <>
     <div className="payment">
-      <CustomerList
-        customers={customers}
-      />
+      <CustomerList customers={customers} />
     </div>
     <PepperestContext.Consumer>
-      {context => (context.state.showCustomerListModal ? <CustomerListItemDetailMobileModal /> : null)}
+      {(context) => (context.state.showCustomerListModal ? (
+        <CustomerListItemDetailMobileModal />
+      ) : null)}
     </PepperestContext.Consumer>
     <PepperestContext.Consumer>
       {(context) => (context.state.showFilterModal ? <FilterByModal /> : null)}

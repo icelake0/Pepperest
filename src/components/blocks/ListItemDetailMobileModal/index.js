@@ -1,28 +1,29 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, {
-  useContext, useRef, useEffect, useState,
+  useContext, useRef, useEffect, useState, useLayoutEffect,
 } from 'react';
 import { PepperestContext } from 'components/helpers/constant';
-
-
+import useResizeObserver from 'components/customHook/useResizeObserver';
 
 const ListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
-  const ref = useRef(null);
-  const [style, setStyle] = useState({});
-  
-  // useEffect(() => {
-  //   // setStyle({
-  //   //   top: ref.current.clientHeight >= (window.innerHeight - 350) ? '350px' : 'unset',
-  //   //   bottom: ref.current.clientHeight >= (window.innerHeight - 350) ? 'unset' : '0',
-  //   // });
+  const [ref, { contentRect }] = useResizeObserver();
+  const [state, setState] = useState({ style: {} });
 
-  //   const r = new MutationObserver((mutations) => {
-  //     console.log('size changed!');
-  //   });
-  //   r.observe(document.getElementById('elem'));
-  // }, [ref]);
+  useEffect(() => {
+    if (contentRect) {
+      setState({
+        ...state,
+        style: {
+          top:
+            contentRect.height >= window.innerHeight - 350 ? '350px' : 'unset',
+          bottom:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '0',
+        },
+      });
+    }
+  }, [contentRect]);
   return (
     <>
       <div className="list-modal-overlay" />
@@ -38,8 +39,7 @@ const ListItemDetailMobileModal = () => {
             event.stopPropagation();
           }}
           ref={ref}
-          style={style}
-          id="elem"
+          style={state.style}
         >
           <div className="list-modal__header">
             <div

@@ -2,24 +2,34 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, {
-  useContext, useState, useRef, useEffect,
+  useContext,
+  useState,
+  useEffect,
 } from 'react';
 import { PepperestContext } from 'components/helpers/constant';
+import useResizeObserver from 'components/customHook/useResizeObserver';
 
 
 const CustomerListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
   const [state, setState] = useState({ isRecentTransactionActive: false, style: {} });
-  const ref = useRef(null);
+  const [ref, { contentRect }] = useResizeObserver();
+
   useEffect(() => {
-    setState({
-      ...state,
-      style: {
-        top: ref.current.clientHeight >= (window.innerHeight - 350) ? '350px' : 'unset',
-        bottom: ref.current.clientHeight >= (window.innerHeight - 350) ? 'unset' : '0',
-      },
-    });
-  }, [ref]);
+    if (contentRect) {
+      setState({
+        ...state,
+        style: {
+          top:
+            contentRect.height >= window.innerHeight - 350 ? '350px' : 'unset',
+          bottom:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '0',
+          minHeight:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '500px',
+        },
+      });
+    }
+  }, [contentRect]);
 
   const handleToggle = () => {
     setState({ ...state, isRecentTransactionActive: !state.isRecentTransactionActive });

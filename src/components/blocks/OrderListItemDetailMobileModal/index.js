@@ -5,17 +5,27 @@ import React, {
   useContext, useRef, useEffect, useState,
 } from 'react';
 import { PepperestContext } from 'components/helpers/constant';
+import useResizeObserver from 'components/customHook/useResizeObserver';
+
 
 const OrderListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
-  const ref = useRef(null);
-  const [style, setStyle] = useState({});
+  const [ref, { contentRect }] = useResizeObserver();
+  const [state, setState] = useState({ style: {} });
+
   useEffect(() => {
-    setStyle({
-      top: ref.current.clientHeight >= (window.innerHeight - 350) ? '350px' : 'unset',
-      bottom: ref.current.clientHeight >= (window.innerHeight - 350) ? 'unset' : '0',
-    });
-  }, [ref]);
+    if (contentRect) {
+      setState({
+        ...state,
+        style: {
+          top:
+            contentRect.height >= window.innerHeight - 350 ? '350px' : 'unset',
+          bottom:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '0',
+        },
+      });
+    }
+  }, [contentRect]);
 
   return (
     <>
@@ -32,7 +42,7 @@ const OrderListItemDetailMobileModal = () => {
             event.stopPropagation();
           }}
           ref={ref}
-          style={style}
+          style={state.style}
         >
           <div className="list-modal__header">
             <div
