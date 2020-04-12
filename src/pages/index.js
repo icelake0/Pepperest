@@ -34,6 +34,9 @@ import LinkMediaAccountPage from './LinkMediaAccountPage';
 import OrderDashboard from './OrderDashboard';
 import OrderAll from './OrderAll';
 
+
+import MerchantProductsPage from './MerchantProductsPage';
+
 export {
   Login,
   Register,
@@ -64,4 +67,5 @@ export {
   LinkMediaAccountPage,
   OrderDashboard,
   OrderAll,
+  MerchantProductsPage,
 };
