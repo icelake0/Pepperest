@@ -1,12 +1,36 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useContext, useState } from 'react';
+import React, {
+  useContext,
+  useState,
+  useEffect,
+} from 'react';
 import { PepperestContext } from 'components/helpers/constant';
+import useResizeObserver from 'components/customHook/useResizeObserver';
+
 
 const CustomerListItemDetailMobileModal = () => {
   const pepperestContext = useContext(PepperestContext);
-  const [state, setState] = useState({ isRecentTransactionActive: false });
+  const [state, setState] = useState({ isRecentTransactionActive: false, style: {} });
+  const [ref, { contentRect }] = useResizeObserver();
+
+  useEffect(() => {
+    if (contentRect) {
+      setState({
+        ...state,
+        style: {
+          top:
+            contentRect.height >= window.innerHeight - 350 ? '350px' : 'unset',
+          bottom:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '0',
+          minHeight:
+            contentRect.height >= window.innerHeight - 350 ? 'unset' : '500px',
+        },
+      });
+    }
+  }, [contentRect]);
+
   const handleToggle = () => {
     setState({ ...state, isRecentTransactionActive: !state.isRecentTransactionActive });
   };
@@ -22,7 +46,12 @@ const CustomerListItemDetailMobileModal = () => {
           pepperestContext.updateShowCustomerListModal(false);
         }}
       >
-        <div className="list-modal__body" onClick={(event) => {event.stopPropagation(); }}>
+        <div
+          className="list-modal__body"
+          onClick={(event) => { event.stopPropagation(); }}
+          ref={ref}
+          style={state.style}
+        >
           <div className="list-modal__header py-0">
             <h4
               className={`list-modal__header-label ${
@@ -113,7 +142,7 @@ const CustomerListItemDetailMobileModal = () => {
                     </div>
                   </div>
                 </li>
-                <li className="list-modal__list-item list-modal__list-item--alt">
+                {/* <li className="list-modal__list-item list-modal__list-item--alt">
                   <p className="list-item-detail__main-item__title">
                     NGN 5,0000
                   </p>
@@ -182,7 +211,7 @@ const CustomerListItemDetailMobileModal = () => {
                       Awaiting Payment
                     </div>
                   </div>
-                </li>
+                </li> */}
                 <div className="list-modal__list-item list-modal__list-item__alternate">
                   <div className="button button-md button--grey">
                     View All Transactions

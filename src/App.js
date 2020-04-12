@@ -1,11 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import {
   BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 import { PageNotFound } from 'pages';
 import { getStringHash } from 'libs/utils';
 import PepperestProvider from 'components/helpers/PepperestProvider';
+
 
 import './assets/scss/styles.scss';
 import routes from 'config/routes';

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { PepperestContext } from 'components/helpers/constant';
 import { SelectInputWithoutLabel } from 'components/blocks';
 
@@ -8,7 +8,14 @@ import { SelectInputWithoutLabel } from 'components/blocks';
 const SortByModal = () => {
   const [state, setState] = useState({});
   const pepperestContext = useContext(PepperestContext);
-
+  const ref = useRef(null);
+  const [style, setStyle] = useState({});
+  useEffect(() => {
+    setStyle({
+      top: ref.current.clientHeight >= (window.innerHeight - 350) ? '350px' : 'unset',
+      bottom: ref.current.clientHeight >= (window.innerHeight - 350) ? 'unset' : '0',
+    });
+  }, [ref]);
 
   return (
     <>
@@ -16,7 +23,7 @@ const SortByModal = () => {
       <div
         className="list-modal"
         onClick={() => {
-          pepperestContext.updateShowPaymentListModal(false);
+          pepperestContext.updateShowSortModal(false);
         }}
       >
         <div
@@ -24,6 +31,8 @@ const SortByModal = () => {
           onClick={(event) => {
             event.stopPropagation();
           }}
+          ref={ref}
+          style={style}
         >
           <div className="list-modal__header">
             <p className="text--small text--black">Sort By</p>
@@ -31,7 +40,7 @@ const SortByModal = () => {
             <div
               className="list-item-detail__container-close"
               onClick={() => {
-                pepperestContext.updateShowPaymentListModal(false);
+                pepperestContext.updateShowSortModal(false);
               }}
             >
               Close

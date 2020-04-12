@@ -1,6 +1,6 @@
 import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
-import { ProductModal } from 'components/blocks';
+import { ProductModal, FilterByModal, SortByModal } from 'components/blocks';
 import { productInnerRoutes } from 'config/inner-routes';
 import { ProductSingleMultiplePage, ProductInstagramPage } from 'pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -35,6 +35,12 @@ const ProductsPage = ({ match }) => (
       </PepperestContext.Consumer>
       <PepperestContext.Consumer>
         {(context) => (context.state.showProductListModal ? <ProductListItemDetailMobileModal /> : null)}
+      </PepperestContext.Consumer>
+      <PepperestContext.Consumer>
+        {(context) => (context.state.showFilterModal ? <FilterByModal /> : null)}
+      </PepperestContext.Consumer>
+      <PepperestContext.Consumer>
+        {(context) => (context.state.showSortModal ? <SortByModal /> : null)}
       </PepperestContext.Consumer>
     </>
   </>

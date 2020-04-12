@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend Application for Pepperest
 
-## Available Scripts
+> This the Frontend Code base for the Pepperest.
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+- `git clone https://github.com/MyloCarson/pepperest.git`
+- cd into the folder or directory
+- run `yarn` or `yarn install`
+  
+  #Step 1
+- `yarn start`
+- open browser `http://localhost:3000`
+-
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Notice
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- For every task you, **DON'T** push to Master!!!
+- Create a well detailed Pull Request please. Add screenshots of tasks done. So we wont take time to review your PR.
+- Thanks . Enjoy!!!
 
-### `yarn test`
+### Assets
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Media
 
-### `yarn build`
+Media ranging from fonts, images and svgs can be found in this path
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **pepperest**
+  - **public**
+    - **assets**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> Stylesheets
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All stylesheets can be found in the path
 
-### `yarn eject`
+- **pepperest**
+  - **src**
+    - **assets**
+    - **scss**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Others
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Reusable components are divided into
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - blocks - components that can be alone and not used everywhere
+  - shared - components that are used in multiples places; example header, buttons, avatar, e.t.c
+  - vectors - components for vectors like svg
+  - layouts - components that houses all other components, e.g default page layouts, authentication page layout, e.t.c
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  All re-useable components can be found at path.
 
-## Learn More
+  - **pepperest**
+    - **src**
+      - **components**
+      - **blocks**
+        - [index.js](src/components/blocks/index.js)
+      - **shared**
+        - [index.js](src/components/shared/index.js)
+      - **vectors**
+        - [index.js](src/components/vectors/index.js)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Pages can be found at this path
+  - **pepperest**
+    - **src**
+      - **pages**
+        - [index.js](src/pages/index.js)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Routes configurations can be found at this path
+  - **pepperest**
+    - **src**
+      - **config**
 
-### Code Splitting
+- Dummy data can be found at this path
+  - **pepperest**
+    - **src**
+      - **libs**
+        - **constants**
+          - [index.js](src/libs/constants/index.js)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Utility functions can be found at this path
+  - **pepperest**
+    - **src**
+      - **libs**
+        - **utils**
+          - [index.js](src/libs/utils/index.js)
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Helper Components and Context can be found at this path
+  - **pepperest**
+    - **src**
+      - **components**
+        - **helpers**

@@ -12,6 +12,7 @@ import {
   ProductPageWithOnBoarding,
   HomePage,
   UserAccountPage,
+  MerchantProductsPage
 } from 'pages';
 
 
@@ -92,6 +93,12 @@ const routes = [
     path: '/orders',
     exact: false,
     component: OrdersPage,
+    isProtected: false,
+  },
+  {
+    path: '/merchant',
+    exact: true,
+    component: MerchantProductsPage,
     isProtected: false,
   },
 ];
