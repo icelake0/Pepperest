@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 // import { Helmet } from 'react-helmet';
 import {
   BrowserRouter as Router, Route, Switch, Redirect,
@@ -15,23 +15,24 @@ function App() {
   return (
     <PepperestProvider>
       <Router>
-        <Switch>
-          {routes.map(({
-            path, component, exact, isProtected,
-          }) => (
-            <Route
-              key={getStringHash(path)}
-              path={path}
-              exact={exact}
-              component={component}
-            />
-          ))}
-          <Route path="/404" component={PageNotFound} />
-          <Redirect to={{ pathname: '/404' }} />
-        </Switch>
+        <Suspense fallback={<div>Loading....</div>}>
+          <Switch>
+            {routes.map(({
+              path, component, exact, isProtected,
+            }) => (
+              <Route
+                key={getStringHash(path)}
+                path={path}
+                exact={exact}
+                component={component}
+              />
+            ))}
+            <Route path="/404" component={PageNotFound} />
+            <Redirect to={{ pathname: '/404' }} />
+          </Switch>
+        </Suspense>
       </Router>
     </PepperestProvider>
-
   );
 }
 
