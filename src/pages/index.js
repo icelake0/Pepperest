@@ -36,6 +36,7 @@ import OrderAll from './OrderAll';
 
 
 import MerchantProductsPage from './MerchantProductsPage';
+import CheckoutPage from './CheckoutPage';
 
 export {
   Login,
@@ -68,4 +69,5 @@ export {
   OrderDashboard,
   OrderAll,
   MerchantProductsPage,
+  CheckoutPage,
 };

@@ -19,6 +19,7 @@ import OrangeRightArrowIcon from './OrangeRightArrowIcon';
 import UpChevron from './UpChevron';
 import HamburgerIcon from './HamburgerIcon';
 import BackArrow from './BackArrow';
+import ProductIcon from './ProductIcon';
 
 
 export {
@@ -43,4 +44,5 @@ export {
   UpChevron,
   HamburgerIcon,
   BackArrow,
+  ProductIcon,
 };

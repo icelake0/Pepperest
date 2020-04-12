@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, HeaderAlternate } from 'components/shared';
+import { Header, HeaderAlternate, CommonHeader } from 'components/shared';
 import { SettingsNavigationBar } from 'components/blocks';
 
 export default function withDefaultLayout(WrappedComponent, data = {}) {
@@ -8,6 +8,7 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
       super(props);
       this.state = {
         isSettings: false,
+        hasCommonHeader: false,
         ...data,
         ...props,
         isDesktop: false,
@@ -31,7 +32,14 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
 
     render() {
       const {
-        hasAlternateHeader, isSettings, links, page, isDesktop,
+        hasAlternateHeader,
+        isSettings,
+        links,
+        page,
+        isDesktop,
+        hasCommonHeader,
+        showCart,
+        commonHeaderTitle,
       } = this.state;
       return (
         <>
@@ -46,7 +54,13 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
           {hasAlternateHeader && isSettings && !isDesktop ? (
             <HeaderAlternate links={links} page={page} />
           ) : null}
-          <div className="max-content">
+          {hasCommonHeader ? (
+            <CommonHeader
+              commonHeaderTitle={commonHeaderTitle}
+              showCart={showCart}
+            />
+          ) : null}
+          <div className='max-content'>
             <WrappedComponent {...this.props} />
           </div>
         </>
