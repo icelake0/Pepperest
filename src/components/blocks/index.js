@@ -63,6 +63,9 @@ import SortBy from './SortBy';
 import SortByModal from './SortByModal';
 import FilterByModal from './FilterByModal';
 
+import MerchantProductCard from './MerchantProductCard';
+import CartItem from './CartItem';
+
 export {
   Input,
   InputWithoutLabel,
@@ -118,5 +121,7 @@ export {
   FilterBy,
   SortBy,
   SortByModal,
-  FilterByModal
+  FilterByModal,
+  MerchantProductCard,
+  CartItem,
 };

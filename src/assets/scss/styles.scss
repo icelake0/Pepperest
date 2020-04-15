@@ -18,6 +18,7 @@
 @import 'components/radio';
 @import 'components/badge';
 @import 'components/card';
+@import 'components/merchant';
 
 @import 'layout/auth';
 
@@ -27,6 +28,10 @@
 @import 'pages/user-account';
 @import 'pages/order';
 @import 'pages/homepage';
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/confirmation';
+
 
 
 @import 'globals';

@@ -36,6 +36,9 @@ import OrderAll from './OrderAll';
 
 
 import MerchantProductsPage from './MerchantProductsPage';
+import CheckoutPage from './CheckoutPage';
+import ShoppingCartPage from './ShoppingCartPage';
+import ConfirmationPage from './ConfirmationPage';
 
 export {
   Login,
@@ -68,4 +71,6 @@ export {
   OrderDashboard,
   OrderAll,
   MerchantProductsPage,
+  CheckoutPage,
+  ShoppingCartPage,
 };

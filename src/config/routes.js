@@ -14,6 +14,9 @@ const ProductPageWithOnBoarding = lazy(() => import('pages/ProductPageWithOnBoar
 const HomePage = lazy(() => import('pages/HomePage'));
 const UserAccountPage = lazy(() => import('pages/UserAccountPage'));
 const MerchantProductsPage = lazy(() => import('pages/MerchantProductsPage'));
+const CheckoutPage = lazy(() => import('pages/CheckoutPage'));
+const ShoppingCartPage = lazy(() => import('pages/ShoppingCartPage'));
+const ConfirmationPage = lazy(() => import('pages/ConfirmationPage'));
 
 const routes = [
   {
@@ -50,55 +53,73 @@ const routes = [
     path: '/payments',
     exact: false,
     component: PaymentPage,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/payment-onboarding',
     exact: true,
     component: PaymentPageWithOnBoarding,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/customers',
     exact: true,
     component: CustomersPage,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/customers-onboarding',
     exact: true,
     component: CustomersPageWithOnBoarding,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/products',
     exact: false,
     component: ProductsPage,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/products-onboarding',
     exact: true,
     component: ProductPageWithOnBoarding,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/user-account',
     exact: false,
     component: UserAccountPage,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/orders',
     exact: false,
     component: OrdersPage,
-    isProtected: false,
+    isProtected: true,
   },
   {
     path: '/merchant',
     exact: true,
     component: MerchantProductsPage,
     isProtected: false,
+  },
+  {
+    path: '/checkout',
+    exact: true,
+    component: CheckoutPage,
+    isProtected: true,
+  },
+  {
+    path: '/cart',
+    exact: true,
+    component: ShoppingCartPage,
+    isProtected: true,
+  },
+  {
+    path: '/confirm',
+    exact: true,
+    component: ConfirmationPage,
+    isProtected: true,
   },
 ];
 
