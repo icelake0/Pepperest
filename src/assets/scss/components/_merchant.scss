@@ -38,9 +38,10 @@
                 font-weight: 600;
                 margin-top: 8px;
                 margin-bottom: 4px;
-                white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
             &__info{
                 width: 100%;
@@ -55,18 +56,10 @@
                 text-align: left;
                 margin-top: 4px;
                 margin-bottom: 16px;
-                white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
-                // max-height: 36px;
-                // overflow: hidden;
-                // position: relative;
-                // &::before {
-                //     content: "...";
-                //     position: absolute;
-                //     bottom: 0;
-                //     right: 0;
-                // }
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
 
             &__amount{

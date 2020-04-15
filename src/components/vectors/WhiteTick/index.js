@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const WhiteTick = props => (
+const WhiteTick = (props) => (
   <svg
-  className="icon"
+    className="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="8"
     height="6"
@@ -16,5 +16,4 @@ const WhiteTick = props => (
   </svg>
 );
 
-export default WhiteTick
-
+export default WhiteTick;

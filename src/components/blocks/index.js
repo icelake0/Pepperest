@@ -64,6 +64,7 @@ import SortByModal from './SortByModal';
 import FilterByModal from './FilterByModal';
 
 import MerchantProductCard from './MerchantProductCard';
+import CartItem from './CartItem';
 
 export {
   Input,
@@ -122,4 +123,5 @@ export {
   SortByModal,
   FilterByModal,
   MerchantProductCard,
+  CartItem,
 };
