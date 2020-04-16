@@ -10,20 +10,23 @@ const config = {
   showCart: false,
   commonHeaderTitle: 'Shopping Cart',
   links: [],
-  page: 'shoppingCart',
+  // page: 'shoppingCart',
+  page: 'settings',
+  isSettings: true,
+  navBarTitle: 'Shopping Cart',
 };
 const ShoppingCartPage = ({ history }) => (
   <>
-    <div className="mt-5 cart">
+    <div className="cart">
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-12 col-lg-8">
           <div className="cart-list">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
               <CartItem key={getStringHash()} />
             ))}
           </div>
         </div>
-        <div className="col-md-4 summary">
+        <div className="col-12 col-lg-4 summary">
           <div className="pcard">
             <div className="pcard-header p-3">
               <p className="text--smaller text-font--medium ">
@@ -52,7 +55,6 @@ const ShoppingCartPage = ({ history }) => (
         </div>
       </div>
     </div>
-    ;
   </>
 );
 

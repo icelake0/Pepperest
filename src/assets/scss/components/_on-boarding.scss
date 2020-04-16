@@ -1,20 +1,40 @@
 .on-boarding{
-    width: 1024px;
-    height: 400px;
+    
     background: $white;
-    padding: 48px;
+    padding: 24px;
     box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
     border-radius: $border-radius-1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
+    @include desktop{
+        // width: 1024px;
+        height: 400px;
+        padding: 48px;
+    }
+    &-wrapper{
+        padding-top: 24px;
+        padding-right: 16px;
+        padding-left: 16px;
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
     &-container{
-        position: absolute;
+        position: relative;
         top: 24px;
         left: 0;
         right: 0;
-        z-index: 1000;
+        // z-index: 1000;
+        // padding-left: 16px;
+        // padding-right: 16px;
+
+        @include desktop{
+            padding: 0;
+        }
         // height: 500px;
     }
 
@@ -24,39 +44,67 @@
         flex-direction: column;
     }
     &__title{
-        width: 317px;
+        
         font-family: $secondary-font;
         font-size: $font-size-8;
         line-height: 1.25;
         color: $black;
         margin-bottom: 12px;
+        text-align: center;
+
+        @include desktop{
+            text-align: left;
+            width: 317px;
+        }
     }
     &__info{
-        width: 328px;
+        
         opacity: 0.8;
         font-size: $font-size-2;
         line-height: 1.71;
         color: $dark;
         margin-top: 12px;
+        text-align: center;
+
+        @include desktop{
+            text-align: left;
+            width: 328px;
+        }
+    }
+    &__actions{
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+
+        @include desktop {
+            flex-direction: row;
+        }
     }
 
     & .button{
-        width: 160px;
+        width: 100%;
         height: 40px;
         display: flex;
         flex-direction:column;
         align-items: center;
         justify-content: center;
-        margin-top: auto;
-        margin-right: 8px;
-        margin-left: 8px;
+        margin-top: 24px;
+
+        @include desktop{
+            width: 160px;
+            margin-top: auto;
+            margin-right: 8px;
+            margin-left: 8px;
+        }
 
         &:first-child {
             margin-left: 0px;
         }
         &:last-child{
             margin-right: 0px;
-            width: 184px;
+            @include desktop{
+                width: 184px;
+            }
         }
     }
 
@@ -65,7 +113,11 @@
         
         &__container{
             height: 100%;
+            display: none;
 
+            @include desktop{
+                display: block;
+            }
             
         }
     }

@@ -11,6 +11,8 @@ const config = {
   commonHeaderTitle: 'Confirmation',
   links: [],
   page: 'checkout',
+  isSettings: true,
+  navBarTitle: 'Confirmation',
 };
 const ConfirmationPage = () => (
   <div className="confirmation">

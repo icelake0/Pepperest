@@ -1,9 +1,11 @@
 .merchant{
-    margin-top: 32px;
     margin-bottom: 150px;
     padding-top: 24px;
     padding-right: 16px;
     padding-left: 16px;
+    @include desktop{
+        margin-top: 32px;
+    }
 
     @include desktop {
         padding-right: 0px;
@@ -16,16 +18,69 @@
     }
     &-product{
         &-card{
-            height: 424px;
+            height: auto;
             width: 100%;
             border-radius: $border-radius-2;
             box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
             background-color: $white;
-            padding: 16px;
+            padding: 16px 0px;
             display: flex;
             flex-direction: column;
             margin: 12px 0px;
             position: relative;
+            @include desktop{
+                flex-direction: column;
+                height: 424px;
+                padding: 16px;
+            }
+
+            &__top{
+                display: flex;
+                flex-direction: row;
+                padding: 0px 16px 16px 16px;
+                @include desktop{
+                    flex-direction: column;
+                }
+            }
+
+            &__details{
+                margin-left: 8px;
+                height: 64px;
+
+                @include desktop{
+                    margin-top: 8px;
+                    margin-left: 0px;
+                }
+
+                &__base{
+                    display: none;
+                    @include desktop{
+                        display: block;
+                    }
+                }
+
+            }
+
+            &__mobile-base{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 16px;
+                padding: 16px;
+                padding-bottom: 0px;
+                border-top: 1px solid $border-color-1;
+
+                @include desktop{
+                    display: none;
+                }
+
+                & .button {
+                    width: auto;
+                    padding: 0px 16px ;
+                    margin: 0px !important;
+                }
+            }
 
             &__title{
                 width: 100%;
@@ -36,7 +91,6 @@
                 color: $black;
                 text-align: left;
                 font-weight: 600;
-                margin-top: 8px;
                 margin-bottom: 4px;
                 overflow: hidden;
                 display: -webkit-box;
@@ -55,11 +109,13 @@
                 color: #778597;
                 text-align: left;
                 margin-top: 4px;
-                margin-bottom: 16px;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
+                @include desktop{
+                    margin-bottom: 16px;
+                }
             }
 
             &__amount{
@@ -87,15 +143,26 @@
             }
 
             &__image{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
                 &-wrapper{
-                    width: 100%;
-                    height: 206px;
+                    width: 64px;
+                    height: 64px;
+                    min-width: 64px;
                     background-color: #dfe2e8;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 8px;
+                    margin-right: 8px;
+                    @include desktop{
+                        width: 100%;
+                        height: 206px;
+                        margin-bottom: 8px;
+                        margin-right: 0px;
+                    }
                 }
             }
         }

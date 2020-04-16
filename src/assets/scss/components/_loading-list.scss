@@ -1,5 +1,6 @@
 .loading-list{
     &__item{
+        width: 100%;
         height: 48px;
         border: 1px solid  rgba(151,151,151,0.3);
         border-left: 2px solid rgba($color: #c9c2c1, $alpha: 0.9);
@@ -10,6 +11,7 @@
         // justify-content: space-between;;
         padding: 0px 24px;
         opacity: 0.2;
+        overflow: hidden;
         &:last-child{
             border: 1px solid  rgba(151,151,151,0.3);
             border-left: 2px solid rgba($color: #c9c2c1, $alpha: 0.9);
@@ -43,12 +45,14 @@
                 margin-right: auto;
             }
             &-two{
-                margin-right: auto;
-                height: 32px;
-                border-radius: 4px;
-                background-color: #cacaca;
-                padding: 13px 14px;
-                opacity: 0.79;
+                @include desktop {
+                    margin-right: auto;
+                    height: 32px;
+                    border-radius: 4px;
+                    background-color: #cacaca;
+                    padding: 13px 14px;
+                    opacity: 0.79;
+                }
             }
             &-five{
                 justify-self: flex-end;

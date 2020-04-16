@@ -12,7 +12,7 @@ const OnBoardingModal = ({
       <p className="on-boarding__info">
         {info}
       </p>
-      <div className="d-flex flex-row mt-auto">
+      <div className="on-boarding__actions">
         <div className="button button-md button--orange">{buttonText}</div>
         {secondaryButtonText ? (<div className="button button-md button--orange">{secondaryButtonText}</div>) : null}
       </div>
