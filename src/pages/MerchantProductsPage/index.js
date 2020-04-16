@@ -8,7 +8,9 @@ const config = {
   hasCommonHeader: true,
   showCart: true,
   commonHeaderTitle: 'Seun Akanni\'s Store',
+  showCommonHeaderOnDesktop: true,
   links: [],
+  isSettings: false,
   page: 'merchantProducts',
 };
 const MerchantProductsPage = () => (
@@ -18,7 +20,7 @@ const MerchantProductsPage = () => (
       <div className="">
         <ul className="row">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
-            <div className="col-12 col-md-4 col-lg-3" key={getStringHash()}>
+            <div className="col-12 col-md-6 col-lg-3" key={getStringHash()}>
               <MerchantProductCard />
             </div>
           ))}

@@ -63,6 +63,10 @@
             }
             &--alt{
                 background-color: $gray;
+                &:hover {
+                    background-color: $white;
+                }
+
             }
 
             &-text{
@@ -77,6 +81,9 @@
 
                 &--alt{
                     color: $white;
+                    &:hover{
+                        color: $gray;
+                    }
                 }
             }
             &:first-child{

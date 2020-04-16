@@ -20,6 +20,7 @@ import UpChevron from './UpChevron';
 import HamburgerIcon from './HamburgerIcon';
 import BackArrow from './BackArrow';
 import ProductIcon from './ProductIcon';
+import LockIcon from './LockIcon';
 
 
 export {
@@ -45,4 +46,5 @@ export {
   HamburgerIcon,
   BackArrow,
   ProductIcon,
+  LockIcon,
 };

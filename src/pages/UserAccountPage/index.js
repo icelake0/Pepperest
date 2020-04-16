@@ -16,6 +16,7 @@ const config = {
   links: settingsInnerRoutes,
   page: 'settings',
   isSettings: true,
+  navBarTitle: 'Settings',
 };
 
 
@@ -28,7 +29,7 @@ const UserAccountPage = ({ match }) => (
       <div className="col-lg-3 d-none d-lg-flex">
         <ul className="menu__list">
           {settingsInnerRoutes
-            && settingsInnerRoutes.map(({ url, title, exact }, index) => (
+            && settingsInnerRoutes.map(({ url, title, exact }) => (
               <>
                 <li className="menu__list-item">
                   <NavLink

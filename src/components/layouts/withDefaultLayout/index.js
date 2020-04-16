@@ -9,6 +9,7 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
       this.state = {
         isSettings: false,
         hasCommonHeader: false,
+        showCommonHeaderOnDesktop: false,
         ...data,
         ...props,
         isDesktop: false,
@@ -27,7 +28,7 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
     }
 
     updateIsDesktop() {
-      this.setState({ isDesktop: window.innerWidth > 1450 });
+      this.setState({ isDesktop: window.innerWidth >= 1024 });
     }
 
     render() {
@@ -40,12 +41,16 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
         hasCommonHeader,
         showCart,
         commonHeaderTitle,
+        showCommonHeaderOnDesktop,
+        navBarTitle,
       } = this.state;
       return (
         <>
           {isSettings && !isDesktop ? null : <Header />}
 
-          {!isSettings && !isDesktop ? null : <SettingsNavigationBar />}
+          {!isSettings && !isDesktop ? null : (
+            <SettingsNavigationBar navBarTitle={navBarTitle} />
+          )}
           {/* show everywhere, but not on settings desktop view */}
           {hasAlternateHeader && !isSettings ? (
             <HeaderAlternate links={links} page={page} />
@@ -54,13 +59,13 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
           {hasAlternateHeader && isSettings && !isDesktop ? (
             <HeaderAlternate links={links} page={page} />
           ) : null}
-          {hasCommonHeader ? (
+          {hasCommonHeader && (showCommonHeaderOnDesktop || isDesktop) ? (
             <CommonHeader
               commonHeaderTitle={commonHeaderTitle}
               showCart={showCart}
             />
           ) : null}
-          <div className='max-content'>
+          <div className="max-content">
             <WrappedComponent {...this.props} />
           </div>
         </>
