@@ -24,8 +24,8 @@ const CustomerListItemDetailMobileModal = () => {
             contentRect.height >= window.innerHeight - 350 ? '350px' : 'unset',
           bottom:
             contentRect.height >= window.innerHeight - 350 ? 'unset' : '0',
-          minHeight:
-            contentRect.height >= window.innerHeight - 350 ? 'unset' : '500px',
+          // minHeight:
+          //   contentRect.height >= window.innerHeight - 350 ? 'unset' : '500px',
         },
       });
     }
