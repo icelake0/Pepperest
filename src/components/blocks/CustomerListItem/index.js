@@ -18,14 +18,18 @@ const CustomerListItem = ({
   const [isListDetailsOpen, setListDetailsOpen] = useState(false);
   const pepperestContext = useContext(PepperestContext);
   const updateListDetailsOpen = (value) => setListDetailsOpen(value);
+  const handleListClick = () => {
+    pepperestContext.updateShowCustomerListModal(true);
+    updateListDetailsOpen(!isListDetailsOpen);
+  };
 
   return (
     <>
-      <div className="list-item row mx-0" onClick={() => { pepperestContext.updateShowCustomerListModal(true); }}>
+      <div className="list-item row mx-0" onClick={() => { handleListClick(); }}>
         <div
           className={`list-item__indicator ${getIndicatorClass(status)}`}
         />
-        <div className="col-4 col-md-4 px-0">
+        <div className="col-4 col-md-4 px-0 d-none d-lg-flex">
           <div className="d-flex flex-row">
             <div className="list-item__date">
               <p className="list-item__date-text">{phone}</p>
@@ -43,7 +47,7 @@ const CustomerListItem = ({
             </div>
           </div>
         </div>
-        <div className="list-item__details col-6 col-md-4 px-0">
+        <div className="list-item__details col-12 col-md-4 px-0">
           <div className="list-item__details-container">
             <p className="list-item__details-product">{paymentName}</p>
             <p className="list-item__details-email">{customerEmail}</p>

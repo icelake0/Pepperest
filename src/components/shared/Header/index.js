@@ -109,9 +109,9 @@ const Header = (props) => {
                 <a href="/user-account/profile" className="dropdown__list-item">
                   Settings
                 </a>
-                <a href="/user-account/profile" className="dropdown__list-item">
+                {/* <a href="/user-account/profile" className="dropdown__list-item">
                   Payout
-                </a>
+                </a> */}
                 <a href="/user-account/loans" className="dropdown__list-item">
                   Request Loan
                 </a>

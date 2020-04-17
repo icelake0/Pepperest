@@ -10,8 +10,11 @@
         border-top-left-radius: $border-radius-2;
         border-top-right-radius: $border-radius-2;
         background-color: $lavender;
-        padding: 12px 24px;
+        padding: 12px 16px;
         box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        @include desktop{
+            padding: 12px 24px;
+        }
 
         .nsForm-input{
             width: 200px;
@@ -268,15 +271,17 @@
         border-left: 0px;
         border-right: 0px;
         position: relative;
-        padding: 8px 24px 8px 22px;
+        padding: 8px 16px 8px 16px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
+        cursor: pointer !important;
         @include desktop{
             height: 48px;
             min-height: 48px;
             align-items: center;
+            padding: 8px 24px 8px 24px;
         }
         &:first-child{
             border-top: 0px;
@@ -413,6 +418,7 @@
                 color: $black;
                 text-align: left;
                 margin-top: 4px;
+                
                 @include desktop{
                     width: 50%;
                     margin-right: auto;
@@ -427,6 +433,9 @@
                 }
             }
             &-product, &-email{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 @include desktop{
                     white-space: nowrap;
                     overflow: hidden;

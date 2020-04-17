@@ -12,25 +12,28 @@ const ProductListItem = ({
   const [isProductListDetailsOpen, setProductListDetailsOpen] = useState(false);
   const updateProductListDetailsOpen = (value) => setProductListDetailsOpen(value);
   const pepperestContext = useContext(PepperestContext);
-
+  const handleListClick = () => {
+    pepperestContext.updateShowProductListModal(true);
+    updateProductListDetailsOpen(!isProductListDetailsOpen);
+  };
 
   return (
     <>
-      <div className="list-item row mx-0" onClick={() => { pepperestContext.updateShowProductListModal(true); }}>
-        <div className="col-2 col-md-2 px-0">
+      <div className="list-item row mx-0" onClick={() => { handleListClick(); }}>
+        <div className="col-2 col-md-2 pl-0">
           <div className="d-flex flex-row">
             <div className="list-item__date">
               <p className="list-item__date-text">{date}</p>
             </div>
           </div>
         </div>
-        <div className="col-6 list-item__details col-md-6 px-0">
+        <div className="col-6 list-item__details col-md-6">
           <div className="list-item__details-container">
             <p className="list-item__details-product">{productName}</p>
             <p className="list-item__details-email">{productDescription}</p>
           </div>
         </div>
-        <div className="col-3 col-md-3 px-0">
+        <div className="col-3 col-md-3 pr-0">
           <div className="d-flex flex-row justify-content-end">
             <div className="list-item__payment">
               <div className="list-item__payment-container">

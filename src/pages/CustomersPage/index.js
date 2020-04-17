@@ -13,7 +13,7 @@ import { PepperestContext } from 'components/helpers/constant';
 
 const CustomersPage = () => (
   <>
-    <div className="payment">
+    <div className="page-container">
       <CustomerList customers={customers} />
     </div>
     <PepperestContext.Consumer>

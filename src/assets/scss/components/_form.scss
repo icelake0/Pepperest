@@ -44,6 +44,10 @@
         &.error{
             border: solid 1px #ff721b;
         }
+        &.disabled{
+            background-color: #f5f5f7;
+            cursor: not-allowed;
+        }
 
 
         &__alternate{

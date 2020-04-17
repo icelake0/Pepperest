@@ -17,7 +17,7 @@ const config = {
 const ProductsPage = ({ match }) => (
   <>
     <>
-      <div className="payment">
+      <div className="page-container">
         <Switch>
           <Route
             path={`${match.url}/single`}

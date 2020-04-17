@@ -18,7 +18,7 @@ const Modal = (props) => (
     <div className="pModal">
       <div className="pModal-content">
         <div className="pModal-header">
-          <h6 className="text--small">Request Payment</h6>
+          <h6 className="text--small">Create Invoice</h6>
           <PepperestContext.Consumer>
             {(context) => (
               <div
@@ -105,7 +105,7 @@ const Modal = (props) => (
                 <TextArea name="description" value="" onChange={() => {}} />
               </div>
             </div>
-            <div className="pModal-form-control row mx-0">
+            {/* <div className="pModal-form-control row mx-0">
               <div className="col-md-5">
                 <div className="pModal-form__label-control">
                   <label htmlFor="description" className="pModal-form__label">Product</label>
@@ -113,6 +113,24 @@ const Modal = (props) => (
               </div>
               <div className="col-md-7">
                 <TextArea name="description" value="" onChange={() => {}} />
+              </div>
+            </div> */}
+            <div className="pModal-form-control row mx-0">
+              <div className="col-md-5">
+                <div className="pModal-form__label-control">
+                  <label htmlFor="currency" className="pModal-form__label">Currency</label>
+                </div>
+              </div>
+              <div className="col-md-7">
+                <SelectInputWithoutLabel
+                  options={[]}
+                  name="currency"
+                  id="currency"
+                  value=""
+                  onChange={() => {}}
+                  defaultValue="American Dollars"
+                  classNames="nsForm-select__alternate"
+                />
               </div>
             </div>
             <div className="pModal-form-control row mx-0">
@@ -130,24 +148,6 @@ const Modal = (props) => (
                   value=""
                   onChange={() => {}}
                   classNames="nsForm-input__alternate"
-                />
-              </div>
-            </div>
-            <div className="pModal-form-control row mx-0">
-              <div className="col-md-5">
-                <div className="pModal-form__label-control">
-                  <label htmlFor="currency" className="pModal-form__label">Currency</label>
-                </div>
-              </div>
-              <div className="col-md-7">
-                <SelectInputWithoutLabel
-                  options={[]}
-                  name="currency"
-                  id="currency"
-                  value=""
-                  onChange={() => {}}
-                  defaultValue="American Dollars"
-                  classNames="nsForm-select__alternate"
                 />
               </div>
             </div>

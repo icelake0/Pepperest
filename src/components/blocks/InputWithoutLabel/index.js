@@ -7,21 +7,23 @@ const handleChange = (onChange) => (event) => {
 };
 
 const InputWithoutLabel = ({
-  name, type, value, id, classNames, placeholder, onChange,
+  name, type, value, id, classNames, placeholder, onChange, disabled
 }) => (
   <input
     name={name}
     type={type}
     value={value}
     id={id}
-    className={`nsForm-input ${classNames}`}
+    className={`nsForm-input ${classNames} ${disabled ? 'disabled' : ''}`}
     placeholder={placeholder}
     onChange={handleChange(onChange)}
+    disabled={disabled}
   />
 );
 
 InputWithoutLabel.defaultProps = {
   classNames: '',
+  disabled: false,
 };
 
 InputWithoutLabel.propTypes = {
@@ -32,5 +34,6 @@ InputWithoutLabel.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   classNames: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 export default InputWithoutLabel;
