@@ -8,7 +8,7 @@ const PaymentPage = (props) => (
       <OnBoarding
         title="Start sending & Receiving money with Pepperest"
         info="Get on board with Pepperest and start selling to your customers or paying merchants in just a few minutes"
-        buttonText="Request Payment"
+        buttonText="Create Invoice"
         imageUrl="assets/images/svg/payment-onboard.svg"
       />
     </div>

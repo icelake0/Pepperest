@@ -31,7 +31,7 @@ const HeaderAlternate = ({ page, links, location }) => {
                   context.updateShowPaymentModal(true);
                 }}
               >
-                Request Payment
+                Create Invoice
               </div>
             )}
           </PepperestContext.Consumer>

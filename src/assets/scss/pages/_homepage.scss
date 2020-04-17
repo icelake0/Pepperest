@@ -144,6 +144,10 @@
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
 
+                &.text--orange{
+                    font-weight: 600;
+                }
+
                 & .icon {
                     margin-left: 16px;
                     animation: fadeIn 0.2s linear 0s forwards;
@@ -675,6 +679,7 @@
                 font-size: $font-size-3;
                 line-height: 2;
                 color: $gray;
+                font-weight: 600;
             }
         }
 

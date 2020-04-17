@@ -6,7 +6,7 @@ const UpdatePassword = (props) => (
   <>
     <div className="auth-panel auth-panel--alternate">
       <div className="auth-panel__head">
-        <h4 className="auth-panel__head-header">Forgot Password?</h4>
+        <h4 className="auth-panel__head-header">Update Password?</h4>
         <p className="auth-panel__head-help auth-panel__head-help--alternate">
           Enter your new password details. Passwords must be at least 6
           characters long.

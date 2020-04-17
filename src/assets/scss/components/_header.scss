@@ -80,7 +80,7 @@
 
                     & .icon{
                         &:first-child{
-                            margin-right: 12px;
+                            // margin-right: 12px;
                             @include desktop{
                                 display: none;
                             }
@@ -89,8 +89,10 @@
                     .avatar {
                         cursor: pointer;
                         margin-left: 12px;
+                        display: none;
                         @include desktop{
                             margin-left: 0px;
+                            display: flex;
                         }
                         
                     }

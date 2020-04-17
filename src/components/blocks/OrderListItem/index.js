@@ -18,13 +18,17 @@ const OrderListItem = ({
   const [isListDetailsOpen, setListDetailsOpen] = useState(false);
   const updateListDetailsOpen = (value) => setListDetailsOpen(value);
   const pepperestContext = useContext(PepperestContext);
+  const handleListClick = () => {
+    pepperestContext.updateShowOrdersListModal(true);
+    updateListDetailsOpen(!isListDetailsOpen);
+  };
 
   return (
     <>
       <div
         className="list-item row mx-0"
         onClick={() => {
-          pepperestContext.updateShowOrdersListModal(true);
+          handleListClick();
         }}
       >
         <div className={`list-item__indicator ${getIndicatorClass(status)}`} />
