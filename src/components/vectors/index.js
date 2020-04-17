@@ -21,6 +21,9 @@ import HamburgerIcon from './HamburgerIcon';
 import BackArrow from './BackArrow';
 import ProductIcon from './ProductIcon';
 import LockIcon from './LockIcon';
+import ImportIcon from './ImportIcon';
+import SortIcon from './SortIcon';
+import FilterIcon from './FilterIcon';
 
 
 export {
@@ -47,4 +50,7 @@ export {
   BackArrow,
   ProductIcon,
   LockIcon,
+  ImportIcon,
+  SortIcon,
+  FilterIcon
 };

@@ -4,12 +4,15 @@ import { products } from 'libs/constants';
 import { getStringHash } from 'libs/utils';
 
 
-const ProductList = () => {
+const ProductList = ({ productListActionLabel }) => {
   const [value, setValue] = useState('');
 
   return (
     <div className="list">
-      <ListHeader isProduct />
+      <ListHeader
+        isProduct
+        productListActionLabel={productListActionLabel}
+      />
       <div className="list-body">
         <ul>
           {products

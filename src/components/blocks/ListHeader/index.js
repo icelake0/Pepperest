@@ -10,8 +10,9 @@ import {
   FilterBy,
   SortBy,
 } from 'components/blocks';
+import { ImportIcon, FilterIcon, SortIcon } from 'components/vectors';
 
-const ListHeader = ({ isProduct }) => {
+const ListHeader = ({ isProduct, productListActionLabel }) => {
   const [value, setValue] = useState('');
   const pepperestContext = useContext(PepperestContext);
 
@@ -46,13 +47,9 @@ const ListHeader = ({ isProduct }) => {
         {
             isProduct ? (
               <div className="list-header__action list-header__action--alt">
-                <img
-                  className="list-header__action-icon"
-                  src="/assets/images/svg/import.svg"
-                  alt="icon"
-                />
+                <ImportIcon />
                 <span className="list-header__action-text list-header__action-text--alt">
-                  Import from Instagram
+                  {productListActionLabel}
                 </span>
               </div>
             ) : null
@@ -63,11 +60,7 @@ const ListHeader = ({ isProduct }) => {
             handleToggleFilterBy();
           }}
         >
-          <img
-            className="list-header__action-icon"
-            src="/assets/images/svg/filter.svg"
-            alt="icon"
-          />
+          <FilterIcon />
           <span className="list-header__action-text">Filter By</span>
           <FilterBy isActive={state.showFilter} />
         </div>
@@ -77,11 +70,7 @@ const ListHeader = ({ isProduct }) => {
             handleToggleSortBy();
           }}
         >
-          <img
-            className="list-header__action-icon"
-            src="/assets/images/svg/sort.svg"
-            alt="icon"
-          />
+          <SortIcon />
           <span className="list-header__action-text">Sort By</span>
           <SortBy isActive={state.showSortBy} />
         </div>
@@ -93,10 +82,12 @@ const ListHeader = ({ isProduct }) => {
 
 ListHeader.defaultProps = {
   isProduct: false,
+  productListActionLabel: '',
 };
 
 ListHeader.propTypes = {
   isProduct: PropTypes.bool,
+  productListActionLabel: PropTypes.string,
 };
 
 export default ListHeader;

@@ -67,8 +67,20 @@
             &--alt{
                 background-color: $gray;
                 &:hover {
-                    background-color: $white;
+                    @include desktop {
+                         background-color: $white;
+                         & .list-header__action-text--alt {
+                             color: $gray;
+                         }
+                        & .icon {
+                            path {
+                                fill: $gray;
+                                stroke: $gray;
+                            }
+                        }
+                    }
                 }
+                
 
             }
 
@@ -84,9 +96,9 @@
 
                 &--alt{
                     color: $white;
-                    &:hover{
-                        color: $gray;
-                    }
+                    // &:hover{
+                    //     color: $gray;
+                    // }
                 }
             }
             &:first-child{
@@ -115,7 +127,7 @@
                 // }
             }
 
-            &-icon{
+            & .icon{
                 @include desktop{
                     margin-right: 8px;
                 }
