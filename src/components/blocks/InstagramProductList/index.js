@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InputWithoutLabel, InstagramProductListItem, ListHeader } from 'components/blocks';
 import { instagramProducts } from 'libs/constants';
+import { getStringHash } from 'libs/utils';
 
 
 const InstagramProductList = (props) => {
@@ -15,6 +16,7 @@ const InstagramProductList = (props) => {
         {instagramProducts
             && instagramProducts.map((instagramProduct) => (
               <InstagramProductListItem
+                key={getStringHash()}
                 imageUrl={instagramProduct.imageUrl}
                 hasImageUrl={instagramProduct.hasImageUrl}
                 date={instagramProduct.date}

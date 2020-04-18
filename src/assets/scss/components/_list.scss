@@ -87,7 +87,7 @@
             &-text{
                 display: none;
                 font-size: $font-size-1;
-                font-weight: 700;
+                @include medium-font;
                 color: $light-gray;
 
                 @include desktop{
@@ -236,7 +236,7 @@
 
             &-alt{
                 color: $black;
-                font-weight: 600;
+                // font-weight: 600;
             }
         }
 
@@ -258,12 +258,12 @@
             &-next{
                 margin-right: 24px;
                 margin-left: 8px;
-                font-weight: 600;
+                // font-weight: 600;
             }
             &-prev{
                 margin-left: 24px;
                 margin-right: 8px;
-                font-weight: 600;
+                // font-weight: 600;
             }
             &-prev,&-next,&-page-number{
                 cursor: pointer;
@@ -369,7 +369,7 @@
             }
 
             & .text--smaller {
-                font-weight: 600;
+                @include medium-font;
             }
         }
         &__details{
@@ -384,8 +384,8 @@
             }
             &-product{
                 font-size: $font-size-2;
+                @include medium-font;
                 color: $black;
-                font-weight: 700;
                 text-align: left;
                 margin-bottom: 4px;  
                 @include desktop{
@@ -472,9 +472,9 @@
             }
 
             &-price{
+                @include medium-font;
                 font-size: $font-size-2;
                 color: $black;
-                font-weight: 700;
                 margin-left: 8px;
                 text-align: right;
                 width: 94px;
@@ -528,7 +528,7 @@
                 height: 24px;
                 border-radius: $border-radius-2;
                 font-size: $font-size-1;
-                font-weight: 600;
+                @include medium-font;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -571,8 +571,8 @@
             }
 
             &-text{
+                @include medium-font;
                 font-size: $font-size-1;
-                font-weight: 600;
                 margin-left: 8px;
             }
         }
@@ -607,7 +607,7 @@
                         }
 
                         &.active{
-                           font-weight: 600;
+                           @include medium-font;
                            border-bottom: 2px solid $orange;
                             
                         }
@@ -642,7 +642,7 @@
                     background-color: #E7E8EB;
                     align-self: flex-end;
                     font-size: $font-size-1;
-                    font-weight: 600;
+                    @include medium-font;
                     color: $light-gray;
                     display: flex;
                     flex-direction: row;
@@ -688,14 +688,14 @@
                         border-bottom: 0px;
                     }
 
-                    &__title,&__details{
+                    &__title{
                         font-size: $font-size-2;
-                        font-weight: 600;
+                        @include medium-font;
                         color: #46505e;
                     }
                     &__details{
                         color: #778597;
-                        font-weight: 500;
+                        font-size: $font-size-2;
                     }
 
                     & .button{
@@ -780,7 +780,7 @@
 
             &-label{
                 font-size: $font-size-2;
-                font-weight: 400;
+                font-weight: normal;
                 padding: 16px 16px;
                 border-bottom: 2px solid transparent;
                 transition: all 0.2s ease-in-out;
@@ -788,8 +788,7 @@
                 &:first-child{}
 
                 &.active{
-                    font-family: $medium-font !important;
-                    font-weight: 500;
+                    @include medium-font;
                     border-bottom: 2px solid $orange;
                 }
             }
@@ -824,7 +823,7 @@
                 }
 
                 & .list-item__status-text {
-                    font-weight: 600;
+                    @include medium-font;
                     margin-left: 0px;
                 }
                 & .list-item__payment-container{

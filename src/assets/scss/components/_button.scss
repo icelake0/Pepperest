@@ -3,8 +3,6 @@
     color: $white;
     height: 48px;
     // padding: 16px;
-    font-size: $font-size-2;
-    font-weight: bold;
     letter-spacing: normal;
     line-height: normal;
     border-radius: $border-radius-2;
@@ -15,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include medium-font;
     &:hover{
         text-decoration: none;
     }
@@ -86,6 +85,7 @@
     &--white__with-icon{
         display: flex;
         flex-direction: row;
+        font-size: $font-size-1;
         & .icon{
             margin-right: 16px;
         }

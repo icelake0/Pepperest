@@ -236,7 +236,7 @@ const HomePage = (props) => {
                 {state.businessFeatures
                   && state.businessFeatures.map(({ isActive, title }, index) => (
                     <HomePageFeatureItem
-                      index={getStringHash()}
+                      key={getStringHash()}
                       isActive={isActive}
                       title={title}
                       handleClick={handleBusinessFeatureClick}
@@ -306,7 +306,7 @@ const HomePage = (props) => {
                       No Integration Needed
                     </h6>
                     <p className="section-four__list-item-info">
-                      There's no integration required to use Pepperest. Signup
+                      There is no integration required to use Pepperest. Signup
                       and start
                     </p>
                   </li>

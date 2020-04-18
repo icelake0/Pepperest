@@ -26,7 +26,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;;
-            font-weight: 600;
+            @include medium-font;
             font-size: $font-size-1;
             color: $dark;
 
@@ -144,7 +144,7 @@
         align-items: center;
 
         & .text--smallest{
-            font-weight: 600;
+            @include medium-font;
         }
     }
     & .current-account {

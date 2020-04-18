@@ -30,7 +30,8 @@
 
     // text colors
     &-font--medium{
-        font-family: $medium-font !important;
+        font-family: $medium-font;
+        font-weight: 500;
     }
 
     &--white{

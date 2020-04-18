@@ -1,5 +1,5 @@
 .confirmation{
-
+    min-height: 80vh;
     &-content{
         display: flex;
         flex-direction: column;
@@ -7,6 +7,7 @@
         margin-top: 24px;
         padding: 0px 16px;
         width: 100%;
+        height: auto;
         @include desktop{
             padding: 0;
         }
@@ -31,11 +32,13 @@
 
     &-card {
         width: 325px;
-        height: 403px;
+        height: auto;
         border-radius: $border-radius-2;
         box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
         background-color: $white;
-
+        @include desktop{
+            height: auto;
+        }
         &-header{
             display: flex;
             flex-direction: row;

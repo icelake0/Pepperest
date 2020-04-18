@@ -20,6 +20,19 @@
         @include desktop {
             width: 1024px;
         }
+
+        & .button{
+            font-size: $font-size-1;
+        }
+
+        &-title{
+            font-size: $font-size-2;
+            @include medium-font;
+            color: $black;
+            @include desktop{
+                font-size: $font-size-5;
+            }
+        }
     }
 
     &-logo{
@@ -55,12 +68,14 @@
                 text-decoration: none;
             }
             &-alternate{
+                @include medium-font;
                 &:hover{
                     background-color: transparent;
                 }
             }
             &.active{
                 background-color: rgb(62, 74, 97);
+                @include medium-font;
 
             }
             &-profile{
@@ -110,7 +125,7 @@
         }
         &__current-link{
             font-size: $font-size-2;
-            font-weight: 600;
+            @include medium-font;
             color: $black;
             @include desktop {
                 display: none;
@@ -189,16 +204,18 @@
                 padding: 0px 24px;
 
                 .avatar{
+                    display: flex;
                     margin-right: 10px;
                 }
 
                 &__email, &__role{
-                    font-family: $medium-font;
+                    @include medium-font;
                     font-size: $font-size-2;
                     color: $black;
                 }
                 &__role{
                     font-family: $primary-font;
+                    font-weight: normal;
                     font-size: $font-size-0;
                 }
             }
@@ -236,12 +253,11 @@
                     border-radius: $border-radius-2;
                     background-color: transparent;
                     transition: 0.3s all ease-in-out;
-                    font-family: $medium-font;
-                    font-weight: 500;
                     font-size: $font-size-2;
                     color: $black;
                     cursor: pointer;
                     text-decoration: none !important;
+                    @include medium-font;
 
                     &:hover {
                         background-color: $whitesmoke;
@@ -266,11 +282,11 @@
                     font-family: $semibold-font;
                     color: $orange;
                     font-size: $font-size-1;
-                    &:first-child {
-                        @include desktop{
-                            display: none;
-                        }
-                    }
+                    // &:first-child {
+                    //     @include desktop{
+                    //         display: none;
+                    //     }
+                    // }
 
                 }
 
@@ -309,7 +325,7 @@
 
                 &.active{
                     background-color: transparent;
-                    font-weight: 600;
+                    @include medium-font;
                     border-bottom: 2px solid $orange;
                 }
             }

@@ -57,8 +57,7 @@
                 
                 &-price{
                     font-size: $font-size-5;
-                    font-family: $medium-font;
-                    font-weight: 600;
+                    @include medium-font;
                     text-align: right;
                 }
                 &-title{

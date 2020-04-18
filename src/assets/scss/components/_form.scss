@@ -6,11 +6,11 @@
 
     label, &__label-help{
         font-size: $font-size-2;
-        font-weight: 500;
         letter-spacing: normal;
         color: $dark;
         line-height: normal;
         margin-bottom: 8px;
+        @include medium-font;
     }
 
     &__label-help{
@@ -35,8 +35,10 @@
         outline: none !important;
         margin-top: 8px;
         border: 0px;
+        @include medium-font;
         &::placeholder{
             color: $gray;
+            @include primary-font;
         }
         &:hover{
           box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
@@ -87,6 +89,7 @@
         height: 48px;
         border-radius: $border-radius-2;
         box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
+        @include medium-font;
     }
 
     &-select{
@@ -107,6 +110,7 @@
             appearance: none; /* remove default arrow */
             background: url(/assets/images/svg/chevron.svg) no-repeat 96% 53%; /* add custom arrow */
             font-size: $font-size-2;
+            @include medium-font;
             line-height: normal;
             color: $gray;
             outline: none;
@@ -158,6 +162,7 @@
 
     &-password{
         position: relative;
+        @include medium-font;
         & .nsForm-input{
             padding-right: 56px;
         }
@@ -181,5 +186,9 @@
         background-color: transparent;
         border: 1px solid $whitesmoke;
         resize: none;
+        @include medium-font;
+        &::placeholder{
+            @include primary-font;
+        }
     }
 }
