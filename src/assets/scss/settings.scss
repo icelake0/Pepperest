@@ -139,3 +139,14 @@ $desktop-width: 1024px;
         @content;
     }
 }
+
+
+@mixin medium-font {
+    font-family: $medium-font;
+    font-weight: 500;
+}
+
+@mixin primary-font {
+    font-family: $primary-font;
+    font-weight: normal;
+}

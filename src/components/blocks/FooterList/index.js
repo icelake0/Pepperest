@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FooterListItem } from 'components/blocks';
+import { getStringHash } from 'libs/utils';
 
 
 const FooterList = ({ links }) => (
   <ul className="footer-list">
     {links
       && links.map(({ url, title, isLink }) => (isLink ? (
-        <FooterListItem url={url} title={title} />
+        <FooterListItem key={getStringHash()} url={url} title={title} />
       ) : (
         <li className="footer-list-item">{title}</li>
       )))}

@@ -40,6 +40,7 @@
                 padding: 0px 16px 16px 16px;
                 @include desktop{
                     flex-direction: column;
+                    padding: 0;
                 }
             }
 
@@ -79,6 +80,7 @@
                     width: auto;
                     padding: 0px 16px ;
                     margin: 0px !important;
+                    font-size: $font-size-1;
                 }
             }
 
@@ -86,12 +88,11 @@
                 width: 100%;
                 height: 36px;
                 font-size: $font-size-2;
-                font-family:  $medium-font;
                 line-height: 1.29;
                 color: $black;
                 text-align: left;
-                font-weight: 600;
                 margin-bottom: 4px;
+                @include medium-font;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
@@ -121,12 +122,11 @@
             &__amount{
                 // width: 85px;
                 // height: 18px;
-                font-family: $medium-font;
                 font-size: $font-size-2;
                 font-weight: 500;
                 line-height: 1.29;
                 color: $black;
-                font-weight: 600;
+                @include medium-font;
             }
 
             &__delivery-day{
@@ -139,6 +139,7 @@
             }
 
             & .button{
+                font-size: $font-size-1;
                 margin-top: 16px;
             }
 

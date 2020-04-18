@@ -35,7 +35,7 @@ const SortByModal = () => {
           style={style}
         >
           <div className="list-modal__header">
-            <p className="text--small text--black">Sort By</p>
+            <p className="text--small text--black text-font--medium">Sort By</p>
 
             <div
               className="list-item-detail__container-close"

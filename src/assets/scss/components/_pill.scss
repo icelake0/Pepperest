@@ -9,6 +9,7 @@
     font-size: $font-size-2;
     cursor: pointer;
     text-decoration: none !important;
+    @include medium-font;
     &:hover{
         color: $dark;
     }

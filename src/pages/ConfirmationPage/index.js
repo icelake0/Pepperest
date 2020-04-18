@@ -22,7 +22,7 @@ const ConfirmationPage = () => (
           <div className="confirmation--status">
             <WhiteTick />
           </div>
-          <h6>Order Confirmation</h6>
+          <h6 className="text--small text-font--medium">Order Confirmation</h6>
         </div>
         <div className="confirmation-card-body">
           <div className="confirmation-card-body-status">

@@ -61,7 +61,7 @@
         padding: 8px 24px;
 
         & .text--small{
-            font-weight: 700;
+            @include medium-font;
         }
 
         & .icon{
@@ -103,7 +103,7 @@
 
             & .text--smaller{
                 &:last-child{
-                    font-weight: 600;
+                    @include medium-font;
                 }
             }
 
@@ -150,9 +150,9 @@
                 }
                 & .text--smallest{
                     color: $brown;
-                    font-weight: normal;
                     text-align: left;
                     display: block;
+                    @include medium-font;
                     //   width: 211px;
 
                 }
