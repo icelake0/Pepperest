@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import { withAuthLayout } from 'components/layouts';
 import { getStringHash } from 'libs/utils';
 import {
-  AuthFooter, Input, PasswordInput, SelectInput, SelectInputWithoutLabel, FeatureListItem, Button,
+  AuthFooter, FeatureListItem, Alert
 } from 'components/blocks';
-import { DownChevron } from 'components/vectors';
+import { RegisterForm } from 'components/forms'
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const FEATURES = [
   '24/7 Customer Care Support',
@@ -18,9 +20,12 @@ const OPTIONS = [
   { value: '', label: 'View less about pepperest' },
   { value: 'view-more', label: 'View more about pepperest' },
 ];
-const Register = () => {
+const Register = (props) => {
   const [viewMore, setViewMore] = useState(false);
   const updateViewMore = () => setViewMore(!viewMore);
+  if(props.token){
+    return <Redirect to="/payments"/>;
+  }
   return (
     <>
       <div className="auth-register">
@@ -69,66 +74,9 @@ const Register = () => {
           </div>
         </div>
         <div className="auth-register__form-section">
-          <form className="nsForm">
-            <SelectInput
-              label="Choose an Pepperest Account"
-              options={[]}
-              name="account"
-              id="account"
-              value=""
-              defaultValue=""
-              onChange={() => {}}
-            />
-            <Input
-              name="business_name"
-              type="text"
-              placeholder="Your Personal / Business Name"
-              label="Personal / Business Name"
-              id="business_name"
-              onChange={() => {}}
-              value=""
-            />
-            <Input
-              name="email"
-              type="email"
-              placeholder="Your Personal / Business Email"
-              label="Personal / Business Email"
-              id="email"
-              onChange={() => {}}
-              value=""
-            />
-            <PasswordInput
-              name="password"
-              placeholder="Strong password"
-              id="password"
-              value=""
-              onChange={() => {}}
-              label="Password"
-            />
-            <PasswordInput
-              name="confirm_password"
-              placeholder="Strong password"
-              id="cfm_password"
-              value=""
-              onChange={() => {}}
-              label="Confirm Password"
-            />
-            <Button
-              type="submit"
-              value="CREATE ACCOUNT"
-              name="sign_up"
-              handleClick={() => {}}
-            />
-          </form>
+          <RegisterForm />
           <p className="auth-terms-condition">
-            I agree to the
-            {' '}
-            <a href="/">Pepperest Agreement</a>
-            {' '}
-            and
-            {' '}
-            <a href="/">Terms</a>
-            .
+            I agree to the <a href="/">Pepperest Agreement</a> and <a href="/">Terms</a>.
           </p>
         </div>
       </div>
@@ -138,8 +86,20 @@ const Register = () => {
         label="ALREADY HAVE AN ACCOUNT ?"
         isAlternate={false}
       />
+      {
+        <Alert
+          message= {props.error}
+          isError = {true}
+        />
+      }
     </>
   );
 };
+const mapStateToProps = state => {
+  return {
+      token: state.auth.token,
+      error: state.auth.error
+  };
+};
 
-export default withAuthLayout(Register, {});
+export default withAuthLayout(connect(mapStateToProps, null )(Register), {});

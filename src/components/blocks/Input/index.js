@@ -7,7 +7,7 @@ const handleChange = (onChange) => (event) => {
 };
 
 const Input = ({
-  name, type, label, placeholder, id, value, onChange,
+  name, type, label, placeholder, id, value, onChange, validation, errorMessage
 }) => (
   <div className="nsForm-control">
     <label htmlFor={id}>{label}</label>
@@ -18,8 +18,10 @@ const Input = ({
       id={id}
       className="nsForm-input"
       placeholder={placeholder}
+      ref={validation}
       onChange={handleChange(onChange)}
     />
+    <label>{errorMessage}</label>
   </div>
 );
 

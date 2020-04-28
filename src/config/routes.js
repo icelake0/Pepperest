@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 
 const Register = lazy(() => import('pages/Register'));
 const Login = lazy(() => import('pages/Login'));
+const Logout = lazy(() => import('pages/Logout'));
 const UpdatePassword = lazy(() => import('pages/UpdatePassword'));
 const ForgotPassword = lazy(() => import('pages/ForgotPassword'));
 const PaymentPage = lazy(() => import('pages/PaymentPage'));
@@ -35,6 +36,12 @@ const routes = [
     path: '/login',
     exact: true,
     component: Login,
+    isProtected: false,
+  },
+  {
+    path: '/logout',
+    exact: true,
+    component: Logout,
     isProtected: false,
   },
   {
