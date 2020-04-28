@@ -14,6 +14,8 @@ const PasswordInput = ({
   onChange,
   hasForgotPasswordLabel,
   hasIcon,
+  validation,
+  errorMessage,
 }) => (
   <div className="nsForm-control">
     <div className="d-flex flex-row justify-content-between">
@@ -32,6 +34,7 @@ const PasswordInput = ({
         className="nsForm-input"
         placeholder={placeholder}
         value={value}
+        ref = {validation}
         onChange={handleChange(onChange)}
       />
       {hasIcon ? (
@@ -41,6 +44,7 @@ const PasswordInput = ({
           alt="eye-icon"
         />
       ) : null}
+      <label>{errorMessage}</label>
     </div>
   </div>
 );

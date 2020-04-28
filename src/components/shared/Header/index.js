@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'components/blocks';
 import { Avatar } from 'components/shared';
 import { DownChevron, HamburgerIcon } from 'components/vectors';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions/index';
 
 const navLinks = [
   {
@@ -72,9 +75,9 @@ const Header = (props) => {
               <Avatar imageUrl="/assets/images/avatar.jpg" avatarSize="md" />
               <div>
                 <p className="dropdown__user-details__email">
-                  Mylocarson@gmail.com
+                  {props.user.email}
                 </p>
-                <p className="dropdown__user-details__role">Member</p>
+                <p className="dropdown__user-details__role">{props.user.usertype}</p>
               </div>
             </div>
             <div className="dropdown-quick__links">
@@ -115,9 +118,10 @@ const Header = (props) => {
                 <a href="/user-account/loans" className="dropdown__list-item">
                   Request Loan
                 </a>
-                <a href="/" className="dropdown__list-item">
-                  Logout
-                </a>
+                <Link 
+                  to={"/logout"}
+                  className="dropdown__list-item">Logout
+                </Link>
               </ul>
               <div className="dropdown__list-header">QUICK LINK</div>
               <ul className="dropdown__list">
@@ -139,4 +143,10 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+      user: state.auth.userInfo,
+  };
+};
+
+export default connect( mapStateToProps, null )( Header );

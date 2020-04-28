@@ -194,3 +194,5 @@ export const getCamelCase = (value) => {
   const restOfString = value.substring(1, value.length);
   return `${char}${restOfString}`;
 };
+
+export {default as PepperestAxios} from './PepperestAxios';

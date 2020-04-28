@@ -1,4 +1,5 @@
 import Login from './Login';
+import Logout from './Logout';
 import Register from './Register';
 import UpdatePassword from './UpdatePassword';
 import ForgotPassword from './ForgotPassword';
@@ -42,6 +43,7 @@ import ConfirmationPage from './ConfirmationPage';
 
 export {
   Login,
+  Logout,
   Register,
   UpdatePassword,
   ForgotPassword,
