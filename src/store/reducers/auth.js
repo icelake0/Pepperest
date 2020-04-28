@@ -40,7 +40,7 @@ const logout = (state, action) => {
 };
 
 const registerFail = (state, action) => {
-    return updateObject(state, { errors: action.errors, loading: true});
+    return updateObject(state, { errors: action.errors, loading: false});
 };
 
 const reducer = ( state = initialState, action ) => {
