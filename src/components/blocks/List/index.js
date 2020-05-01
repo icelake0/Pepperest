@@ -3,66 +3,61 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  InputWithoutLabel,
   ListItem,
-  FilterBy,
-  SortBy,
   ListHeader,
+  ListFooter,
+  LoadingListItem,
 } from 'components/blocks';
 import { getStringHash } from 'libs/utils';
 
-const List = ({ payments }) => {
+const List = ({ payments, meta, links, refreshData, loading }) => {
   const [value, setValue] = useState('');
+
+  const gotoPage = (page) => {
+    const params = {
+      page : page
+    };
+    refreshData(params);
+  }
 
   return (
     <div className="list">
       <ListHeader />
-      <div className="list-body">
-        <ul>
-          {payments
-            && payments.map((payment, index) => (
-              <ListItem
-                key={getStringHash(index)}
-                status={payment.status}
-                statusText={payment.statusText}
-                transactionId={payment.transactionId}
-                transactionDatetime={payment.transactionDatetime}
-                amount={payment.amount}
-                customerEmail={payment.customerEmail}
-                customerName={payment.customerName}
-                paymentDescription={payment.paymentDescription}
-                paymentName={payment.paymentName}
-                deliveryDatetime={payment.deliveryDatetime}
-                date={payment.date}
-              />
-            ))}
-        </ul>
-      </div>
-      <div className="list-footer">
-        <p className="list-footer-label">Showing 1 - 6 of 90 entries</p>
-        <div className="list-footer__pagination">
-          <span className="list-footer__pagination-prev list-footer-text">
-            Previous
-          </span>
-          <ul className="d-flex flex-row">
-            <li className="list-footer__pagination-page-number list-footer-text">
-              1
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text">
-              2
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text">
-              3
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text list-footer-text-alt">
-              4
-            </li>
+        <div className="list-body">
+          <ul>
+            {loading ? 
+              <> 
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem /> 
+              </>:
+              payments
+              && payments.map((payment, index) => (
+                <ListItem
+                  key={getStringHash(index)}
+                  status={payment.status}
+                  statusText={payment.statusText}
+                  transactionId={payment.transactionId}
+                  transactionDatetime={payment.transactionDatetime}
+                  amount={payment.amount}
+                  customerEmail={payment.customerEmail}
+                  customerName={payment.customerName}
+                  paymentDescription={payment.paymentDescription}
+                  paymentName={payment.paymentName}
+                  deliveryDatetime={payment.deliveryDatetime}
+                  date={payment.date}
+                />
+              ))}
           </ul>
-          <span className="list-footer__pagination-next list-footer-text list-footer-text-alt">
-            Next
-          </span>
         </div>
-      </div>
+      <ListFooter
+        meta = {meta}
+        links = {links}  
+        gotoPage = { (page) => gotoPage(page)}
+      />
     </div>
   );
 };

@@ -65,6 +65,7 @@ import FilterByModal from './FilterByModal';
 
 import MerchantProductCard from './MerchantProductCard';
 import CartItem from './CartItem';
+import ListFooter from './ListFooter'
 
 export {
   Input,
@@ -124,4 +125,5 @@ export {
   FilterByModal,
   MerchantProductCard,
   CartItem,
+  ListFooter,
 };
