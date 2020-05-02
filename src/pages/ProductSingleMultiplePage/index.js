@@ -42,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onLoadProducts: ( token, user, status, extraParams ) => dispatch( actions.loadProduct( token, user, extraParams )  )
+      onLoadProducts: ( token, user, extraParams ) => dispatch( actions.loadProduct( token, user, extraParams )  )
   };
 };
 

@@ -30,11 +30,11 @@ const ProductRecentTransaction = ({
       <div className="list-item__status">
         <div className="list-item__status-container">
           <div
-            className={`list-item__status-tag ${status && getStatusTagClass(
+            className={`list-item__status-tag ${getStatusTagClass(
               status,
-            )} ${status && getStatusTextClass(status)}`}
+            )} ${getStatusTextClass(status)}`}
           >
-            {status && getStatusText(status)}
+            {getStatusText(status)}
           </div>
         </div>
       </div>

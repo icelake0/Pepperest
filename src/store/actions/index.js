@@ -9,3 +9,7 @@ export {
 export {
     loadProduct,
 } from './products';
+
+export {
+    loadCustomer,
+} from './customers';

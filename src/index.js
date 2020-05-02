@@ -9,13 +9,15 @@ import thunk from 'redux-thunk';
 import authReducer from './store/reducers/auth';
 import paymentsReducer from './store/reducers/payments';
 import productsReducer from './store/reducers/products';
+import customersReducer from './store/reducers/customers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     auth: authReducer,
     payments: paymentsReducer,
-    products: productsReducer
+    products: productsReducer,
+    customers: customersReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(
@@ -24,7 +26,7 @@ const store = createStore(rootReducer, composeEnhancers(
 
 const app = (
     <Provider store={store}>
-            <App />
+        <App />
     </Provider>
 );
 
