@@ -15,4 +15,3 @@ export const ErrorMessages =
 {
     getHistoryFailed : "We are currently unable to get your payment data",
 }
-

@@ -5,3 +5,7 @@ export {
 export {
     loadPayments,
 } from './payments';
+
+export {
+    loadProduct,
+} from './products';

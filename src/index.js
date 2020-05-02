@@ -8,12 +8,14 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import authReducer from './store/reducers/auth';
 import paymentsReducer from './store/reducers/payments';
+import productsReducer from './store/reducers/products';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    payments : paymentsReducer
+    payments: paymentsReducer,
+    products: productsReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

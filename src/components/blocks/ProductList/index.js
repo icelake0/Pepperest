@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import { InputWithoutLabel, ProductListItem, ListHeader } from 'components/blocks';
-import { products } from 'libs/constants';
+import React from 'react';
+import { ProductListItem, ListHeader, ListFooter, LoadingListItem } from 'components/blocks';
 import { getStringHash } from 'libs/utils';
 
 
-const ProductList = ({ productListActionLabel }) => {
-  const [value, setValue] = useState('');
+const ProductList = ({ productListActionLabel, loading, products, meta, links, refreshData}) => {
+
+  const gotoPage = (page) => {
+    const params = {
+      page : page
+    };
+    refreshData(params);
+  }
 
   return (
     <div className="list">
@@ -15,7 +20,16 @@ const ProductList = ({ productListActionLabel }) => {
       />
       <div className="list-body">
         <ul>
-          {products
+          {loading ? 
+              <> 
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem />
+                <LoadingListItem /> 
+              </>:
+            products
               && products.map((product, index) => (
                 <ProductListItem
                   key={getStringHash(index)}
@@ -32,31 +46,10 @@ const ProductList = ({ productListActionLabel }) => {
               ))}
         </ul>
       </div>
-      <div className="list-footer">
-        <p className="list-footer-label">Showing 1 - 6 of 90 entries</p>
-        <div className="list-footer__pagination">
-          <span className="list-footer__pagination-prev list-footer-text">
-            Previous
-          </span>
-          <ul className="d-flex flex-row">
-            <li className="list-footer__pagination-page-number list-footer-text">
-              1
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text">
-              2
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text">
-              3
-            </li>
-            <li className="list-footer__pagination-page-number list-footer-text list-footer-text-alt">
-              4
-            </li>
-          </ul>
-          <span className="list-footer__pagination-next list-footer-text list-footer-text-alt">
-            Next
-          </span>
-        </div>
-      </div>
+      <ListFooter
+        meta = {meta}
+        links = {links}  
+        gotoPage = { (page) => gotoPage(page)} />
     </div>
   );
 };

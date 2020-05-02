@@ -3,7 +3,6 @@ import { List } from 'components/blocks';
 import { STATUS as PaymentStatus } from 'libs/constants/PepperestWebServices/Payments';
 import { connect } from 'react-redux';
 import * as actions from 'store/actions/index';
-import { payments } from 'libs/constants';
 
 const PaymentPendingPage = (props) => {
 
