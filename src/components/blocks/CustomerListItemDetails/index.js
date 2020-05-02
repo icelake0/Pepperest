@@ -69,8 +69,8 @@ const CustomerListItemDetails = ({
             <CustomerRecentTransaction
               key={getStringHash(index)}
               amount={transaction.amount}
-              status={transaction.status}
-              datetime={transaction.datetime}
+              status={transaction.trans_status}
+              datetime={transaction.posting_date}
             />
           ))
         )}
@@ -99,15 +99,15 @@ CustomerListItemDetails.propTypes = {
   phone: PropTypes.string.isRequired,
   customerEmail: PropTypes.string.isRequired,
   customerName: PropTypes.string.isRequired,
-  totalTransactions: PropTypes.string.isRequired,
+  totalTransactions: PropTypes.number.isRequired,
   recentTransactions: PropTypes.arrayOf(
     PropTypes.shape({
       amount: PropTypes.string.isRequired,
-      datetime: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
+      posting_date: PropTypes.string.isRequired,
+      trans_status: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  totalSpent: PropTypes.string.isRequired,
+  totalSpent: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

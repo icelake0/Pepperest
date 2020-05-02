@@ -87,11 +87,11 @@ const ProductInfo = ({
 );
 
 ProductInfo.propTypes = {
-  productID: PropTypes.string.isRequired,
+  productID: PropTypes.number.isRequired,
   productName: PropTypes.string.isRequired,
   dateCreated: PropTypes.string.isRequired,
-  transactions: PropTypes.string.isRequired,
-  deliveryDate: PropTypes.string.isRequired,
+  transactions: PropTypes.number.isRequired,
+  deliveryDate: PropTypes.number.isRequired,
   amount: PropTypes.string.isRequired,
   productDescription: PropTypes.string.isRequired,
 };

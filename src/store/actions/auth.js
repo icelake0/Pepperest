@@ -73,12 +73,13 @@ export const autenticate = (payLoad, type = 'login') => {
         const endpoint = type === 'login' ? Auth.LOGIN : Auth.REGISTER;
         PepperestAxios.post(endpoint, payLoad)
         .then( response => {
+            const token = 'Bearer '+response.data.token.access_token;
             const expirationDate = new Date(new Date().getTime() + response.data.token.expires_in * 1000);
-            localStorage.setItem('token', response.data.token.access_token);
+            localStorage.setItem('token', token);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('tokenType', response.data.token.token_type);
             localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));
-            dispatch(authSuccess(response.data.token.access_token, response.data.userInfo));
+            dispatch(authSuccess(token, response.data.userInfo));
             dispatch(checkAuthTimeout(response.data.token.expires_in));
         } )
         .catch( error => {

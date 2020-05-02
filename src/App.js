@@ -31,7 +31,7 @@ function App(props) {
                 path={path}
                 exact={exact}
                 component={component}
-              /> : <Redirect key={getStringHash(path)} from = {path} to={"login"} />
+              /> : <Redirect key={getStringHash(path)} from = {path} to={"/login"} />
             ))}
             <Route path="/404" component={PageNotFound} />
             <Redirect to={{ pathname: '/404' }} />

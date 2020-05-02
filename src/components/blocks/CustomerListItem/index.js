@@ -90,13 +90,13 @@ CustomerListItem.propTypes = {
   customerName: PropTypes.string.isRequired,
   paymentName: PropTypes.string.isRequired,
   customerEmail: PropTypes.string.isRequired,
-  totalTransactions: PropTypes.string.isRequired,
-  totalSpent: PropTypes.string.isRequired,
+  totalTransactions: PropTypes.number.isRequired,
+  totalSpent: PropTypes.number.isRequired,
   recentTransactions: PropTypes.arrayOf(
     PropTypes.shape({
       amount: PropTypes.string.isRequired,
-      datetime: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
+      posting_date: PropTypes.string.isRequired,
+      trans_status: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

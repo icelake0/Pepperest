@@ -74,19 +74,19 @@ const ProductListItem = ({
 
 ProductListItem.propTypes = {
   date: PropTypes.string.isRequired,
-  productID: PropTypes.string.isRequired,
+  productID: PropTypes.number.isRequired,
   productName: PropTypes.string.isRequired,
   dateCreated: PropTypes.string.isRequired,
-  transactions: PropTypes.string.isRequired,
-  deliveryDate: PropTypes.string.isRequired,
+  transactions: PropTypes.number.isRequired,
+  deliveryDate: PropTypes.number.isRequired,
   amount: PropTypes.string.isRequired,
   productDescription: PropTypes.string.isRequired,
   recentTransactions: PropTypes.arrayOf(
     PropTypes.shape({
-      status: PropTypes.string.isRequired,
+      trans_status: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       customer_email: PropTypes.string.isRequired,
-      datetime: PropTypes.string.isRequired,
+      posting_date: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

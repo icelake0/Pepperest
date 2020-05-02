@@ -75,8 +75,8 @@ CustomerInfo.propTypes = {
   phone: PropTypes.string.isRequired,
   customerName: PropTypes.string.isRequired,
   customerEmail: PropTypes.string.isRequired,
-  totalTransaction: PropTypes.string.isRequired,
-  totalSpent: PropTypes.string.isRequired,
+  totalTransaction: PropTypes.number.isRequired,
+  totalSpent: PropTypes.number.isRequired,
 };
 
 export default CustomerInfo;
