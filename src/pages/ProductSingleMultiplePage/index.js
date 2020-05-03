@@ -6,7 +6,7 @@ import * as actions from 'store/actions/index';
 const ProductSingleMultiplePage = (props) => {
 
   useEffect(() => {
-    if(!props.loaded) {
+    if(!props.loaded && !props.loading) {
         getProducts();
     }
   });

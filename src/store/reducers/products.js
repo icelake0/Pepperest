@@ -30,7 +30,7 @@ const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.LOADING_PRODUCTS: return loading(state, action);
         case actionTypes.FINISHED_LOADING_PRODUCTS: return loadedProducts(state, action);
-        case actionTypes.LOADING_PRODUCTS_FAILED : return failedToLoadProducts(state. action)
+        case actionTypes.LOADING_PRODUCTS_FAILED : return failedToLoadProducts(state, action)
         default:
             return state;
     }

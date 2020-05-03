@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
-import { OrderListItem, InputWithoutLabel, ListItem, ListHeader } from 'components/blocks';
+import React from 'react';
+import { OrderListItem, ListFooter, ListHeader, LoadingListItem } from 'components/blocks';
 import PropTypes from 'prop-types';
 import { getStringHash } from 'libs/utils';
 
-const OrderList = ({ orders }) => {
-  const [value, setValue] = useState('');
+const OrderList = ({ orders, meta, links, refreshData, loading,}) => {
+  
+  const gotoPage = (page) => {
+    const params = {
+      page : page
+    };
+    refreshData(params);
+  }
 
   return (
     <>
       <div className="list">
        <ListHeader />
         <div className="list-body">
-          { orders && orders.map(({
-            status, date, address, orderId, cost,
+          { loading ? 
+            <> 
+              <LoadingListItem />
+              <LoadingListItem />
+              <LoadingListItem />
+              <LoadingListItem />
+              <LoadingListItem />
+              <LoadingListItem /> 
+            </>:
+            orders && orders.map(({
+            status, date, address, orderId, cost, customerEmail, customerName
           }) => (
             <OrderListItem
               key={getStringHash(status)}
@@ -20,37 +35,18 @@ const OrderList = ({ orders }) => {
               date={date}
               address={address}
               orderId={orderId}
+              customerEmail = {customerEmail}
+              customerName = {customerName}
               cost={cost}
             />
           ))}
 
         </div>
-
-        <div className="list-footer">
-          <p className="list-footer-label">Showing 1 - 6 of 90 entries</p>
-          <div className="list-footer__pagination">
-            <span className="list-footer__pagination-prev list-footer-text">
-              Previous
-            </span>
-            <ul className="d-flex flex-row">
-              <li className="list-footer__pagination-page-number list-footer-text">
-                1
-              </li>
-              <li className="list-footer__pagination-page-number list-footer-text">
-                2
-              </li>
-              <li className="list-footer__pagination-page-number list-footer-text">
-                3
-              </li>
-              <li className="list-footer__pagination-page-number list-footer-text list-footer-text-alt">
-                4
-              </li>
-            </ul>
-            <span className="list-footer__pagination-next list-footer-text list-footer-text-alt">
-              Next
-            </span>
-          </div>
-        </div>
+        <ListFooter
+          meta = {meta}
+          links = {links}  
+          gotoPage = { (page) => gotoPage(page)}
+        />
       </div>
     </>
   );
@@ -62,8 +58,8 @@ OrderList.propTypes = {
       status: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       address: PropTypes.string.isRequired,
-      orderId: PropTypes.string.isRequired,
-      cost: PropTypes.string.isRequired,
+      orderId: PropTypes.any.isRequired,
+      cost: PropTypes.any.isRequired,
     }),
   ).isRequired,
 };

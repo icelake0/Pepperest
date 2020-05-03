@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getStatusTextClass, getIndicatorClass } from 'libs/utils';
 
-const OrderListItemDetails = ({ status, onClick }) => (
+const OrderListItemDetails = ({ status, onClick, date, address, orderId, cost, customerEmail, customerName}) => (
   <div className="list-item-detail__container">
     <div className={`list-item__indicator ${getIndicatorClass(status)}`} />
     <div className="list-item-detail__header">
@@ -24,7 +24,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
           <p className="list-item-detail__main-item__title">Order ID</p>
         </div>
         <div className="col-md-9 px-0">
-          <p className="list-item-detail__main-item__details">#9999202241</p>
+          <p className="list-item-detail__main-item__details">{orderId}</p>
         </div>
       </div>
       <div className="list-item-detail__main-item row mx-0">
@@ -32,7 +32,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
           <p className="list-item-detail__main-item__title">Customer</p>
         </div>
         <div className="col-md-9 px-0">
-          <p className="list-item-detail__main-item__details">James Blunt</p>
+          <p className="list-item-detail__main-item__details">{customerName}</p>
         </div>
       </div>
       <div className="list-item-detail__main-item row mx-0">
@@ -41,7 +41,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
         </div>
         <div className="col-md-9 px-0">
           <p className="list-item-detail__main-item__details">
-            January 21, 2019 / 15:00:23pm
+            {date}
           </p>
         </div>
       </div>
@@ -50,7 +50,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
           <p className="list-item-detail__main-item__title">Total Amount</p>
         </div>
         <div className="col-md-9 px-0">
-          <p className="list-item-detail__main-item__details">NGN 530,600</p>
+          <p className="list-item-detail__main-item__details">NGN {cost}</p>
         </div>
       </div>
       <div className="list-item-detail__main-item row mx-0">
@@ -59,7 +59,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
         </div>
         <div className="col-md-9 px-0">
           <p className="list-item-detail__main-item__details">
-            Tohbeey@gmail.com
+            {customerEmail}
           </p>
         </div>
       </div>
@@ -83,7 +83,7 @@ const OrderListItemDetails = ({ status, onClick }) => (
         </div>
         <div className="col-md-9 px-0">
           <p className="list-item-detail__main-item__details">
-            40 Abiodun Alakemo str, off ikorodu road, ketu, lagos state.
+            {address}.
           </p>
         </div>
       </div>

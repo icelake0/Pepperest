@@ -34,6 +34,10 @@ import LinkMediaAccountPage from './LinkMediaAccountPage';
 
 import OrderDashboard from './OrderDashboard';
 import OrderAll from './OrderAll';
+import OrderCanceled from './OrderCanceled';
+import OrderDelivered from './OrderDelivered';
+import OrderPending from './OrderPending';
+import OrderShipped from './OrderShipped';
 
 
 import MerchantProductsPage from './MerchantProductsPage';
@@ -72,6 +76,10 @@ export {
   LinkMediaAccountPage,
   OrderDashboard,
   OrderAll,
+  OrderCanceled,
+  OrderDelivered,
+  OrderPending,
+  OrderShipped,
   MerchantProductsPage,
   CheckoutPage,
   ShoppingCartPage,

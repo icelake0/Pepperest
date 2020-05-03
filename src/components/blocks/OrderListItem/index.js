@@ -13,7 +13,7 @@ import {
 } from 'libs/utils';
 
 const OrderListItem = ({
-  status, date, address, orderId, cost,
+  status, date, address, orderId, cost, customerEmail, customerName
 }) => {
   const [isListDetailsOpen, setListDetailsOpen] = useState(false);
   const updateListDetailsOpen = (value) => setListDetailsOpen(value);
@@ -86,7 +86,15 @@ const OrderListItem = ({
         </div>
       </div>
       {isListDetailsOpen ? (
-        <OrderListItemDetails onClick={updateListDetailsOpen} status={status} />
+        <OrderListItemDetails 
+          onClick={updateListDetailsOpen} 
+          date = {date}
+          address = {address}
+          orderId = {orderId}
+          cost = {cost}
+          customerEmail = {customerEmail}
+          customerName = {customerName}
+          status={status} />
       ) : null}
     </>
   );
@@ -96,8 +104,8 @@ OrderListItem.propTypes = {
   status: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
-  orderId: PropTypes.string.isRequired,
-  cost: PropTypes.string.isRequired,
+  orderId: PropTypes.any.isRequired,
+  cost: PropTypes.any.isRequired,
 };
 
 export default OrderListItem;

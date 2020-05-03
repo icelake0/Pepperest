@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from 'store/actions/index';
 
 
-const OrderAll = (props) => {
+const OrderCanceled = (props) => {
   useEffect(() => {
     if(!props.loaded && !props.loading) {
           getOrders();
@@ -13,10 +13,10 @@ const OrderAll = (props) => {
   });
 
   const getOrders = () => {
-      props.onLoadOrders(props.token, props.user, OrdersPageTypes.ALL)
+      props.onLoadOrders(props.token, props.user, OrdersPageTypes.CANCELED)
   };
   const refreshData = (params) => {
-      props.onLoadOrders(props.token, props.user, OrdersPageTypes.ALL, params)
+      props.onLoadOrders(props.token, props.user, OrdersPageTypes.CANCELED, params)
   };
 
   return <div className="page-container">
@@ -32,12 +32,12 @@ const mapStateToProps = state => {
   return {
     token: state.auth.token,
     user: state.auth.userInfo,
-    orders: state.orders[OrdersPageTypes.ALL].orders,
-    meta: state.orders[OrdersPageTypes.ALL].meta,
-    links: state.orders[OrdersPageTypes.ALL].links,
-    links: state.orders[OrdersPageTypes.ALL].links,
-    loading: state.orders[OrdersPageTypes.ALL].loading,
-    loaded: state.orders[OrdersPageTypes.ALL].loaded
+    orders: state.orders[OrdersPageTypes.CANCELED].orders,
+    meta: state.orders[OrdersPageTypes.CANCELED].meta,
+    links: state.orders[OrdersPageTypes.CANCELED].links,
+    links: state.orders[OrdersPageTypes.CANCELED].links,
+    loading: state.orders[OrdersPageTypes.CANCELED].loading,
+    loaded: state.orders[OrdersPageTypes.CANCELED].loaded
   };
 };
 
@@ -47,4 +47,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect( mapStateToProps, mapDispatchToProps )( OrderAll );
+export default connect( mapStateToProps, mapDispatchToProps )( OrderCanceled );
