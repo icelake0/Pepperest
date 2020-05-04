@@ -10,6 +10,7 @@ import authReducer from './store/reducers/auth';
 import paymentsReducer from './store/reducers/payments';
 import productsReducer from './store/reducers/products';
 import customersReducer from './store/reducers/customers';
+import ordersReducer from './store/reducers/orders';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     auth: authReducer,
     payments: paymentsReducer,
     products: productsReducer,
-    customers: customersReducer
+    customers: customersReducer,
+    orders: ordersReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

@@ -14,7 +14,7 @@ import { PepperestContext } from 'components/helpers/constant';
 
 const CustomersPage = (props) => {
   useEffect(() => {
-    if(!props.loaded) {
+    if(!props.loaded && !props.loading) {
         getCustomers();
     }
   });

@@ -1,6 +1,7 @@
 import PepperestAxios from '../../libs/utils/PepperestAxios'
 import { Auth, AuthErrorMessages } from '../../libs/constants/PepperestWebServices';
 import * as actionTypes from './actionTypes';
+import { setStateInLocalStorage, getStateFromLocalStorage, removeStateFromLocalStorage } from '../utility';
 
 export const authStart = () => {
     return {
@@ -38,10 +39,10 @@ export const registerFail = (errors) => {
 };
 
 export const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('expirationDate');
-    localStorage.removeItem('tokenType');
-    localStorage.removeItem('userInfo');
+    removeStateFromLocalStorage('token');
+    removeStateFromLocalStorage('expirationDate');
+    removeStateFromLocalStorage('tokenType');
+    removeStateFromLocalStorage('userInfo');
     return {
         type: actionTypes.LOGOUT
     };
@@ -75,13 +76,13 @@ export const autenticate = (payLoad, type = 'login') => {
         .then( response => {
             const token = 'Bearer '+response.data.token.access_token;
             const expirationDate = new Date(new Date().getTime() + response.data.token.expires_in * 1000);
-            localStorage.setItem('token', token);
-            localStorage.setItem('expirationDate', expirationDate);
-            localStorage.setItem('tokenType', response.data.token.token_type);
-            localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));
+            setStateInLocalStorage('token', token)
+            setStateInLocalStorage('expirationDate', expirationDate);
+            setStateInLocalStorage('tokenType', response.data.token.token_type);
+            setStateInLocalStorage('userInfo', JSON.stringify(response.data.userInfo));
             dispatch(authSuccess(token, response.data.userInfo));
             dispatch(checkAuthTimeout(response.data.token.expires_in));
-        } )
+        })
         .catch( error => {
             let errorMessage = null;
             if(type === 'login'){
@@ -100,15 +101,15 @@ export const autenticate = (payLoad, type = 'login') => {
 
 export const authCheckState = () => {
     return dispatch => {
-        const token = localStorage.getItem('token');
+        const token = getStateFromLocalStorage('token');
         if (!token) {
             dispatch(logout());
         } else {
-            const expirationDate = new Date(localStorage.getItem('expirationDate'));
+            const expirationDate = new Date(getStateFromLocalStorage('expirationDate'));
             if (expirationDate <= new Date()) {
                 dispatch(logout());
             } else {
-                const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+                const userInfo = JSON.parse(getStateFromLocalStorage('userInfo'));
                 dispatch(authSuccess(token, userInfo));
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
             }   

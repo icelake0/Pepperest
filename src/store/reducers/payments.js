@@ -43,7 +43,7 @@ const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.LOADING_PAYMENTS: return loading(state, action);
         case actionTypes.FINISHED_LOADING_PAYMENTS: return loadedPayment(state, action);
-        case actionTypes.LOADING_PAYMENTS_FAILED : return failedToLoadPayment(state. action)
+        case actionTypes.LOADING_PAYMENTS_FAILED : return failedToLoadPayment(state, action)
         default:
             return state;
     }

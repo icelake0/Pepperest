@@ -13,3 +13,7 @@ export {
 export {
     loadCustomer,
 } from './customers';
+
+export {
+    loadOrders,
+} from './orders';

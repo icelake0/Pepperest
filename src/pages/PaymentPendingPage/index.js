@@ -7,7 +7,7 @@ import * as actions from 'store/actions/index';
 const PaymentPendingPage = (props) => {
 
     useEffect(() => {
-        if(!props.loaded) {
+        if(!props.loaded && !props.loading) {
             getPayments();
         }
     });
