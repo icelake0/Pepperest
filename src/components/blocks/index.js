@@ -65,7 +65,9 @@ import FilterByModal from './FilterByModal';
 
 import MerchantProductCard from './MerchantProductCard';
 import CartItem from './CartItem';
-import ListFooter from './ListFooter'
+import ListFooter from './ListFooter';
+
+import FormErrorBoundary from './FormErrorBoundary';
 
 export {
   Input,
@@ -126,4 +128,5 @@ export {
   MerchantProductCard,
   CartItem,
   ListFooter,
+  FormErrorBoundary,
 };

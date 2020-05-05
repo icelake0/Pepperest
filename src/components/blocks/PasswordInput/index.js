@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FormErrorBoundary } from 'components/blocks';
+import { EyeIcon } from 'components/vectors';
 
 const handleChange = (onChange) => (event) => {
   onChange(event);
@@ -16,42 +18,56 @@ const PasswordInput = ({
   hasIcon,
   validation,
   errorMessage,
-}) => (
-  <div className="nsForm-control">
-    <div className="d-flex flex-row justify-content-between">
-      <label htmlFor={id}>{label}</label>
-      {hasForgotPasswordLabel ? (
-        <a href="/forgot-password" className="nsForm__label-help">
-          Forgot password
-        </a>
-      ) : null}
-    </div>
-    <div className="nsForm-password">
-      <input
-        name={name}
-        type="password"
-        id={id}
-        className="nsForm-input"
-        placeholder={placeholder}
-        value={value}
-        ref = {validation}
-        onChange={handleChange(onChange)}
-      />
-      {hasIcon ? (
-        <img
-          src="assets/images/svg/eye.svg"
-          className="nsForm-password-icon"
-          alt="eye-icon"
+  hasError,
+}) => {
+  const [state, setState] = useState({ type: 'password', showPassword: false });
+
+  const handlePasswordToggle = () => {
+    if (state.type === 'password') {
+      setState({ ...state, type: 'text' });
+    } else {
+      setState({ ...state, type: 'password' });
+    }
+  };
+
+  return (
+    <div className="nsForm-control">
+      <div className="d-flex flex-row justify-content-between">
+        <label htmlFor={id}>{label}</label>
+        {hasForgotPasswordLabel ? (
+          <a href="/forgot-password" className="nsForm__label-help">
+            Forgot password
+          </a>
+        ) : null}
+      </div>
+      <div className="nsForm-password">
+        <input
+          name={name}
+          type={state.type}
+          id={id}
+          className="nsForm-input"
+          placeholder={placeholder}
+          value={value}
+          ref={validation}
+          onChange={handleChange(onChange)}
         />
-      ) : null}
-      <label>{errorMessage}</label>
+        {hasIcon ? (
+          <EyeIcon
+            classNames="nsForm-password-icon"
+            hasError={hasError}
+            onClick={handlePasswordToggle}
+          />
+        ) : null}
+        {hasError && <FormErrorBoundary message={errorMessage} />}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 PasswordInput.defaultProps = {
   hasForgotPasswordLabel: false,
   hasIcon: true,
+  hasError: false,
 };
 
 PasswordInput.propTypes = {
@@ -63,6 +79,8 @@ PasswordInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   hasForgotPasswordLabel: PropTypes.bool,
   hasIcon: PropTypes.bool,
+  errorMessage: PropTypes.string.isRequired,
+  hasError: PropTypes.bool,
 };
 
 export default PasswordInput;
