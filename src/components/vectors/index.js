@@ -24,6 +24,9 @@ import LockIcon from './LockIcon';
 import ImportIcon from './ImportIcon';
 import SortIcon from './SortIcon';
 import FilterIcon from './FilterIcon';
+import ErrorIcon from './ErrorIcon';
+import EyeIcon from './EyeIcon';
+import AlertCloseIcon from './AlertCloseIcon';
 
 
 export {
@@ -52,5 +55,8 @@ export {
   LockIcon,
   ImportIcon,
   SortIcon,
-  FilterIcon
+  FilterIcon,
+  ErrorIcon,
+  EyeIcon,
+  AlertCloseIcon,
 };

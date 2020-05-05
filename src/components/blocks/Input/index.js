@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {FormErrorBoundary} from 'components/blocks';
 
 const handleChange = (onChange) => (event) => {
   // passing back the event to the function from the parent component
@@ -7,7 +8,7 @@ const handleChange = (onChange) => (event) => {
 };
 
 const Input = ({
-  name, type, label, placeholder, id, value, onChange, validation, errorMessage
+  name, type, label, placeholder, id, value, onChange, validation, errorMessage, hasError
 }) => (
   <div className="nsForm-control">
     <label htmlFor={id}>{label}</label>
@@ -16,14 +17,18 @@ const Input = ({
       type={type}
       value={value}
       id={id}
-      className="nsForm-input"
+      className={`nsForm-input ${errorMessage ? 'error' : ''}`}
       placeholder={placeholder}
       ref={validation}
       onChange={handleChange(onChange)}
     />
-    <label>{errorMessage}</label>
+    {hasError && <FormErrorBoundary message={errorMessage} />}
   </div>
 );
+
+Input.defaultProps = {
+  hasError: false,
+};
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
@@ -33,5 +38,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string.isRequired,
+  hasError: PropTypes.bool,
 };
 export default Input;

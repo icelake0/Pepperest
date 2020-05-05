@@ -7,7 +7,24 @@
     text-align: center;
     border: 0px;
     border-radius: 0px;
+    display: flex;
+    flex-direction: row;
     @include medium-font;
+
+    &-icon{
+        cursor: pointer;
+    }
+
+    &-message{
+        font-size: $font-size-2;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        margin: 0px auto;
+    }
 
     &-wrapper{
         width: 100%;

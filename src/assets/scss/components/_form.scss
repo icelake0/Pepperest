@@ -44,7 +44,11 @@
           box-shadow: 0 10px 20px 0 rgba(231, 231, 231, 0.5);
         }
         &.error{
-            border: solid 1px #ff721b;
+            border: solid 1px $error;
+            color: $error;
+            &::placeholder {
+                color: $error;
+            }
         }
         &.disabled{
             background-color: #f5f5f7;
@@ -118,7 +122,8 @@
                 outline: none;
             }
             &.error{
-                border: solid 1px #ff721b;
+                border: solid 1px $error;
+                color: $error;
             }
 
             // &:hover {
@@ -170,6 +175,12 @@
             position: absolute;
             top: 24px;
             right: 16px;
+            cursor: pointer;
+            &.error {
+                path {
+                    fill: $error;
+                }
+            }
         }
     }
 
@@ -189,6 +200,35 @@
         @include medium-font;
         &::placeholder{
             @include primary-font;
+        }
+        &.error {
+            border: solid 1px $error;
+            color: $error;
+
+            &::placeholder {
+                color: $error;
+            }
+        }
+    }
+
+    &-error{
+        &__boundary{
+            display: flex;
+            flex-direction: row;
+            margin-top: 4px;
+            align-items: center;
+
+            &-message{
+                font-size: $font-size-0;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $error;
+                margin-left: 4px;
+            }
+
         }
     }
 }
