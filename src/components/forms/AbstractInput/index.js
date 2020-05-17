@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Input, PasswordInput, SelectInput,
+  Input, PasswordInput, SelectInput, InputWithoutLabel
 } from 'components/blocks';
 
 const AbstractInput = (props) => {
@@ -38,6 +38,18 @@ const AbstractInput = (props) => {
           validation={props.validation}
           errorMessage={props.errorMessage}
           hasForgotPasswordLabel={props.hasForgotPasswordLabel}
+        />
+      );
+    break
+    case 'inputWithoutLabel':
+      abstractInput = (
+        <InputWithoutLabel
+          value={props.value}
+          {...{...props.elementConfig, type : props.inputWithoutLabelType}}
+          onChange={(event) => props.onChange(event)}
+          validation={props.validation}
+          errorMessage={props.errorMessage}
+          classNames="nsForm-input__alternate"
         />
       );
   }

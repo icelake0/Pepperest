@@ -17,3 +17,11 @@ export {
 export {
     loadOrders,
 } from './orders';
+
+export {
+    updateProfile, 
+    updateBankAccount, 
+    updateUserType, 
+    updateApiSetting, 
+    updateNotificationSetting
+} from './userAccount';

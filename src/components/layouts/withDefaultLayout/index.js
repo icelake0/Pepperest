@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Header, HeaderAlternate, CommonHeader } from 'components/shared';
 import { SettingsNavigationBar } from 'components/blocks';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 export default function withDefaultLayout(WrappedComponent, data = {}) {
-  return class extends Component {
+  const component = class extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -32,6 +34,9 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
     }
 
     render() {
+      if (!this.props.isAuthenticated) {
+        return <Redirect to="/login"/>;
+      }
       const {
         hasAlternateHeader,
         isSettings,
@@ -72,4 +77,11 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
       );
     }
   };
+  const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !== null
+    };
+  };
+
+  return ( connect( mapStateToProps, null )( component ) );
 }

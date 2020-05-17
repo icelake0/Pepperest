@@ -2,6 +2,7 @@ import PepperestAxios from '../../libs/utils/PepperestAxios'
 import { Auth, AuthErrorMessages } from '../../libs/constants/PepperestWebServices';
 import * as actionTypes from './actionTypes';
 import { setStateInLocalStorage, getStateFromLocalStorage, removeStateFromLocalStorage } from '../utility';
+import { getUserProfile } from 'store/actions/userAccount';
 
 export const authStart = () => {
     return {
@@ -81,6 +82,7 @@ export const autenticate = (payLoad, type = 'login') => {
             setStateInLocalStorage('tokenType', response.data.token.token_type);
             setStateInLocalStorage('userInfo', JSON.stringify(response.data.userInfo));
             dispatch(authSuccess(token, response.data.userInfo));
+            dispatch(getUserProfile(token, response.data.userInfo));
             dispatch(checkAuthTimeout(response.data.token.expires_in));
         })
         .catch( error => {
@@ -111,6 +113,7 @@ export const authCheckState = () => {
             } else {
                 const userInfo = JSON.parse(getStateFromLocalStorage('userInfo'));
                 dispatch(authSuccess(token, userInfo));
+                dispatch(getUserProfile(token, userInfo));
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
             }   
         }

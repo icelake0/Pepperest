@@ -7,7 +7,7 @@ const SelectInputWithoutLabel = ({
   id, value, name, defaultValue, options, classNames, onChange
 }) => (
   <div className={`nsForm-select ${classNames || ''}`}>
-    <select name={name} id={id} value={value} onChange={(event) => { onChange(event.target.value); }}>
+    <select name={name} id={id} value={value} onChange={(event) => { onChange(event); }}>
       {defaultValue ? (<option value="">{defaultValue}</option>) : null}
       {options.map((option, index) => (
         <option key={getStringHash(index)} value={option.value}>{option.label}</option>
