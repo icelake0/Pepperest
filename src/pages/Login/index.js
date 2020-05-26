@@ -1,7 +1,7 @@
 import React from 'react';
 import { withAuthLayout } from 'components/layouts';
 import {
-  AuthFooter, FacebookButton, GoogleButton, Alert,
+  AuthFooter, Alert,
 } from 'components/blocks';
 import { LoginForm } from 'components/forms'
 import { Redirect } from 'react-router-dom';
@@ -20,15 +20,6 @@ const Login = (props) => {
         </div>
         <div className="auth-panel-main">
           <LoginForm />
-          <div className="auth-panel-divider">
-            <div className="auth-panel-divider__line" />
-            <div className="auth-panel-divider__circle">
-              <span className="auth-panel-divider-text">OR</span>
-            </div>
-            <div className="auth-panel-divider__line" />
-          </div>
-          <FacebookButton />
-          <GoogleButton />
         </div>
       </div>
       <AuthFooter

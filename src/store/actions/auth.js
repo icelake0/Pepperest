@@ -59,20 +59,24 @@ export const checkAuthTimeout = (expirationTime) => {
 
 export const login = (email, password) => {
     return dispatch => {
-        dispatch(autenticate({email, password}))
+        dispatch(autenticate({email, password}, Auth.LOGIN))
     };
 };
 
 export const register = (payLoad) => {
     return dispatch => {
-        dispatch(autenticate(payLoad, 'register'))
+        dispatch(autenticate(payLoad, Auth.REGISTER))
     };
 }
 
-export const autenticate = (payLoad, type = 'login') => {
+export const socialLogin = (payLoad) => {
     return dispatch => {
-        dispatch(authStart());
-        const endpoint = type === 'login' ? Auth.LOGIN : Auth.REGISTER;
+        dispatch(autenticate(payLoad, Auth.SOCIAL))
+    };
+}
+
+export const autenticate = (payLoad, endpoint) => {
+    return dispatch => {
         PepperestAxios.post(endpoint, payLoad)
         .then( response => {
             const token = 'Bearer '+response.data.token.access_token;
@@ -87,7 +91,7 @@ export const autenticate = (payLoad, type = 'login') => {
         })
         .catch( error => {
             let errorMessage = null;
-            if(type === 'login'){
+            if(endpoint === Auth.LOGIN || endpoint === Auth.SOCIAL){
                 errorMessage = error.response ? 
                 (AuthErrorMessages[error.response.data.error] || AuthErrorMessages.default) : 
                 'Unable to connect to the server' //TODO handle this in global PepperestAxios

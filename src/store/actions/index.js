@@ -1,5 +1,9 @@
 export {
-    register, login, logout, authCheckState
+    register,
+    login,
+    logout,
+    authCheckState,
+    socialLogin
 } from './auth';
 
 export {
