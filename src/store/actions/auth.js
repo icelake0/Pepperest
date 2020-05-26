@@ -52,10 +52,33 @@ export const logout = () => {
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
         setTimeout(() => {
-            dispatch(logout());
-        }, expirationTime * 1000);
+            dispatch(refreshToken());
+        }, (expirationTime * 1000)-60000);
     };
 };
+
+export const refreshToken = () => {
+    return dispatch => {
+        let token = getStateFromLocalStorage('token');
+        const userInfo = JSON.parse(getStateFromLocalStorage('userInfo'))
+        const headers = {
+            Authorization : token,
+            customerID : userInfo.customerID
+        };
+        PepperestAxios.post(Auth.REFRESH_TOKEN, {}, {headers: headers})
+        .then( response => {
+            token = 'Bearer '+response.data.token.access_token;
+            const expirationDate = new Date(new Date().getTime() + response.data.token.expires_in * 1000);
+            setStateInLocalStorage('token', token)
+            setStateInLocalStorage('expirationDate', expirationDate);
+            dispatch(authSuccess(token, userInfo));
+            dispatch(checkAuthTimeout(response.data.token.expires_in));
+        })
+        .catch( error => {
+            dispatch(logout());
+        });
+    };
+}
 
 export const login = (email, password) => {
     return dispatch => {
