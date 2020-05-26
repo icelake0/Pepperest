@@ -5,6 +5,7 @@ export default {
     UPDATE_USER_TYPE : '/EscrowBackend/api/userAccount/changeAccountType',
     UPDATE_API_SETTING: '/EscrowBackend/api/userAccount/changeAPIsetting',
     UPDATE_NOTIFICATION_SETTING: '/EscrowBackend/api/userAccount/changeNotificationSetting',
+    UPDATE_PASSWORD: '/EscrowBackend/api/resetPassword',
 }
 
 export const ErrorMessages =
@@ -15,4 +16,5 @@ export const ErrorMessages =
     updateUserTypeFailed : 'We are currently unable to update your Account Type,',
     updateApiSettingFailed : 'We are currently unable to update your Api Setting',
     updateNotificationSettingFailed : 'We are currently unable to update your Notification setting',
+    updatePasswordFailed : 'We are currently unable to effect your password change',
 }

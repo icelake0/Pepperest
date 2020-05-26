@@ -27,5 +27,6 @@ export {
     updateBankAccount, 
     updateUserType, 
     updateApiSetting, 
-    updateNotificationSetting
+    updateNotificationSetting,
+    updatePassword
 } from './userAccount';

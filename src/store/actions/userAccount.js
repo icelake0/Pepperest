@@ -235,3 +235,44 @@ export const failedToUpdateNotificationSetting = (error) => {
         error : error
     };
 }
+
+export const updatePassword = (payLoad, token, user)  => {
+    return dispatch => {
+        dispatch(updatingPassword());
+        const headers = {
+            Authorization : token,
+            customerID : user.customerID
+        }
+        payLoad.customerID = user.customerID;
+        payLoad.email = user.email; //TODO please remove this after backend change
+        PepperestAxios.post(UserAccount.UPDATE_PASSWORD, payLoad, {headers: headers})
+        .then( response => {
+            dispatch(updatedPassword());
+        })
+        .catch( error => {
+            error = error.response.data?.message ? 
+                Object.values(error.response.data?.message).flat().join(' ') : 
+                UserAccountErrorMessages.updatePasswordFailed;
+            dispatch(failedToUpdatePassword(error))
+        });
+    };
+}
+
+export const updatingPassword = () => {
+    return {
+        type: actionTypes.UPDATING_PASSWORD,
+    };
+}
+
+export const updatedPassword  = () => {
+    return {
+        type: actionTypes.UPDATED_PASSWORD,
+    };
+}
+
+export const failedToUpdatePassword = (error) => {
+    return {
+        type: actionTypes.FAILED_TO_UPDATE_PASSWORD,
+        error : error
+    };
+}

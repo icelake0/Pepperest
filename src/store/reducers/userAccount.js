@@ -13,6 +13,8 @@ const initialState = {
     updateApiSettingError : null,
     updatingNotificationSetting : false,
     updateNotificationSettingError : null,
+    updatingPassword : false,
+    updatePasswordError : null,
 }
 
 const getUserProfileSuccess = (state, action) => {
@@ -121,6 +123,26 @@ const failedToUpdateNotificationSetting= (state, action) => {
     });
 }
 
+const updatingPassword = (state, action) => {
+    return updateObject( state, {
+        updatingPassword : true
+    });
+}
+
+const updatedPassword = (state, action) => {
+    return updateObject( state, {
+        updatingPassword : false,
+        updatePasswordError : null
+    });
+}
+
+const failedToUpdatePassword = (state, action) => {
+    return updateObject( state, {
+        updatingPassword : false,
+        updatePasswordError : action.error
+    });
+}
+
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.GET_USER_PROFILE_SUCCESS: return getUserProfileSuccess(state, action);
@@ -139,6 +161,9 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.UPDATING_NOTIFICATION_SETTING: return updatingNotificationSetting(state, action);
         case actionTypes.UPDATED_NOTIFICATION_SETTING: return updatedNotificationSetting(state, action);
         case actionTypes.FAILED_TO_UPDATE_NOTIFICATION_SETTING: return failedToUpdateNotificationSetting(state, action);
+        case actionTypes.UPDATING_PASSWORD: return updatingPassword(state, action);
+        case actionTypes.UPDATED_PASSWORD: return updatedPassword(state, action);
+        case actionTypes.FAILED_TO_UPDATE_PASSWORD: return failedToUpdatePassword(state, action);
         default:
             return state;
     }

@@ -5,4 +5,5 @@ export {default as BankAccountForm} from './BankAccountForm';
 export {default as ChangeAccountTypeForm} from './ChangeAccountTypeForm';
 export {default as ApiSettingForm} from './ApiSettingForm';
 export {default as NotificationSettingForm} from './NotificationSettingForm'
+export {default as ChangePasswordForm} from './ChangePasswordForm'
 export {default as AbstractInput} from './AbstractInput';
