@@ -40,10 +40,22 @@ export const registerFail = (errors) => {
 };
 
 export const logout = () => {
+    const token = getStateFromLocalStorage('token');
+    const userInfo = JSON.parse(getStateFromLocalStorage('userInfo'))
     removeStateFromLocalStorage('token');
     removeStateFromLocalStorage('expirationDate');
     removeStateFromLocalStorage('tokenType');
     removeStateFromLocalStorage('userInfo');
+    if(token && userInfo) {
+        const headers = {
+            Authorization : token,
+            customerID : userInfo.customerID
+        };
+        const payLoad = {
+            token : token.replace("Bearer ", "")
+        }
+        PepperestAxios.post(Auth.LOGOUT, payLoad, {headers: headers})
+    }
     return {
         type: actionTypes.LOGOUT
     };

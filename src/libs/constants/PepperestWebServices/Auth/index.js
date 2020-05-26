@@ -3,6 +3,7 @@ export default {
     REGISTER : '/EscrowBackend/api/register',
     SOCIAL : '/EscrowBackend/api/login/social',
     REFRESH_TOKEN : '/EscrowBackend/api/refreshToken',
+    LOGOUT :  '/EscrowBackend/api/logout',
 }
 
 export const ErrorMessages = {
