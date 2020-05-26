@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { OrderListItem, ListFooter, ListHeader, LoadingListItem } from 'components/blocks';
 import PropTypes from 'prop-types';
 import { getStringHash } from 'libs/utils';
 
 const OrderList = ({ orders, meta, links, refreshData, loading,}) => {
   
+  const [page, setPage] = useState(null);
+
+  const [query, setQuery] = useState('');
+  
   const gotoPage = (page) => {
+    setPage(page)
     const params = {
-      page : page
+      page : page,
+      query : query,
+    };
+    refreshData(params);
+  }
+
+  const search = (query) => {
+    setQuery(query)
+    const params = {
+      page : page,
+      query : query
     };
     refreshData(params);
   }
@@ -15,7 +30,7 @@ const OrderList = ({ orders, meta, links, refreshData, loading,}) => {
   return (
     <>
       <div className="list">
-       <ListHeader />
+      <ListHeader search = {search}/>
         <div className="list-body">
           { loading ? 
             <> 
