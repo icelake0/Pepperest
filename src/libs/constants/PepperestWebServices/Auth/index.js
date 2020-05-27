@@ -14,12 +14,12 @@ export const ErrorMessages = {
 export const SOCIAL_PROVIDERS = {
     google : {
         client_id : '1085614773661-e36tjkli9oen6laocn1hra8anuedhn0f',
-        redirectURL : 'http://localhost:3000/login',
+        redirectURL : 'https://pepperest-app.netlify.app/login',
         baseURL : 'https://accounts.google.com/o/oauth2/v2/auth',
     },
     facebook : {
         client_id : '2253727468182840',
-        redirectURL : 'http://localhost:3000/login',
+        redirectURL : 'https://pepperest-app.netlify.app/login',
         baseURL : 'https://www.facebook.com/v7.0/dialog/oauth',
     }
 }
