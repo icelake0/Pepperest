@@ -243,8 +243,7 @@ export const updatePassword = (payLoad, token, user)  => {
             Authorization : token,
             customerID : user.customerID
         }
-        payLoad.customerID = user.customerID;
-        payLoad.email = user.email; //TODO please remove this after backend change
+        payLoad.merchantID = user.customerID;
         PepperestAxios.post(UserAccount.UPDATE_PASSWORD, payLoad, {headers: headers})
         .then( response => {
             dispatch(updatedPassword());

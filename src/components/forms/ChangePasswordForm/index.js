@@ -11,13 +11,13 @@ const ChangePasswordForm = (props) => {
         updatedFormStateValuesWithProps : false,
         loading: false,
         form: {
-            new_password: {
+            password: {
                 elementConfig: {
-                name: 'new_password',
+                name: 'password',
                 type: 'inputWithoutLabel',
                 placeholder: '',
-                label: 'new_password',
-                id: 'new_password',
+                label: 'password',
+                id: 'password',
                 },
                 inputWithoutLabelType : 'password',
                 value: '',
@@ -28,13 +28,13 @@ const ChangePasswordForm = (props) => {
                 errorMessage: null,
                 },
             },
-            new_password_confirmation: {
+            password_confirmation: {
                 elementConfig: {
-                name: 'new_password_confirmation',
+                name: 'password_confirmation',
                 type: 'inputWithoutLabel',
                 placeholder: '',
-                label: 'new_password_confirmation',
-                id: 'new_password_confirmation',
+                label: 'password_confirmation',
+                id: 'password_confirmation',
                 },
                 inputWithoutLabelType : 'password',
                 value: '',
@@ -67,8 +67,8 @@ const ChangePasswordForm = (props) => {
     }
     const passwordUpdateHandler = () => {
         const payLoad = {
-            new_password : state.form.new_password.value,
-            new_password_confirmation : state.form.new_password_confirmation.value,
+            password : state.form.password.value,
+            password_confirmation : state.form.password_confirmation.value,
         }
         props.onUpdatePassword(payLoad, props.token, props.user)
     };
@@ -91,14 +91,14 @@ const ChangePasswordForm = (props) => {
                     </div>
                     <div className="pcard-form_control">
                         <AbstractInput
-                            key={state.form.new_password.elementConfig.name}
-                            value={state.form.new_password.value}
-                            elementConfig={state.form.new_password.elementConfig}
-                            inputWithoutLabelType={state.form.new_password.inputWithoutLabelType}
-                            onChange={(event) => inputChangedHandler(event, state.form.new_password.elementConfig.id)}
-                            validation={register(state.form.new_password.validation.rules)}
-                            errorMessage={(errors[state.form.new_password.elementConfig.name] && errors[state.form.new_password.elementConfig.name].message) || state.form.new_password.validation.errorMessage}
-                            hasForgotPasswordLabel={state.form.new_password.hasForgotPasswordLabel}
+                            key={state.form.password.elementConfig.name}
+                            value={state.form.password.value}
+                            elementConfig={state.form.password.elementConfig}
+                            inputWithoutLabelType={state.form.password.inputWithoutLabelType}
+                            onChange={(event) => inputChangedHandler(event, state.form.password.elementConfig.id)}
+                            validation={register(state.form.password.validation.rules)}
+                            errorMessage={(errors[state.form.password.elementConfig.name] && errors[state.form.password.elementConfig.name].message) || state.form.password.validation.errorMessage}
+                            hasForgotPasswordLabel={state.form.password.hasForgotPasswordLabel}
                         />
                     </div>
                     </div>
@@ -110,14 +110,14 @@ const ChangePasswordForm = (props) => {
                     </div>
                     <div className="pcard-form_control">
                         <AbstractInput
-                            key={state.form.new_password_confirmation.elementConfig.name}
-                            value={state.form.new_password_confirmation.value}
-                            elementConfig={state.form.new_password_confirmation.elementConfig}
-                            inputWithoutLabelType={state.form.new_password_confirmation.inputWithoutLabelType}
-                            onChange={(event) => inputChangedHandler(event, state.form.new_password_confirmation.elementConfig.id)}
-                            validation={register(state.form.new_password_confirmation.validation.rules)}
-                            errorMessage={(errors[state.form.new_password_confirmation.elementConfig.name] && errors[state.form.new_password_confirmation.elementConfig.name].message) || state.form.new_password_confirmation.validation.errorMessage}
-                            hasForgotPasswordLabel={state.form.new_password_confirmation.hasForgotPasswordLabel}
+                            key={state.form.password_confirmation.elementConfig.name}
+                            value={state.form.password_confirmation.value}
+                            elementConfig={state.form.password_confirmation.elementConfig}
+                            inputWithoutLabelType={state.form.password_confirmation.inputWithoutLabelType}
+                            onChange={(event) => inputChangedHandler(event, state.form.password_confirmation.elementConfig.id)}
+                            validation={register(state.form.password_confirmation.validation.rules)}
+                            errorMessage={(errors[state.form.password_confirmation.elementConfig.name] && errors[state.form.password_confirmation.elementConfig.name].message) || state.form.password_confirmation.validation.errorMessage}
+                            hasForgotPasswordLabel={state.form.password_confirmation.hasForgotPasswordLabel}
                         />
                     </div>
                     </div>
