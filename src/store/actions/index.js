@@ -1,5 +1,9 @@
 export {
-    register, login, logout, authCheckState
+    register,
+    login,
+    logout,
+    authCheckState,
+    socialLogin
 } from './auth';
 
 export {
@@ -17,3 +21,12 @@ export {
 export {
     loadOrders,
 } from './orders';
+
+export {
+    updateProfile, 
+    updateBankAccount, 
+    updateUserType, 
+    updateApiSetting, 
+    updateNotificationSetting,
+    updatePassword
+} from './userAccount';

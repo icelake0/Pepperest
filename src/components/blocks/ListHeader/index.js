@@ -12,7 +12,7 @@ import {
 } from 'components/blocks';
 import { ImportIcon, FilterIcon, SortIcon } from 'components/vectors';
 
-const ListHeader = ({ isProduct, productListActionLabel }) => {
+const ListHeader = ({ isProduct, productListActionLabel, search }) => {
   const [value, setValue] = useState('');
   const pepperestContext = useContext(PepperestContext);
 
@@ -20,6 +20,11 @@ const ListHeader = ({ isProduct, productListActionLabel }) => {
     showFilter: false,
     showSortBy: false,
   });
+
+  const searchInputHandler = (newValue) => {
+    setValue(newValue);
+    search(newValue);
+  }
 
   const handleToggleFilterBy = () => {
     setState({ ...state, showSortBy: false, showFilter: !state.showFilter });
@@ -39,7 +44,7 @@ const ListHeader = ({ isProduct, productListActionLabel }) => {
         id="search"
         value={value}
         onChange={(e) => {
-          setValue(e.target.value);
+          searchInputHandler(e.target.value);
         }}
       />
 

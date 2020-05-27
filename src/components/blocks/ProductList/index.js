@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { ProductListItem, ListHeader, ListFooter, LoadingListItem } from 'components/blocks';
 import { getStringHash } from 'libs/utils';
 
 
 const ProductList = ({ productListActionLabel, loading, products, meta, links, refreshData}) => {
 
+  const [page, setPage] = useState(null);
+
+  const [query, setQuery] = useState('');
+  
   const gotoPage = (page) => {
+    setPage(page)
     const params = {
-      page : page
+      page : page,
+      query : query,
+    };
+    refreshData(params);
+  }
+
+  const search = (query) => {
+    setQuery(query)
+    const params = {
+      page : page,
+      query : query
     };
     refreshData(params);
   }
@@ -15,6 +30,7 @@ const ProductList = ({ productListActionLabel, loading, products, meta, links, r
   return (
     <div className="list">
       <ListHeader
+        search = {search}
         isProduct
         productListActionLabel={productListActionLabel}
       />

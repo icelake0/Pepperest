@@ -14,7 +14,9 @@ import routes from 'config/routes';
 function App(props) {
 
   useEffect(() => {
-    props.onTryAutoSignup();
+    if(!props.isAuthenticated) {
+      props.onTryAutoSignup();
+    }
   });
 
   return (
@@ -24,15 +26,14 @@ function App(props) {
           <Switch>
             {routes.map(({
               path, component, exact, isProtected,
-            }) => (
-              !isProtected || props.isAuthenticated ?
+            }) => 
               <Route
                 key={getStringHash(path)}
                 path={path}
                 exact={exact}
                 component={component}
-              /> : <Redirect key={getStringHash(path)} from = {path} to={"/login"} />
-            ))}
+              /> 
+            )}
             <Route path="/404" component={PageNotFound} />
             <Redirect to={{ pathname: '/404' }} />
           </Switch>

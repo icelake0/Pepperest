@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { FormErrorBoundary } from 'components/blocks';
 
 
-const TextArea = ({ name,value, onChange, errorMessage, hasError }) => (
+const TextArea = ({ name,value, onChange, errorMessage, hasError, validation }) => (
   <>
-    <textarea className={`nsForm-textarea ${errorMessage ? 'error' : ''}`} name={name} id={name} value={value} onChange={(e) => { onChange(e); }} />
+    <textarea ref={validation} className={`nsForm-textarea ${errorMessage ? 'error' : ''}`} name={name} id={name} value={value} onChange={(e) => { onChange(e); }} />
     {errorMessage && <FormErrorBoundary message={errorMessage} />}
   </>
 );

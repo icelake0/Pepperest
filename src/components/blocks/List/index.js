@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   ListItem,
@@ -12,16 +12,31 @@ import { getStringHash } from 'libs/utils';
 
 const List = ({ payments, meta, links, refreshData, loading }) => {
 
+  const [page, setPage] = useState(null);
+
+  const [query, setQuery] = useState('');
+  
   const gotoPage = (page) => {
+    setPage(page)
     const params = {
-      page : page
+      page : page,
+      query : query,
+    };
+    refreshData(params);
+  }
+
+  const search = (query) => {
+    setQuery(query)
+    const params = {
+      page : page,
+      query : query
     };
     refreshData(params);
   }
 
   return (
     <div className="list">
-      <ListHeader />
+      <ListHeader search = {search}/>
         <div className="list-body">
           <ul>
             {loading ? 
