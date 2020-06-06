@@ -7,4 +7,5 @@ export {default as ApiSettingForm} from './ApiSettingForm';
 export {default as NotificationSettingForm} from './NotificationSettingForm'
 export {default as ChangePasswordForm} from './ChangePasswordForm'
 export {default as AddProductAndServiceForm} from './AddProductAndServiceForm'
+export {default as AddLinkMediaAccountForm} from './AddLinkMediaAccountForm'
 export {default as AbstractInput} from './AbstractInput';

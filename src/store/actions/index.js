@@ -29,5 +29,7 @@ export {
     updateUserType, 
     updateApiSetting, 
     updateNotificationSetting,
-    updatePassword
+    updatePassword,
+    addMediaLink,
+    removeMediaLink,
 } from './userAccount';
