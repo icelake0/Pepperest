@@ -12,6 +12,7 @@ export {
 
 export {
     loadProduct,
+    addProduct,
 } from './products';
 
 export {
