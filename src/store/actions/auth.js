@@ -112,6 +112,7 @@ export const socialLogin = (payLoad) => {
 
 export const autenticate = (payLoad, endpoint) => {
     return dispatch => {
+        dispatch(authStart());
         PepperestAxios.post(endpoint, payLoad)
         .then( response => {
             const token = 'Bearer '+response.data.token.access_token;

@@ -121,15 +121,16 @@ const LoginForm = (props) => {
             hasForgotPasswordLabel={formInput.hasForgotPasswordLabel}
           />
         ))}
+         <Button
+            type="submit"
+            value={props.loading ? <SpinnerIcon /> : "SIGN IN"}
+            dispatch = {props.loading}
+            name="sign_in"
+            handleClick={() => {}}
+          />
         {
-          props.loading ? <SpinnerIcon />
+          props.loading ? null
           : <>
-            <Button
-              type="submit"
-              value="SIGN IN"
-              name="sign_in"
-              handleClick={() => {}}
-            />
             <div className="auth-panel-divider">
                 <div className="auth-panel-divider__line" />
                 <div className="auth-panel-divider__circle">

@@ -4,8 +4,7 @@ import { AbstractInput } from 'components/forms';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import { SpinnerIcon } from '../../vectors';
-import { Alert } from 'components/blocks';
-import { InputWithoutLabel } from 'components/blocks';
+import { Alert } from 'components/blocks'; 
 
 const AddLinkMediaAccountForm = (props) => {
     const [state, setState] = useState({
@@ -73,10 +72,11 @@ const AddLinkMediaAccountForm = (props) => {
                         />
                     </div>
                     <div className="col-1 col-md-1 mr-md-auto d-flex flex-column justify-content-center">
-                        {
-                            props.loading ? <SpinnerIcon />
-                            :  <button className="button button-md button--orange">ADD</button>
-                        }
+                        <button className="button button-md button--orange" disabled = {props.loading}>
+                                {
+                                    props.loading ? <SpinnerIcon /> : 'Add'
+                                }
+                        </button>
                     </div>
                 </div>
             </form>
