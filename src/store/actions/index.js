@@ -33,3 +33,7 @@ export {
     addMediaLink,
     removeMediaLink,
 } from './userAccount';
+
+export {
+    loadMerchantStoreProduct,
+} from './merchantStore';

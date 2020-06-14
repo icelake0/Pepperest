@@ -69,6 +69,8 @@ import ListFooter from './ListFooter';
 
 import FormErrorBoundary from './FormErrorBoundary';
 
+import MerchantProductList from './MerchantProductList';
+
 
 export {
   Input,
@@ -130,4 +132,5 @@ export {
   CartItem,
   ListFooter,
   FormErrorBoundary,
+  MerchantProductList,
 };

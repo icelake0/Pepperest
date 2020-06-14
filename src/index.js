@@ -12,6 +12,7 @@ import productsReducer from './store/reducers/products';
 import customersReducer from './store/reducers/customers';
 import ordersReducer from './store/reducers/orders';
 import userAccountReducer from './store/reducers/userAccount';
+import merchantStoreReducer from './store/reducers/merchantStore'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     products: productsReducer,
     customers: customersReducer,
     orders: ordersReducer,
-    userAccount: userAccountReducer
+    userAccount: userAccountReducer,
+    merchantStore : merchantStoreReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(
