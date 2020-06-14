@@ -159,3 +159,10 @@ export const authCheckState = () => {
         }
     };
 };
+
+export const updateIntendedLocation = (location) => {
+    return {
+        type: actionTypes.UPDATE_INTENDED_LOCATION,
+        location: location
+    };
+}

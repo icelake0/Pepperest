@@ -3,7 +3,8 @@ export {
     login,
     logout,
     authCheckState,
-    socialLogin
+    socialLogin,
+    updateIntendedLocation
 } from './auth';
 
 export {
