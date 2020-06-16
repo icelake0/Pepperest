@@ -38,3 +38,9 @@ export {
 export {
     loadMerchantStoreProduct,
 } from './merchantStore';
+
+export {
+    addItemToCart,
+    removeItemFromCart
+} from './cart';
+

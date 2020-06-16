@@ -70,6 +70,8 @@ import ListFooter from './ListFooter';
 import FormErrorBoundary from './FormErrorBoundary';
 
 import MerchantProductList from './MerchantProductList';
+import MyCartButton from './MyCartButton';
+import CheckOutProductItem from './CheckOutProductItem';
 
 
 export {
@@ -133,4 +135,6 @@ export {
   ListFooter,
   FormErrorBoundary,
   MerchantProductList,
+  MyCartButton,
+  CheckOutProductItem
 };

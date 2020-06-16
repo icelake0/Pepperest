@@ -99,7 +99,6 @@ const LoginForm = (props) => {
   }
 
   const attemptSocialLogin = (provider, code) => {
-    console.log(code);
     const payLoad = {
       provider : provider,
       code : code
