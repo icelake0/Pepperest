@@ -58,7 +58,7 @@ const ListItem = ({
                       status,
                     )}`}
                   >
-                    {statusText.substring(statusText.indexOf(' ') + 1)}
+                    {statusText}
                   </p>
                 ) : null}
               </div>

@@ -15,6 +15,10 @@ const initialState = {
     updateNotificationSettingError : null,
     updatingPassword : false,
     updatePasswordError : null,
+    addingMediaLink : false,
+    addMediaLinkError : null,
+    mediaLinksRemoving : new Set([]),
+    removeMediaLinkError : null, 
 }
 
 const getUserProfileSuccess = (state, action) => {
@@ -143,6 +147,51 @@ const failedToUpdatePassword = (state, action) => {
     });
 }
 
+const addingMediaLink = (state, action) => {
+    return updateObject( state, {
+        addingMediaLink : true
+    });
+}
+
+const addedMediaLink = (state, action) => {
+    return updateObject( state, {
+        addingMediaLink : false,
+        addMediaLinkError : null
+    });
+}
+
+const failedToAddMediaLink = (state, action) => {
+    return updateObject( state, {
+        addingMediaLink : false,
+        addMediaLinkError : action.error
+    });
+}
+const removingMediaLink = (state, action) => {
+    const mediaLinksRemoving = new Set(state.mediaLinksRemoving)
+    mediaLinksRemoving.add(action.mediaLinkId)
+    return updateObject( state, {
+        mediaLinksRemoving : mediaLinksRemoving
+    });
+}
+
+const removedMediaLink = (state, action) => {
+    const mediaLinksRemoving = new Set(state.mediaLinksRemoving)
+    mediaLinksRemoving.delete(action.mediaLinkId)
+    return updateObject( state, {
+        mediaLinksRemoving : mediaLinksRemoving
+    });
+}
+
+const failedToRemoveMediaLink = (state, action) => {
+    const mediaLinksRemoving = new Set(state.mediaLinksRemoving)
+    mediaLinksRemoving.delete(action.mediaLinkId)
+    return updateObject( state, {
+        mediaLinksRemoving : mediaLinksRemoving,
+        removeMediaLinkError : action.error
+    });
+}
+
+
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.GET_USER_PROFILE_SUCCESS: return getUserProfileSuccess(state, action);
@@ -164,6 +213,12 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.UPDATING_PASSWORD: return updatingPassword(state, action);
         case actionTypes.UPDATED_PASSWORD: return updatedPassword(state, action);
         case actionTypes.FAILED_TO_UPDATE_PASSWORD: return failedToUpdatePassword(state, action);
+        case actionTypes.ADDING_MEDIA_LINK: return addingMediaLink(state, action);
+        case actionTypes.ADDED_MEDIA_LINK: return addedMediaLink(state, action);
+        case actionTypes.FAILED_TO_ADD_MEDIA_LINK: return failedToAddMediaLink(state, action);
+        case actionTypes.REMOVING_MEDIA_LINK: return removingMediaLink(state, action);
+        case actionTypes.REMOVED_MEDIA_LINK: return removedMediaLink(state, action);
+        case actionTypes.FAILED_TO_REMOVE_MEDIA_LINK: return failedToRemoveMediaLink(state, action);
         default:
             return state;
     }

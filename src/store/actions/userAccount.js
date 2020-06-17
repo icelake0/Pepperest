@@ -275,3 +275,91 @@ export const failedToUpdatePassword = (error) => {
         error : error
     };
 }
+
+export const addMediaLink = (token, user, payLoad) => {
+    return dispatch => {
+        dispatch(addingMediaLink());
+        const headers = {
+            Authorization : token,
+            customerID : user.customerID
+        }
+        payLoad.customerID = user.customerID;
+        PepperestAxios.post(UserAccount.ADD_MEDIA_LINK, payLoad, {headers: headers})
+        .then( response => {
+            const updatedUserProfile = response.data.userProfile;
+            dispatch(addedMediaLink());
+            dispatch(getUserProfileSuccess(updatedUserProfile));
+        })
+        .catch( error => {
+            error = error.response.data?.message ? 
+                Object.values(error.response.data?.message).flat().join(' ') : 
+                UserAccountErrorMessages.addMediaLinkFailed;
+            dispatch(failedToAddMediaLink(error))
+        });
+    };
+}
+
+export const addingMediaLink = () => {
+    return {
+        type: actionTypes.ADDING_MEDIA_LINK,
+    };
+}
+
+export const addedMediaLink  = () => {
+    return {
+        type: actionTypes.ADDED_MEDIA_LINK,
+    };
+}
+
+export const failedToAddMediaLink = (error) => {
+    return {
+        type: actionTypes.FAILED_TO_ADD_MEDIA_LINK,
+        error : error
+    };
+}
+
+export const removeMediaLink = (token, user, payLoad) => {
+    return dispatch => {
+        dispatch(removingMediaLink(payLoad.mediaLink_id));
+        const headers = {
+            Authorization : token,
+            customerID : user.customerID
+        }
+        payLoad.customerID = user.customerID;
+        PepperestAxios.post(UserAccount.REMOVE_MEDIA_LINK, payLoad, {headers: headers})
+        .then( response => {
+            const updatedUserProfile = response.data.userProfile;
+            dispatch(removedMediaLink(payLoad.mediaLink_id));
+            dispatch(getUserProfileSuccess(updatedUserProfile));
+        })
+        .catch( error => {
+            error = error.response?.data?.message ? 
+                Object.values(error.response.data?.message).flat().join(' ') : 
+                UserAccountErrorMessages.removeMediaLinkFailed;
+            dispatch(failedToRemoveMediaLink(payLoad.mediaLink_id, error))
+        });
+    };
+}
+
+export const removingMediaLink = (mediaLinkId) => {
+    return {
+        type: actionTypes.REMOVING_MEDIA_LINK,
+        mediaLinkId: mediaLinkId
+    };
+}
+
+export const removedMediaLink  = (mediaLinkId) => {
+    return {
+        type: actionTypes.REMOVED_MEDIA_LINK,
+        mediaLinkId: mediaLinkId
+    };
+}
+
+export const failedToRemoveMediaLink = (mediaLinkId,error) => {
+    return {
+        type: actionTypes.FAILED_TO_REMOVE_MEDIA_LINK,
+        mediaLinkId: mediaLinkId,
+        error : error
+    };
+}
+

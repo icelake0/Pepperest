@@ -145,15 +145,13 @@ const RegisterForm = (props) => {
                     errorMessage={(errors[formInput.elementConfig.name] && errors[formInput.elementConfig.name].message) || props.errors[formInput.elementConfig.name]}
                 />
             )}
-            {
-              props.loading ? <SpinnerIcon /> :
-              <Button
-                type="submit"
-                value="CREATE ACCOUNT"
-                name="sign_up"
-                handleClick={() => {}}
-              />
-            }
+            <Button
+              type="submit"
+              value={props.loading ? <SpinnerIcon /> : "CREATE ACCOUNT"}
+              dispatch = {props.loading}
+              name="sign_up"
+              handleClick={() => {}}
+            />
          </form>
     </>
   )

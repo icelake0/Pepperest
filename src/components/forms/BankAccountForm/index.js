@@ -179,10 +179,11 @@ const BankAccountForm = (props) => {
                 ) : null}
                 </div>
                 <div className="pcard-footer">
-                {
-                    props.loading ? <SpinnerIcon />
-                    :  <button className="button button-md button--orange">Add Account Number</button>
-                }
+                    <button className="button button-md button--orange" disabled = {props.loading}>
+                        {
+                            props.loading ? <SpinnerIcon /> : 'Add Account Number'
+                        }
+                    </button>
                 </div>
             </div>
         </form>

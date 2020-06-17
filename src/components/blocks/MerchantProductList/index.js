@@ -1,9 +1,9 @@
 import React, { useState }  from 'react';
-import { ProductListItem, ListHeader, ListFooter, LoadingListItem } from 'components/blocks';
+import { ProductListItem, ListHeader, ListFooter, LoadingListItem, MerchantProductCard} from 'components/blocks';
 import { getStringHash } from 'libs/utils';
 
 
-const ProductList = ({ productListActionLabel, loading, products, meta, links, refreshData}) => {
+const MerchantProductList = ({ productListActionLabel, loading, products, meta, links, refreshData}) => {
 
   const [page, setPage] = useState(null);
 
@@ -29,15 +29,14 @@ const ProductList = ({ productListActionLabel, loading, products, meta, links, r
 
   return (
     <div className="list">
-      <ListHeader
-        search = {search}
-        isProduct
-        productListActionLabel={productListActionLabel}
-        placeholder = "Search product name and product id"
-      />
-      <div className="list-body">
-        <ul>
-          {loading ? 
+        <ListHeader
+            search = {search}
+            productListActionLabel={productListActionLabel}
+            placeholder = "Search product name and product id"
+        />
+      <div className="">
+        <ul className="row">
+        {loading ? 
               <> 
                 <LoadingListItem />
                 <LoadingListItem />
@@ -48,17 +47,9 @@ const ProductList = ({ productListActionLabel, loading, products, meta, links, r
               </>:
             products
               && products.map((product, index) => (
-                <ProductListItem
+                <MerchantProductCard 
                   key={getStringHash(index)}
-                  date={product.date}
-                  productName={product.productName}
-                  productDescription={product.productDescription}
-                  amount={product.amount}
-                  productID={product.id}
-                  dateCreated={product.dateCreated}
-                  deliveryDate={product.deliveryDate}
-                  transactions={product.transactions}
-                  recentTransactions={product.recentTransactions}
+                  product={product}
                 />
               ))}
         </ul>
@@ -71,4 +62,4 @@ const ProductList = ({ productListActionLabel, loading, products, meta, links, r
   );
 };
 
-export default ProductList;
+export default MerchantProductList;
