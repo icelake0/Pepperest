@@ -30,7 +30,7 @@ const OrderList = ({ orders, meta, links, refreshData, loading,}) => {
   return (
     <>
       <div className="list">
-      <ListHeader search = {search}/>
+      <ListHeader search = {search} placeholder = "Search order id, customer/merchant name and customer/merchant email"/>
         <div className="list-body">
           { loading ? 
             <> 

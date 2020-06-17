@@ -32,6 +32,7 @@ const MerchantProductList = ({ productListActionLabel, loading, products, meta, 
         <ListHeader
             search = {search}
             productListActionLabel={productListActionLabel}
+            placeholder = "Search product name and product id"
         />
       <div className="">
         <ul className="row">

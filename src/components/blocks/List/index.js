@@ -36,7 +36,7 @@ const List = ({ payments, meta, links, refreshData, loading }) => {
 
   return (
     <div className="list">
-      <ListHeader search = {search}/>
+      <ListHeader search = {search} placeholder = "Search transaction no/code, customer/merchant email and description"/>
         <div className="list-body">
           <ul>
             {loading ? 

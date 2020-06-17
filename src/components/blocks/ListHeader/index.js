@@ -12,7 +12,7 @@ import {
 } from 'components/blocks';
 import { ImportIcon, FilterIcon, SortIcon } from 'components/vectors';
 
-const ListHeader = ({ isProduct, productListActionLabel, search }) => {
+const ListHeader = ({ isProduct, productListActionLabel, search, placeholder }) => {
   const [value, setValue] = useState('');
   const pepperestContext = useContext(PepperestContext);
 
@@ -40,7 +40,7 @@ const ListHeader = ({ isProduct, productListActionLabel, search }) => {
       <InputWithoutLabel
         name="search"
         type="text"
-        placeholder="Search Transactions ID, customer name, email address"
+        placeholder={placeholder || "Search Transactions ID, customer name, email address"}
         id="search"
         value={value}
         onChange={(e) => {
