@@ -10,7 +10,6 @@ const InstagramProductList = (props) => {
     <div className="list">
       <ListHeader
         isProduct
-        placeholder = "Search product name, product id"
         productListActionLabel="Import from Instagram"
         />
       <div className="list-body">

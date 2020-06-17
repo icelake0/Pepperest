@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { MyCartButton } from 'components/blocks'
 
 const CommonHeader = ({ history, showCart, commonHeaderTitle }) => (
   <div className="nsHeader-alternate">
@@ -10,7 +9,10 @@ const CommonHeader = ({ history, showCart, commonHeaderTitle }) => (
       <h4 className="nsHeader-main-title">{commonHeaderTitle}</h4>
       {
           showCart ? (
-           < MyCartButton />
+            <div role="button" tabIndex="0" className="button button-md button--orange d-flex flex-row" onClick={() => { history.push('/cart'); }}>
+              My Cart
+              <div className="mBadge-alt">12</div>
+            </div>
           ) : null
       }
     </div>

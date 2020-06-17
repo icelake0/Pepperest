@@ -115,11 +115,10 @@ const ChangeAccountTypeForm = (props) => {
                         </div>
                     </div>
                     <div className="pcard-footer">
-                        <button className="button button-md button--orange" disabled = {props.loading}>
-                            {
-                                props.loading ? <SpinnerIcon /> : 'Save Changes'
-                            }
-                        </button>
+                        {
+                            props.loading ? <SpinnerIcon />
+                            :  <button className="button button-md button--orange">Save Changes</button>
+                        }
                     </div>
                 </form>
             </div>

@@ -48,51 +48,7 @@ export const loadedProduct = (products, meta, links) => {
 }
 export const failedToLoadProduct = (error) => {
     return {
-        type: actionTypes.LOADING_PRODUCTS_FAILED,
-        error: error,
-    }
-}
-
-export const addProduct = (token, user, payLoad) => {
-    return dispatch => {
-        dispatch(addingProduct())
-        const headers = {
-            Authorization : token,
-            customerID : user.customerID
-        }
-        payLoad.merchantID = user.customerID
-
-        PepperestAxios.post(Products.ADD_PRODUCTS, payLoad, {headers: headers})
-        .then(response => {
-            dispatch(addedProduct())
-            const products = response.data.products.data
-            const meta = response.data.products.meta
-            const links = response.data.products.links
-            dispatch(loadedProduct(products, meta, links))
-        })
-        .catch(error => {
-            error = error.response.data?.message ? 
-                Object.values(error.response.data?.message).flat().join(' ') : 
-                ProductsErrorMessages.addProductFailed;
-            dispatch(failedToAddProduct(error))
-        })
-    };
-}
-
-export const addingProduct = () => {
-    return {
-        type: actionTypes.ADDING_PRODUCT,
-    };
-}
-
-export const addedProduct = () => {
-    return {
-        type: actionTypes.FINISHED_ADDING_PRODUCT,
-    };
-}
-export const failedToAddProduct = (error) => {
-    return {
-        type: actionTypes.ADDING_PRODUCT_FAILED,
+        type: actionTypes.LOADING_PRODUCTS,
         error: error,
     }
 }

@@ -3,8 +3,7 @@ export {
     login,
     logout,
     authCheckState,
-    socialLogin,
-    updateIntendedLocation
+    socialLogin
 } from './auth';
 
 export {
@@ -13,7 +12,6 @@ export {
 
 export {
     loadProduct,
-    addProduct,
 } from './products';
 
 export {
@@ -30,17 +28,5 @@ export {
     updateUserType, 
     updateApiSetting, 
     updateNotificationSetting,
-    updatePassword,
-    addMediaLink,
-    removeMediaLink,
+    updatePassword
 } from './userAccount';
-
-export {
-    loadMerchantStoreProduct,
-} from './merchantStore';
-
-export {
-    addItemToCart,
-    removeItemFromCart
-} from './cart';
-

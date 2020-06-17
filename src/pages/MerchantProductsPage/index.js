@@ -1,64 +1,58 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
-import { connect } from 'react-redux';
-import * as actions from 'store/actions/index';
-import { MerchantProductList } from 'components/blocks'
-import {
-  useParams
-} from "react-router-dom";
+import { ListHeader, MerchantProductCard } from 'components/blocks';
+import { getStringHash } from 'libs/utils';
 
 const config = {
   hasAlternateHeader: false,
   hasCommonHeader: true,
   showCart: true,
-  commonHeaderTitle: null,
+  commonHeaderTitle: 'Seun Akanni\'s Store',
   showCommonHeaderOnDesktop: true,
   links: [],
   isSettings: false,
   page: 'merchantProducts',
 };
-const MerchantProductsPage = (props) => {
-  const { merchantCode } = useParams();
-
-  useEffect(() => {
-    if(!props.loaded && !props.loading && !props.error) {
-      refreshData({});
-    }
-  });
-
-  const refreshData = (params) => {
-      params.merchantCode = merchantCode;
-      props.onLoadMerchantStoreProduct(props.token, props.user, params)
-  };
-
-  return <div className="merchant">
-          <MerchantProductList 
-            products={props.products} 
-            meta = {props.meta}
-            links = {props.links}
-            refreshData = {(params) => refreshData(params)}
-            loading = {props.loading}
-            productListActionLabel="Import Multiple Products" />
+const MerchantProductsPage = () => (
+  <div className="merchant">
+    <div className="list">
+      <ListHeader />
+      <div className="">
+        <ul className="row">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
+            <div className="col-12 col-md-6 col-lg-3" key={getStringHash()}>
+              <MerchantProductCard />
+            </div>
+          ))}
+        </ul>
+      </div>
+      <div className="list-footer">
+        <p className="list-footer-label">Showing 1 - 6 of 90 entries</p>
+        <div className="list-footer__pagination">
+          <span className="list-footer__pagination-prev list-footer-text">
+            Previous
+          </span>
+          <ul className="d-flex flex-row">
+            <li className="list-footer__pagination-page-number list-footer-text">
+              1
+            </li>
+            <li className="list-footer__pagination-page-number list-footer-text">
+              2
+            </li>
+            <li className="list-footer__pagination-page-number list-footer-text">
+              3
+            </li>
+            <li className="list-footer__pagination-page-number list-footer-text list-footer-text-alt">
+              4
+            </li>
+          </ul>
+          <span className="list-footer__pagination-next list-footer-text list-footer-text-alt">
+            Next
+          </span>
         </div>
-}
-const mapStateToProps = state => {
-  return {
-      token: state.auth.token,
-      user: state.auth.userInfo,
-      products: state.merchantStore.products,
-      meta: state.merchantStore.meta,
-      links: state.merchantStore.links,
-      links: state.merchantStore.links,
-      loading: state.merchantStore.loading,
-      loaded: state.merchantStore.loaded,
-      error: state.merchantStore.loaded,
-  };
-};
+      </div>
+    </div>
+  </div>
+);
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onLoadMerchantStoreProduct: ( token, user, params ) => dispatch( actions.loadMerchantStoreProduct( token, user, params )  )
-  };
-};
-
-export default connect( mapStateToProps, mapDispatchToProps )( withDefaultLayout(MerchantProductsPage, config) );
+export default withDefaultLayout(MerchantProductsPage, config);

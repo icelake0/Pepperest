@@ -3,7 +3,6 @@ import { Auth, AuthErrorMessages } from '../../libs/constants/PepperestWebServic
 import * as actionTypes from './actionTypes';
 import { setStateInLocalStorage, getStateFromLocalStorage, removeStateFromLocalStorage } from '../utility';
 import { getUserProfile } from 'store/actions/userAccount';
-import { loadCart } from 'store/actions/cart'
 
 export const authStart = () => {
     return {
@@ -113,7 +112,6 @@ export const socialLogin = (payLoad) => {
 
 export const autenticate = (payLoad, endpoint) => {
     return dispatch => {
-        dispatch(authStart());
         PepperestAxios.post(endpoint, payLoad)
         .then( response => {
             const token = 'Bearer '+response.data.token.access_token;
@@ -124,7 +122,6 @@ export const autenticate = (payLoad, endpoint) => {
             setStateInLocalStorage('userInfo', JSON.stringify(response.data.userInfo));
             dispatch(authSuccess(token, response.data.userInfo));
             dispatch(getUserProfile(token, response.data.userInfo));
-            dispatch(loadCart(token, response.data.userInfo))
             dispatch(checkAuthTimeout(response.data.token.expires_in));
         })
         .catch( error => {
@@ -156,16 +153,8 @@ export const authCheckState = () => {
                 const userInfo = JSON.parse(getStateFromLocalStorage('userInfo'));
                 dispatch(authSuccess(token, userInfo));
                 dispatch(getUserProfile(token, userInfo));
-                dispatch(loadCart(token, userInfo))
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000 ));
             }   
         }
     };
 };
-
-export const updateIntendedLocation = (location) => {
-    return {
-        type: actionTypes.UPDATE_INTENDED_LOCATION,
-        location: location
-    };
-}
