@@ -12,8 +12,7 @@ const initialState = {
         name : null,
         businessName : null,
         password : null,
-    },
-    intendedLocation : null
+    }
 };
 
 const loginStart = ( state, action ) => {
@@ -44,10 +43,6 @@ const registerFail = (state, action) => {
     return updateObject(state, { errors: action.errors, loading: false});
 };
 
-const updateIntendedLocation = (state, action) => {
-    return updateObject(state, { intendedLocation: action.location });
-}
-
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.AUTH_START: return loginStart(state, action);
@@ -55,7 +50,6 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.AUTH_FAIL: return loginFail(state, action);
         case actionTypes.LOGOUT: return logout(state, action);
         case actionTypes.REGISTER_FAIL: return registerFail(state, action);
-        case actionTypes.UPDATE_INTENDED_LOCATION : return updateIntendedLocation(state, action);
         default:
             return state;
     }

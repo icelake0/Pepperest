@@ -33,7 +33,6 @@ const ProductList = ({ productListActionLabel, loading, products, meta, links, r
         search = {search}
         isProduct
         productListActionLabel={productListActionLabel}
-        placeholder = "Search product name and product id"
       />
       <div className="list-body">
         <ul>

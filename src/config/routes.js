@@ -105,7 +105,7 @@ const routes = [
     isProtected: true,
   },
   {
-    path: '/merchant/:merchantCode',
+    path: '/merchant',
     exact: true,
     component: MerchantProductsPage,
     isProtected: false,

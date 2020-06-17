@@ -3,7 +3,6 @@ import { Header, HeaderAlternate, CommonHeader } from 'components/shared';
 import { SettingsNavigationBar } from 'components/blocks';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import * as actions from '../../../store/actions/index';
 
 export default function withDefaultLayout(WrappedComponent, data = {}) {
   const component = class extends Component {
@@ -17,7 +16,6 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
         ...props,
         isDesktop: false,
       };
-      this.current_location = props.location.pathname;
 
       this.updateIsDesktop = this.updateIsDesktop.bind(this);
     }
@@ -37,16 +35,8 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
 
     render() {
       if (!this.props.isAuthenticated) {
-        this.props.onUpdateIntendedLocation(this.current_location);
         return <Redirect to="/login"/>;
       }
-
-      if(this.props.intendedLocation && this.props.isAuthenticated) {
-        const intendedLocation = this.props.intendedLocation;
-        this.props.onUpdateIntendedLocation(null);
-        return <Redirect to = {intendedLocation}/>;
-      }
-
       const {
         hasAlternateHeader,
         isSettings,
@@ -87,16 +77,11 @@ export default function withDefaultLayout(WrappedComponent, data = {}) {
       );
     }
   };
-  const mapDispatchToProps = (dispatch) => ({
-      onUpdateIntendedLocation: (location) => dispatch(actions.updateIntendedLocation(location)),
-  });
-
   const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null,
-        intendedLocation: state.auth.intendedLocation,
+        isAuthenticated: state.auth.token !== null
     };
   };
 
-  return ( connect( mapStateToProps, mapDispatchToProps )( component ) );
+  return ( connect( mapStateToProps, null )( component ) );
 }

@@ -29,7 +29,7 @@ const CustomerList = ({ productListActionLabel, loading, customers, meta, links,
   
   return (
     <div className="list">
-      <ListHeader search = {search} placeholder = "Search customer name, customer email"/>
+      <ListHeader search = {search}/>
       <div className="list-body">
         <ul>
           {loading ? 

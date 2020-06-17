@@ -99,6 +99,7 @@ const LoginForm = (props) => {
   }
 
   const attemptSocialLogin = (provider, code) => {
+    console.log(code);
     const payLoad = {
       provider : provider,
       code : code
@@ -120,16 +121,15 @@ const LoginForm = (props) => {
             hasForgotPasswordLabel={formInput.hasForgotPasswordLabel}
           />
         ))}
-         <Button
-            type="submit"
-            value={props.loading ? <SpinnerIcon /> : "SIGN IN"}
-            dispatch = {props.loading}
-            name="sign_in"
-            handleClick={() => {}}
-          />
         {
-          props.loading ? null
+          props.loading ? <SpinnerIcon />
           : <>
+            <Button
+              type="submit"
+              value="SIGN IN"
+              name="sign_in"
+              handleClick={() => {}}
+            />
             <div className="auth-panel-divider">
                 <div className="auth-panel-divider__line" />
                 <div className="auth-panel-divider__circle">

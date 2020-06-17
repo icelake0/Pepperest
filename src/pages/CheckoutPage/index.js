@@ -2,9 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { withDefaultLayout } from 'components/layouts';
+import { getStringHash } from 'libs/utils';
 import { LockIcon } from 'components/vectors';
-import { connect } from 'react-redux';
-import { CheckOutProductItem } from 'components/blocks'
 
 const config = {
   hasAlternateHeader: false,
@@ -16,7 +15,7 @@ const config = {
   isSettings: true,
   navBarTitle: 'Secure Checkout',
 };
-const CheckoutPage = (props) => (
+const CheckoutPage = ({ history }) => (
   <>
     <div className="checkout">
       <div className="row">
@@ -39,7 +38,7 @@ const CheckoutPage = (props) => (
               <div
                 className="button button-lg button--orange"
                 onClick={() => {
-                  props.history.push('/confirm');
+                  history.push('/confirm');
                 }}
               >
                 PLACE ORDER
@@ -53,12 +52,143 @@ const CheckoutPage = (props) => (
               <h6 className="checkout-item-content__title text--smaller text-font--medium">
                 My Order Summary
               </h6>
-              <p className="text--smaller">{props.cartItems.length} Items</p>
+              <p className="text--smaller">8 Items</p>
             </div>
             <div className="">
-            {props.cartItems.map((product) => (
-              <CheckOutProductItem key={product.id} product = {product} />
-            ))}
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment Iya Remi Ina
+                    Ankara with two lace Payment Iya Remi Ina Ankara with two
+                    lace Payment Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="checkout-item">
+                <div className="checkout-item-image__wrapper">
+                  <img
+                    className="checkout-item-image"
+                    src="assets/images/product.jpeg"
+                    alt="product"
+                  />
+                </div>
+                <div className="checkout-item-content">
+                  <h6 className="checkout-item-content__title text--smaller">
+                    Iya Remi Ina Ankara with two lace Payment
+                  </h6>
+                  <div className="d-flex flex-row justify-content-between align-items-center mt-2">
+                    <p className="text--smaller text-font--medium">
+                      NGN 18,500
+                    </p>
+                    <p className="text--smallest text--orange">
+                      2 Delivery days
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="checkout-summary-base">
               <h5 className="text--md text--silver text-font--medium text--bold">
@@ -66,7 +196,7 @@ const CheckoutPage = (props) => (
               </h5>
 
               <p className="text--md text--bold text-font--medium">
-              {props.cartItems[0]?.currency} {props.cart?.totalprice}
+                NGN 108,500
               </p>
             </div>
           </div>
@@ -82,12 +212,4 @@ const CheckoutPage = (props) => (
   </>
 );
 
-const mapStateToProps = state => {
-  return {
-      cartItems: state.cart?.cart?.items || [],
-      cart : state.cart.cart
-  };
-};
-
-export default connect(mapStateToProps, null)(withDefaultLayout(CheckoutPage, config));
-
+export default withDefaultLayout(CheckoutPage, config);
