@@ -13,9 +13,9 @@ export const ErrorMessages = {
 
 export const SOCIAL_PROVIDERS = {
     google : {
-        client_id : '1085614773661-e36tjkli9oen6laocn1hra8anuedhn0f',
+        client_id : '1085614773661-e36tjkli9oen6laocn1hra8anuedhn0f.apps.googleusercontent.com',
         redirectURL : 'https://pepperest-app.netlify.app/login',
-        baseURL : 'https://accounts.google.com/o/oauth2/v2/auth',
+        baseURL : 'https://accounts.google.com/signin/oauth/oauthchooseaccount',
     },
     facebook : {
         client_id : '2253727468182840',

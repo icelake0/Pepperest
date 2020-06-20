@@ -94,7 +94,7 @@ const LoginForm = (props) => {
     const client_id = SOCIAL_PROVIDERS.google.client_id
     const redirectURL = SOCIAL_PROVIDERS.google.redirectURL
     const baseURL = SOCIAL_PROVIDERS.google.baseURL;
-    const googleAuthURL = `${baseURL}?scope=https%3A//www.googleapis.com/auth/drive.metadata.readonly&include_granted_scopes=true&response_type=code&redirect_uri=${redirectURL}&client_id=${client_id}&state={"provider":"google"}`
+    const googleAuthURL = `${baseURL}?scope=openid%20profile%20email&response_type=code&redirect_uri=${redirectURL}&client_id=${client_id}&state={"provider":"google"}`
     window.location.replace(googleAuthURL);
   }
 
