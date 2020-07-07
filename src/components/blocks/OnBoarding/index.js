@@ -7,22 +7,26 @@ const OnBoarding = ({
 }) => (
   <div className="on-boarding-container">
     <BankAlert />
-    {!secondaryButtonText ? (
-      <OnBoardingModal
-        title={title}
-        info={info}
-        buttonText={buttonText}
-        imageUrl={imageUrl}
-      />
-    ) : (
-      <OnBoardingModal
-        title={title}
-        info={info}
-        buttonText={buttonText}
-        secondaryButtonText={secondaryButtonText}
-        imageUrl={imageUrl}
-      />
-    )}
+    {
+      buttonText.length > 1 && (
+        !secondaryButtonText ? (
+          <OnBoardingModal
+            title={title}
+            info={info}
+            buttonText={buttonText}
+            imageUrl={imageUrl}
+          />
+        ) : (
+          <OnBoardingModal
+            title={title}
+            info={info}
+            buttonText={buttonText}
+            secondaryButtonText={secondaryButtonText}
+            imageUrl={imageUrl}
+          />
+        )
+      )
+    }
 
     <LoadingListItem />
     <LoadingListItem styleNumber={2} />

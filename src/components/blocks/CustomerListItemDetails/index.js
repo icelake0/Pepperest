@@ -78,7 +78,7 @@ const CustomerListItemDetails = ({
         <div className="list-item-detail__main-item">
           {showCustomerInfo ? (
             <>
-              <div className="button button-md button--grey">Edit Customer</div>
+              {/* <div className="button button-md button--grey">Edit Customer</div> */}
               <div className="button button-md button--grey">
                 Block Customer
               </div>
