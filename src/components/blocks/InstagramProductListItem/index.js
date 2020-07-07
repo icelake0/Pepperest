@@ -3,6 +3,8 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PepperestContext } from 'components/helpers/constant';
+
 
 const InstagramProductListItem = ({
   imageUrl, hasImageUrl,
@@ -22,11 +24,11 @@ const InstagramProductListItem = ({
           <div className="list-item__date">
             <p className="list-item__date-text">{date}</p>
           </div>
-          {hasImageUrl ? (
+          {/* {hasImageUrl ? (
             <div className="button button-md button--orange-outline">
               Visit Product Link
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
       <div className="list-item__details col-md-4 px-0">
@@ -39,9 +41,20 @@ const InstagramProductListItem = ({
           <div className="list-item__payment">
             <div className="list-item__payment-container">
               {!hasImageUrl ? (
-                <div className="button button-md button--orange">
-                  Add Payment Plan
-                </div>
+                <PepperestContext.Consumer>
+                  {(context) => (
+                    <div
+                      className="button button-md button--orange"
+                      onClick={() => {
+                        context.updateShowProductModal(true);
+                      }}
+                    >
+                      Add Payment Plan
+                    </div>
+
+                  )}
+                </PepperestContext.Consumer>
+
               ) : null}
               <p className="list-item__payment-price">
                 NGN
