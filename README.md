@@ -4,7 +4,7 @@
 
 ## Installation
 
-- `git clone https://github.com/MyloCarson/pepperest.git`
+- `git clone https://github.com/Pepperest-dev/pepperest.git`
 - cd into the folder or directory
 - run `yarn` or `yarn install`
   
